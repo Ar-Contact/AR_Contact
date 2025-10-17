@@ -1,0 +1,57 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Cnr13\\My project (7)\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7B9F1080-9A84-857A-4D89-56845DFEA68A}|Assembly-CSharp.csproj|c:\\users\\cnr13\\my project (7)\\assets\\backgroundremoval.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B9F1080-9A84-857A-4D89-56845DFEA68A}|Assembly-CSharp.csproj|solutionrelative:assets\\backgroundremoval.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B9F1080-9A84-857A-4D89-56845DFEA68A}|Assembly-CSharp.csproj|C:\\Users\\Cnr13\\My project (7)\\assets\\opencv\u002Bunity\\assets\\scripts\\opencvsharp\\modules\\core\\mat\\mat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B9F1080-9A84-857A-4D89-56845DFEA68A}|Assembly-CSharp.csproj|solutionrelative:assets\\opencv\u002Bunity\\assets\\scripts\\opencvsharp\\modules\\core\\mat\\mat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BackgroundRemoval.cs",
+              "DocumentMoniker": "C:\\Users\\Cnr13\\My project (7)\\Assets\\BackgroundRemoval.cs",
+              "RelativeDocumentMoniker": "Assets\\BackgroundRemoval.cs",
+              "ToolTip": "C:\\Users\\Cnr13\\My project (7)\\Assets\\BackgroundRemoval.cs",
+              "RelativeToolTip": "Assets\\BackgroundRemoval.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAqwBoAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T09:34:06.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Mat.cs",
+              "DocumentMoniker": "C:\\Users\\Cnr13\\My project (7)\\Assets\\OpenCV\u002BUnity\\Assets\\Scripts\\OpenCvSharp\\modules\\core\\Mat\\Mat.cs",
+              "RelativeDocumentMoniker": "Assets\\OpenCV\u002BUnity\\Assets\\Scripts\\OpenCvSharp\\modules\\core\\Mat\\Mat.cs",
+              "ToolTip": "C:\\Users\\Cnr13\\My project (7)\\Assets\\OpenCV\u002BUnity\\Assets\\Scripts\\OpenCvSharp\\modules\\core\\Mat\\Mat.cs",
+              "RelativeToolTip": "Assets\\OpenCV\u002BUnity\\Assets\\Scripts\\OpenCvSharp\\modules\\core\\Mat\\Mat.cs",
+              "ViewState": "AgIAAE8SAAAAAAAAAAAxwE8SAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T09:18:31.694Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
