@@ -1,0 +1,706 @@
+Using pre-set license
+Built from '2022.3/respin/2022.3.62f2-4af31df585-v2' branch; Version is '2022.3.62f2 (7670c08855a9) revision 7762112'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Professional' Language: 'tr' Physical Memory: 16163 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2022.3.62f2\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker2
+-projectPath
+D:/ardenemeler/My project
+-logFile
+Logs/AssetImportWorker2.log
+-srvPort
+56764
+Successfully changed project path to: D:/ardenemeler/My project
+D:/ardenemeler/My project
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [24064]  Target information:
+
+Player connection [24064]  * "[IP] 192.168.56.1 [Port] 0 [Flags] 2 [Guid] 3803742656 [EditorId] 3803742656 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-KJ0AJ7V) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [24064]  * "[IP] 172.16.0.146 [Port] 0 [Flags] 2 [Guid] 3803742656 [EditorId] 3803742656 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-KJ0AJ7V) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [24064] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [24064] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+Refreshing native plugins compatible for Editor in 187.89 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.3.62f2 (7670c08855a9)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.62f2/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/ardenemeler/My project/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3050 Ti Laptop GPU (ID=0x25a0)
+    Vendor:   NVIDIA
+    VRAM:     3962 MB
+    Driver:   32.0.15.8157
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.62f2/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.62f2/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.62f2/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56440
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.62f2/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.62f2/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.62f2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.016056 seconds.
+- Loaded All Assemblies, in  1.219 seconds
+Native extension for WindowsStandalone target not found
+[usbmuxd] Start listen thread
+[usbmuxd] Listen thread started
+Native extension for iOS target not found
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 2564 ms
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  2.945 seconds
+Domain Reload Profiling: 4162ms
+	BeginReloadAssembly (191ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (242ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (66ms)
+	LoadAllAssembliesAndSetupDomain (708ms)
+		LoadAssemblies (193ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (701ms)
+			TypeCache.Refresh (698ms)
+				TypeCache.ScanAssembly (680ms)
+			ScanForSourceGeneratedMonoScriptInfo (1ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (2946ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (2899ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2720ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (3ms)
+			ProcessInitializeOnLoadAttributes (119ms)
+			ProcessInitializeOnLoadMethodAttributes (52ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.312 seconds
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.866 seconds
+Domain Reload Profiling: 2176ms
+	BeginReloadAssembly (149ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (27ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (47ms)
+	LoadAllAssembliesAndSetupDomain (1073ms)
+		LoadAssemblies (659ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (498ms)
+			TypeCache.Refresh (449ms)
+				TypeCache.ScanAssembly (424ms)
+			ScanForSourceGeneratedMonoScriptInfo (32ms)
+			ResolveRequiredComponents (13ms)
+	FinalizeReload (867ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (651ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (37ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (92ms)
+			ProcessInitializeOnLoadAttributes (441ms)
+			ProcessInitializeOnLoadMethodAttributes (68ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (7ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 3.50 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5209 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (348.4 KB). Loaded Objects now: 5677.
+Memory consumption went from 209.8 MB to 209.4 MB.
+Total: 6.176600 ms (FindLiveObjects: 0.497900 ms CreateObjectMapping: 0.275800 ms MarkObjects: 5.034300 ms  DeleteObjects: 0.366800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 46667.442555 seconds.
+  path: Assets/SopaDopa/URP_Medieval_Fantasy/Misc_2/Textures
+  artifactKey: Guid(66bdb4d181e2e7346908c30cf90e2ac0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SopaDopa/URP_Medieval_Fantasy/Misc_2/Textures using Guid(66bdb4d181e2e7346908c30cf90e2ac0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '6857e3fb6ef7b000fcc767b04ead7e1f') in 0.003961 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.044448 seconds.
+  path: Assets/SopaDopa/URP_Medieval_Fantasy/Misc_2/Textures/Misc2_AO.png
+  artifactKey: Guid(5c46aea2e8b75da40ad2cfb5c9791040) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SopaDopa/URP_Medieval_Fantasy/Misc_2/Textures/Misc2_AO.png using Guid(5c46aea2e8b75da40ad2cfb5c9791040) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '24b3db9bab433ff80eb0377b1f350972') in 0.128246 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/SopaDopa/URP_Medieval_Fantasy/Misc_2/Textures/Misc2_Roughness.png
+  artifactKey: Guid(79ba78b4960caa847a0a7514adec6ef2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SopaDopa/URP_Medieval_Fantasy/Misc_2/Textures/Misc2_Roughness.png using Guid(79ba78b4960caa847a0a7514adec6ef2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '3ee4f313c2f5f22581130e543d194b16') in 0.064754 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 11.591326 seconds.
+  path: Assets/SopaDopa/URP_Medieval_Fantasy/Misc_2/Textures/Free_Color
+  artifactKey: Guid(2d7342d650365b842b4bfc2c748604d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SopaDopa/URP_Medieval_Fantasy/Misc_2/Textures/Free_Color using Guid(2d7342d650365b842b4bfc2c748604d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '69af171dae22c561a96155f9f9768e88') in 0.001334 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.049450 seconds.
+  path: Assets/SopaDopa/URP_Medieval_Fantasy/Misc_2/Textures/Free_Color/Misc2_Free_Base.png
+  artifactKey: Guid(007da760e6c282443801a5c85af1158d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SopaDopa/URP_Medieval_Fantasy/Misc_2/Textures/Free_Color/Misc2_Free_Base.png using Guid(007da760e6c282443801a5c85af1158d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'a0895cbe2838e24184abee5ea4ea3de9') in 0.076072 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 6.945495 seconds.
+  path: Assets/SopaDopa/URP_Medieval_Fantasy/Cloth
+  artifactKey: Guid(318b2a264dec42649989be8015e92b02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SopaDopa/URP_Medieval_Fantasy/Cloth using Guid(318b2a264dec42649989be8015e92b02) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '49a7ae782f1eb24d29869cf4024673c8') in 0.002052 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.756422 seconds.
+  path: Assets/SopaDopa/URP_Medieval_Fantasy/Cloth/Materials
+  artifactKey: Guid(735b476508c26e54c942462a885c3d65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SopaDopa/URP_Medieval_Fantasy/Cloth/Materials using Guid(735b476508c26e54c942462a885c3d65) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '22c24937f807ca2b24588da2617d30c2') in 0.000969 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.047718 seconds.
+  path: Assets/SopaDopa/URP_Medieval_Fantasy/Cloth/Materials/Cloth_mat_URP.mat
+  artifactKey: Guid(41425b2da1b0b2e40836ed61e7a33f2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SopaDopa/URP_Medieval_Fantasy/Cloth/Materials/Cloth_mat_URP.mat using Guid(41425b2da1b0b2e40836ed61e7a33f2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '596357a8585630a8c20fb55b82617576') in 0.923960 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 26
+========================================================================
+Received Import Request.
+  Time since last request: 1.883343 seconds.
+  path: Assets/SopaDopa/URP_Medieval_Fantasy/Cloth/Textures
+  artifactKey: Guid(c097c8b7328beb04bb5473a320415186) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SopaDopa/URP_Medieval_Fantasy/Cloth/Textures using Guid(c097c8b7328beb04bb5473a320415186) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'cf4893a751103f012057e3afd07b0b08') in 0.001269 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.067143 seconds.
+  path: Assets/SopaDopa/URP_Medieval_Fantasy/Cloth/Textures/Cloth_AO.png
+  artifactKey: Guid(73f0df613f47d3940aa49b3edeefb868) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SopaDopa/URP_Medieval_Fantasy/Cloth/Textures/Cloth_AO.png using Guid(73f0df613f47d3940aa49b3edeefb868) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd0639c72ba5016f07e966a4b470781eb') in 0.259539 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000060 seconds.
+  path: Assets/SopaDopa/URP_Medieval_Fantasy/Cloth/Textures/Cloth_Roughness.png
+  artifactKey: Guid(afd9804a1050c4245a0f833028ece9e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SopaDopa/URP_Medieval_Fantasy/Cloth/Textures/Cloth_Roughness.png using Guid(afd9804a1050c4245a0f833028ece9e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'ef3107f2edcc3ce466358c9604834463') in 0.250609 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 3.731470 seconds.
+  path: Assets/SopaDopa/URP_Medieval_Fantasy/Decals
+  artifactKey: Guid(3a5d9c5b4a101bd429deb3b08351e413) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SopaDopa/URP_Medieval_Fantasy/Decals using Guid(3a5d9c5b4a101bd429deb3b08351e413) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0de7cd3fd5d1914ba358490c270a3046') in 0.001373 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.749372 seconds.
+  path: Assets/SopaDopa/URP_Medieval_Fantasy/Decals/Pref
+  artifactKey: Guid(217f0b22b45ae1e459e6cd1b685d3e6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SopaDopa/URP_Medieval_Fantasy/Decals/Pref using Guid(217f0b22b45ae1e459e6cd1b685d3e6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '98a134ff0fdfdbde757e2febf907a339') in 0.001871 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.048536 seconds.
+  path: Assets/SopaDopa/URP_Medieval_Fantasy/Decals/Pref/Decal_Proj_URP.prefab
+  artifactKey: Guid(a0e556cc4e20a1f4d8fe6ee5b60cdf7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SopaDopa/URP_Medieval_Fantasy/Decals/Pref/Decal_Proj_URP.prefab using Guid(a0e556cc4e20a1f4d8fe6ee5b60cdf7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '39ed198acada962b3b5b2569a022a1eb') in 0.011928 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 8.792741 seconds.
+  path: Assets/SopaDopa/URP_Medieval_Fantasy/Decals/Textures
+  artifactKey: Guid(9e7b365f1687e8d4c9ddf4be7588d34d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SopaDopa/URP_Medieval_Fantasy/Decals/Textures using Guid(9e7b365f1687e8d4c9ddf4be7588d34d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '3b6998d4cd3b26eb5c9d69beb0fa610a') in 0.000814 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.045296 seconds.
+  path: Assets/SopaDopa/URP_Medieval_Fantasy/Decals/Textures/Decal_Mat_URP.mat
+  artifactKey: Guid(9b7a34093ba5a9249bb9cf708fa4f442) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SopaDopa/URP_Medieval_Fantasy/Decals/Textures/Decal_Mat_URP.mat using Guid(9b7a34093ba5a9249bb9cf708fa4f442) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '38cb59bbb3afbaa9c36d776e02645e00') in 0.110761 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000111 seconds.
+  path: Assets/SopaDopa/URP_Medieval_Fantasy/Decals/Textures/Decals_Normal.png
+  artifactKey: Guid(005253bb2ce49e14da29951578dbafd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SopaDopa/URP_Medieval_Fantasy/Decals/Textures/Decals_Normal.png using Guid(005253bb2ce49e14da29951578dbafd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '5dcee7618c42123979a3bed89589d957') in 0.063759 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 2.356086 seconds.
+  path: Assets/SopaDopa/URP_Medieval_Fantasy/Dynamic_parts
+  artifactKey: Guid(5cb94f6013334374eaef094648d940ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SopaDopa/URP_Medieval_Fantasy/Dynamic_parts using Guid(5cb94f6013334374eaef094648d940ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'a122f8e69d53166ea88510b454a068c1') in 0.001677 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.570072 seconds.
+  path: Assets/SopaDopa/URP_Medieval_Fantasy/Dynamic_parts/Meshes
+  artifactKey: Guid(d541669d57c38e94a9d0af9a0643e65d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SopaDopa/URP_Medieval_Fantasy/Dynamic_parts/Meshes using Guid(d541669d57c38e94a9d0af9a0643e65d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '6919383c27815353c56d8156b0614644') in 0.000694 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.062995 seconds.
+  path: Assets/SopaDopa/URP_Medieval_Fantasy/Dynamic_parts/Meshes/Back_Pack_U.fbx
+  artifactKey: Guid(46944d2a58ec5b04c9664fe27106f9af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SopaDopa/URP_Medieval_Fantasy/Dynamic_parts/Meshes/Back_Pack_U.fbx using Guid(46944d2a58ec5b04c9664fe27106f9af) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'eb5aa1d0109bc893f4aac2ba147a49b0') in 0.088556 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 7.408823 seconds.
+  path: Assets/SopaDopa/URP_Medieval_Fantasy/Dynamic_parts/Prefs
+  artifactKey: Guid(ee76d9437de58de44abde142ec6bb49c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SopaDopa/URP_Medieval_Fantasy/Dynamic_parts/Prefs using Guid(ee76d9437de58de44abde142ec6bb49c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '27d0e6aca82f8b76f69949d6691e2ce8') in 0.000571 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.048475 seconds.
+  path: Assets/SopaDopa/URP_Medieval_Fantasy/Dynamic_parts/Prefs/Back_Pack_U.prefab
+  artifactKey: Guid(58455737705dd7543aedb84c3e85790c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SopaDopa/URP_Medieval_Fantasy/Dynamic_parts/Prefs/Back_Pack_U.prefab using Guid(58455737705dd7543aedb84c3e85790c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '07264bdbdc63cf6bdcda9cf046974fae') in 0.247311 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/SopaDopa/URP_Medieval_Fantasy/Dynamic_parts/Prefs/Little_purse_U.prefab
+  artifactKey: Guid(3a21ac97a88f25947931d8e88be3dfa6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SopaDopa/URP_Medieval_Fantasy/Dynamic_parts/Prefs/Little_purse_U.prefab using Guid(3a21ac97a88f25947931d8e88be3dfa6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '28a92aea03bf6cdced55b1a36399f839') in 0.138011 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 2.368644 seconds.
+  path: Assets/SopaDopa/URP_Medieval_Fantasy/Example_Scene
+  artifactKey: Guid(d195911afee47d9409551daf1df135c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SopaDopa/URP_Medieval_Fantasy/Example_Scene using Guid(d195911afee47d9409551daf1df135c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b99ed39cbf6985fb1b87eeadd6ab8443') in 0.001040 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 2.121439 seconds.
+  path: Assets/SopaDopa/URP_Medieval_Fantasy/Leather
+  artifactKey: Guid(c798ddcaa34f44b4681b860ff2832abb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SopaDopa/URP_Medieval_Fantasy/Leather using Guid(c798ddcaa34f44b4681b860ff2832abb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '97e9959b3c1dfde651772f2ec66b1ffc') in 0.000835 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.301733 seconds.
+  path: Assets/SopaDopa/URP_Medieval_Fantasy/Leather/Materials
+  artifactKey: Guid(56558eee21e2d9146aac5a2f1aff54a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SopaDopa/URP_Medieval_Fantasy/Leather/Materials using Guid(56558eee21e2d9146aac5a2f1aff54a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '6b6a4ff5948ba28276c759c549611ea2') in 0.000772 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.060095 seconds.
+  path: Assets/SopaDopa/URP_Medieval_Fantasy/Leather/Materials/Leather_mat_URP.mat
+  artifactKey: Guid(9feb6535a3b8e714e9743cda5f0dc2d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SopaDopa/URP_Medieval_Fantasy/Leather/Materials/Leather_mat_URP.mat using Guid(9feb6535a3b8e714e9743cda5f0dc2d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '4536ec6e6d6a7ae69841a369c36920eb') in 0.200871 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 8.900974 seconds.
+  path: Assets/SopaDopa/URP_Medieval_Fantasy/Leather/Textures
+  artifactKey: Guid(8a2e68276251d0c46a4f8c6beb477634) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SopaDopa/URP_Medieval_Fantasy/Leather/Textures using Guid(8a2e68276251d0c46a4f8c6beb477634) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '6b1e588133d7451406c8b5e1b54255b1') in 0.001305 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.068769 seconds.
+  path: Assets/SopaDopa/URP_Medieval_Fantasy/Leather/Textures/Leather_AO.png
+  artifactKey: Guid(ae88933e126de114d85ce6833101791e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SopaDopa/URP_Medieval_Fantasy/Leather/Textures/Leather_AO.png using Guid(ae88933e126de114d85ce6833101791e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '90a19d1a3eb942449385a199f6feaeb8') in 0.052421 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000067 seconds.
+  path: Assets/SopaDopa/URP_Medieval_Fantasy/Leather/Textures/Leather_Roughness.png
+  artifactKey: Guid(9b2a7fa1c0455e245911ed8dfd709004) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SopaDopa/URP_Medieval_Fantasy/Leather/Textures/Leather_Roughness.png using Guid(9b2a7fa1c0455e245911ed8dfd709004) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '79e546fc5da30833a22b751a2d29a151') in 0.081666 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 14.270451 seconds.
+  path: Assets/SopaDopa/URP_Medieval_Fantasy/Example_Scene/Construct_Example.unity
+  artifactKey: Guid(67fccd74a655db04d9f325707adea242) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SopaDopa/URP_Medieval_Fantasy/Example_Scene/Construct_Example.unity using Guid(67fccd74a655db04d9f325707adea242) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '691f128e93f6962a2f39d7585d63ea56') in 0.001614 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 33.110022 seconds.
+  path: Assets/Scenes/SampleScene.unity
+  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleScene.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'a9d4590af66d78eafb356dd299e46ae8') in 0.001400 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.362519 seconds.
+  path: Assets/Scenes/SampleScene
+  artifactKey: Guid(f9d4fbc5741c88844b4a8446b096353d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleScene using Guid(f9d4fbc5741c88844b4a8446b096353d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'ff671338e993de8f0febd358f23cd937') in 0.001365 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.189272 seconds.
+  path: Assets/Scenes/SampleScene/NavMesh-arena.asset
+  artifactKey: Guid(6aacfd1d26b959e478cecd09cd77e8f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleScene/NavMesh-arena.asset using Guid(6aacfd1d26b959e478cecd09cd77e8f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'a36630f6e45bd0527ff1d8631a41f83d') in 0.001763 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 28.694329 seconds.
+  path: Assets/sprites/armor
+  artifactKey: Guid(15513f2c7728af549b92bdd7d958e5fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/armor using Guid(15513f2c7728af549b92bdd7d958e5fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '178705cbecb60599ff74698dbf03ac4e') in 0.001124 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 74.381075 seconds.
+  path: Assets/sprites/mead/Models/NF_Prop_Pine_02.fbx
+  artifactKey: Guid(8bb1ce573d002864fa732523ed29e19b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/mead/Models/NF_Prop_Pine_02.fbx using Guid(8bb1ce573d002864fa732523ed29e19b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'e06778969b836e1893a6374abbd53f44') in 0.046114 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.007734 seconds.
+  path: Assets/sprites/skeleton/char/Sources/Modular_Armors/Meshes/Separate_Parts/PT_Male_Armor_Skeleton_01_boots.fbx
+  artifactKey: Guid(52527d1b1f5c38d4faec98b18a0c18b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/skeleton/char/Sources/Modular_Armors/Meshes/Separate_Parts/PT_Male_Armor_Skeleton_01_boots.fbx using Guid(52527d1b1f5c38d4faec98b18a0c18b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'ed484f99ff0163befe204361aaa62814') in 0.203380 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 174
+========================================================================
+Received Import Request.
+  Time since last request: 0.000067 seconds.
+  path: Assets/sprites/skeleton/char/Sources/Modular_Armors/Meshes/Separate_Parts/PT_Male_Armor_Skeleton_01_gauntlets.fbx
+  artifactKey: Guid(59acf7ad678ac50408280df02efd002c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/skeleton/char/Sources/Modular_Armors/Meshes/Separate_Parts/PT_Male_Armor_Skeleton_01_gauntlets.fbx using Guid(59acf7ad678ac50408280df02efd002c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '735a80a62dfcbdfcfe3be4cca6fc6b6d') in 0.051295 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 174
+========================================================================
+Received Import Request.
+  Time since last request: 1.830054 seconds.
+  path: Assets/sprites/skeleton/char/Sources/Modular_Armors/Meshes/Separate_Parts/PT_Male_Armor_Skeleton_01_legs.fbx
+  artifactKey: Guid(1aba5f7eaf4b3bc488b6c6964103ad48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/skeleton/char/Sources/Modular_Armors/Meshes/Separate_Parts/PT_Male_Armor_Skeleton_01_legs.fbx using Guid(1aba5f7eaf4b3bc488b6c6964103ad48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '6bad9cca3808939fdb68989958ac42f0') in 0.045862 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 174
+========================================================================
+Received Import Request.
+  Time since last request: 4.925921 seconds.
+  path: Assets/sprites/mead/Models/NF_Prop_CookingGear_03.fbx
+  artifactKey: Guid(5f5f1a4779dd805469dffebd7a7dd40d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/mead/Models/NF_Prop_CookingGear_03.fbx using Guid(5f5f1a4779dd805469dffebd7a7dd40d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '82b26a99035642bc3ce90ebd2d05cf7b') in 0.039642 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000144 seconds.
+  path: Assets/sprites/mead/Models/NF_Prop_CookingGear_02.fbx
+  artifactKey: Guid(e90b471aed0eacb4397f01b708b91722) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/mead/Models/NF_Prop_CookingGear_02.fbx using Guid(e90b471aed0eacb4397f01b708b91722) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '4b00dac5849c190e5d732c0b8c62cc33') in 0.042343 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.005208 seconds.
+  path: Assets/sprites/mead/Models/NF_Prop_Barrel_02.fbx
+  artifactKey: Guid(4a5556d6a365c6c4591fa560bd3f5cb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/mead/Models/NF_Prop_Barrel_02.fbx using Guid(4a5556d6a365c6c4591fa560bd3f5cb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '9a51847c2e9ad1db70d62c4c8cbcc89c') in 0.062406 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.506525 seconds.
+  path: Assets/sprites/mead/Models/NF_Prop_Barrel_01.fbx
+  artifactKey: Guid(c9c496676ce0ad340a0f79ddc4f26d2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/mead/Models/NF_Prop_Barrel_01.fbx using Guid(c9c496676ce0ad340a0f79ddc4f26d2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '599191850a9c6eba75658c2c7cbfb0ec') in 0.034916 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.006095 seconds.
+  path: Assets/sprites/archer/Human Animations/Unity Demo Scenes/Human Archer Animations/Models/HumanArcher_Arrow.fbx
+  artifactKey: Guid(67c079f97b8805149856bf0095a1a841) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/archer/Human Animations/Unity Demo Scenes/Human Archer Animations/Models/HumanArcher_Arrow.fbx using Guid(67c079f97b8805149856bf0095a1a841) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd985eca920b0f92e55b89079a0ed2285') in 0.028999 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 71.074558 seconds.
+  path: Assets/sprites/mead/Models/NF_Prop_Tree_02.fbx
+  artifactKey: Guid(d0eb41e8f6efd684186aff82ce9fe4a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/mead/Models/NF_Prop_Tree_02.fbx using Guid(d0eb41e8f6efd684186aff82ce9fe4a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '1f2c64e3c228a134ff675e4427bea8cf') in 0.058060 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.163286 seconds.
+  path: Assets/sprites/mead/Models/NF_Prop_Stump_01.fbx
+  artifactKey: Guid(3efcaad2c4ea4fc4dbbbf0a678bae12a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/mead/Models/NF_Prop_Stump_01.fbx using Guid(3efcaad2c4ea4fc4dbbbf0a678bae12a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '96396dcadf7b090e2d8f97e125af9892') in 0.035722 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/sprites/mead/Models/NF_Prop_Stump_03.fbx
+  artifactKey: Guid(c17b1cb418635ca4d87623e436766213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/mead/Models/NF_Prop_Stump_03.fbx using Guid(c17b1cb418635ca4d87623e436766213) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'e8d0fcb475581ab0bb8603e85727572c') in 0.039402 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/sprites/mead/Models/NF_Prop_TreeStump_01.fbx
+  artifactKey: Guid(3d9080ff02d6fbb4ba8aa02248a05ea9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/mead/Models/NF_Prop_TreeStump_01.fbx using Guid(3d9080ff02d6fbb4ba8aa02248a05ea9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0d43a03b5486f5ad8ee2d4e288f02ef2') in 0.041171 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 39.331236 seconds.
+  path: Assets/sprites/castle/Medieval Castle/Art/Model/Materials/BridgeTexture.mat
+  artifactKey: Guid(5fbbc43ab9bdb8e4d9af0684cfb40f9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/castle/Medieval Castle/Art/Model/Materials/BridgeTexture.mat using Guid(5fbbc43ab9bdb8e4d9af0684cfb40f9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '3a8f37d64bd22f4ac43cb6c66c5d742e') in 0.063012 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000092 seconds.
+  path: Assets/sprites/castle/Medieval Castle/Art/Model/Materials/CastleTexture.mat
+  artifactKey: Guid(31a4673ea55360d46b2b47bdbef014d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/castle/Medieval Castle/Art/Model/Materials/CastleTexture.mat using Guid(31a4673ea55360d46b2b47bdbef014d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '33af9c94a83cf67e8845c6be69a8ea27') in 0.030350 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000087 seconds.
+  path: Assets/sprites/castle/Medieval Castle/Art/Model/Materials/CastleTopTexture.mat
+  artifactKey: Guid(a93345ffcfb51d541bf4d8f2e361ec6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/castle/Medieval Castle/Art/Model/Materials/CastleTopTexture.mat using Guid(a93345ffcfb51d541bf4d8f2e361ec6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f4467045e0b70f0e5e5bb84d9c4547f0') in 0.049579 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: Bir iþ parçacýðý çýkýþý veya bir uygulama isteði nedeniyle G/Ç iþlemi iptal edildi.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

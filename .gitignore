@@ -1,0 +1,15 @@
+Unity generated folders
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+UserSettings/
+
+Visual Studio / MonoDevelop
+*.unityproj
+*.user
+*.userprefs
+*.csproj
+*.unityhost
+*.suo
