@@ -14,8 +14,19 @@ public class Health : MonoBehaviour
     public float blinkDuration;
     float blinkTimer;
 
-    // --- YENÝ EKLEME ---
-    private bool isDead = false; // Karakterin ölü olup olmadýðýný takip eder
+    public bool isDead = false;
+
+    [Tooltip("Öldükten kaç saniye sonra obje tamamen yok olsun?")]
+    public float destroyAfterDeathTime = 5.0f;
+
+    // --- YENÝ EKLENEN KISIMLAR ---
+    [Header("Takým ve Ödül Ayarlarý")]
+    [Tooltip("Bu mob hangi takýma ait? (Büyük harfle: 'Blue' veya 'Red' yazýn)")]
+    public string mobTakimi = "Red"; // Varsayýlan Red olsun
+
+    [Tooltip("Bu mob öldüðünde karþý takýma kaç puan versin?")]
+    public int oldurmeOdulu = 10;
+    // -----------------------------
 
     void Start()
     {
@@ -23,7 +34,7 @@ public class Health : MonoBehaviour
         skinnedMeshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
         healthBar = GetComponentInChildren<UIHealthBar>();
         currentHealth = maxHealth;
-        isDead = false; // Oyuna canlý baþla
+        isDead = false;
 
         var rigidBodies = GetComponentsInChildren<Rigidbody>();
         foreach (var rigidBody in rigidBodies)
@@ -35,45 +46,47 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(float amount, Vector3 direction)
     {
-        // --- GÜNCELLEME ---
-        // Eðer karakter zaten öldüyse, bu fonksiyondan hemen çýk
-        // (Ölüler hasar alamaz)
-        if (isDead)
-        {
-            return;
-        }
-        // --------------------
+        if (isDead) return;
 
         currentHealth -= amount;
         healthBar.SetHealthBarPertencage(currentHealth / maxHealth);
 
-        // --- GÜNCELLEME ---
-        // Caný 0'ýn altýndaysa VE HENÜZ ÖLÜ DEÐÝLSE
         if (currentHealth <= 0.0f && !isDead)
         {
-            Die(); // Die() fonksiyonunu sadece bir kez tetikle
+            Die();
         }
-        // --------------------
 
         blinkTimer = blinkDuration;
     }
+
     private void Die()
     {
-        // --- YENÝ EKLEME ---
-        // Karakteri "Öldü" olarak iþaretle
         isDead = true;
-        // --------------------
 
         ragdoll.ActivateRagdoll();
         healthBar.gameObject.SetActive(false);
 
-        
+        // --- YENÝ EKLENEN MANTIK ---
+        // Oyuncu þu an hangi takýmda? (PlayerTeamer'dan öðreniyoruz)
+        string oyuncuTakimi = PlayerTeamer.SecilenTakim;
+
+        // EÐER: Oyuncu Mavi ise VE bu ölen mob Kýrmýzý ise -> Para Ver
+        if (oyuncuTakimi == "Blue" && mobTakimi == "Red")
+        {
+            CurrencyManager.Instance.ParaKazan(oldurmeOdulu);
+        }
+        // EÐER: Oyuncu Kýrmýzý ise VE bu ölen mob Mavi ise -> Para Ver
+        else if (oyuncuTakimi == "Red" && mobTakimi == "Blue")
+        {
+            CurrencyManager.Instance.ParaKazan(oldurmeOdulu);
+        }
+        // ---------------------------
+
+        Destroy(gameObject, destroyAfterDeathTime);
     }
 
     private void Update()
     {
-        // --- GÜNCELLEME ---
-        // Eðer öldüyse, hasar alma efektini (blink) çalýþtýrma
         if (isDead)
         {
             if (!gameObject.CompareTag("Untagged"))
@@ -82,7 +95,6 @@ public class Health : MonoBehaviour
             }
             return;
         }
-        
 
         blinkTimer -= Time.deltaTime;
         float lerp = Mathf.Clamp01(blinkTimer / blinkDuration);

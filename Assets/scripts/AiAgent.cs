@@ -11,6 +11,7 @@ public class AiAgent : MonoBehaviour
     // BÝLEÞENLER
     [HideInInspector] public NavMeshAgent navMeshAgent;
     [HideInInspector] public Animator animator;
+    [HideInInspector] public Health health; // Saðlýk scriptine eriþim
 
     // HEDEF BÝLGÝSÝ
     public string targetTag;
@@ -27,6 +28,7 @@ public class AiAgent : MonoBehaviour
         // Bileþenleri al
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        health = GetComponent<Health>(); // Health bileþenini bul ve taný
 
         // NavMeshAgent'ýn durma mesafesini 'attackDistance' ile eþitle
         navMeshAgent.stoppingDistance = attackDistance;
@@ -56,10 +58,19 @@ public class AiAgent : MonoBehaviour
 
     void Update()
     {
+        // --- ÖLÜM KONTROLÜ (ZOMBÝ FIX) ---
+        // Eðer karakterin caný bittiyse (isDead true ise)
+        if (health != null && health.isDead)
+        {
+            // Hareket etmeyi durdur (NavMesh'i kapat)
+            navMeshAgent.enabled = false;
+
+            // Animasyonlarý veya beyni güncellemeyi býrak ve fonksiyondan çýk
+            return;
+        }
+        // ---------------------------------
+
         // State machine'i her frame güncelle (Hangi durumdaysa onu çalýþtýrýr)
         stateMachine.Update();
-
-        // DEÐÝÞÝKLÝK: Animasyon satýrý buradan SÝLÝNDÝ.
-        // Bu iþi artýk 'AiIdleState', 'AiChaseState' ve 'AiAttackState' yapýyor.
     }
 }

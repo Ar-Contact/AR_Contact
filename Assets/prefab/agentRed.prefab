@@ -2702,7 +2702,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.027950287, y: -10.399999, z: 2.9}
-  m_LocalScale: {x: 2.3621023, y: 2.3621023, z: 2.3621023}
+  m_LocalScale: {x: 2.3, y: 2.3, z: 2.3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6854525148717641740}
@@ -2800,6 +2800,10 @@ MonoBehaviour:
   currentHealth: 0
   blinkIntensity: 100
   blinkDuration: 0.5
+  isDead: 0
+  destroyAfterDeathTime: 2
+  mobTakimi: Red
+  oldurmeOdulu: 10
 --- !u!114 &5840293295127145701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2814,6 +2818,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 0}
   animator: {fileID: 0}
+  health: {fileID: 0}
   targetTag: BlueTeam
   targetTransform: {fileID: 0}
   chaseDistance: 100
