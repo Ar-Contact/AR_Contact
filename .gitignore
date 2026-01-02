@@ -13,3 +13,7 @@ Visual Studio / MonoDevelop
 *.csproj
 *.unityhost
 *.suo
+
+# Firebase native plugins
+Assets/Firebase/Plugins/x86_64/
+Assets/Firebase/Plugins/x86/
