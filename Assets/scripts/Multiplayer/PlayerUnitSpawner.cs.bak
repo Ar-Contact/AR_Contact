@@ -1,0 +1,52 @@
+using Unity.Netcode;
+using UnityEngine;
+using System.Collections.Generic;
+
+public class PlayerUnitSpawner : NetworkBehaviour
+{
+    [Header("Mavi Takým Askerleri (Sýrasýyla)")]
+    public List<GameObject> blueTeamUnits; // 0: Okçu, 1: Þövalye...
+
+    [Header("Kýrmýzý Takým Askerleri (Sýrasýyla)")]
+    public List<GameObject> redTeamUnits; // 0: Büyücü, 1: Ork...
+
+    // UI (DragAndDrop) bu fonksiyonu çaðýracak
+    public void RequestSpawnUnit(int unitIndex, Vector3 position)
+    {
+        // Sadece kendi karakterim için istek atabilirim
+        if (IsOwner)
+        {
+            // Hangi takým olduðumu PlayerSession'dan öðrenip gönderiyorum
+            string myTeam = PlayerSession.Team;
+            SpawnUnitServerRpc(unitIndex, position, myTeam);
+        }
+    }
+
+    // Bu fonksiyon sadece SUNUCUDA çalýþýr
+    [ServerRpc]
+    private void SpawnUnitServerRpc(int unitIndex, Vector3 position, string team)
+    {
+        GameObject prefabToSpawn = null;
+
+        // Gelen takým bilgisine göre doðru listeden askeri seç
+        if (team == "Blue")
+        {
+            if (unitIndex < blueTeamUnits.Count)
+                prefabToSpawn = blueTeamUnits[unitIndex];
+        }
+        else if (team == "Red")
+        {
+            if (unitIndex < redTeamUnits.Count)
+                prefabToSpawn = redTeamUnits[unitIndex];
+        }
+
+        // Eðer geçerli bir prefab bulunduysa oluþtur ve Aða tanýt (Spawn)
+        if (prefabToSpawn != null)
+        {
+            GameObject newUnit = Instantiate(prefabToSpawn, position, Quaternion.identity);
+
+            // Burasý çok önemli: Nesneyi aðda görünür yapýyoruz
+            newUnit.GetComponent<NetworkObject>().Spawn();
+        }
+    }
+}

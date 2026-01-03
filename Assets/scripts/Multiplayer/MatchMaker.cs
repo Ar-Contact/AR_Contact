@@ -7,6 +7,7 @@ using System.Linq;
 using UnityEngine.SceneManagement;
 using System.Threading.Tasks;
 using System.Threading;
+using System.Collections;
 
 public class MatchMaker : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class MatchMaker : MonoBehaviour
     private SynchronizationContext _mainThreadContext;
     private bool _isGameReadyToStart = false;
     private string _sceneToLoad = "Scenes/SampleScene";
+    
+    private ListenerRegistration _matchListener;
 
     private void Awake()
     {
@@ -27,8 +30,22 @@ public class MatchMaker : MonoBehaviour
         if (_isGameReadyToStart)
         {
             _isGameReadyToStart = false;
-            Debug.Log(" Sahne yükleniyor...");
+            Debug.Log("Sahne yukleniyor...");
+            
+            // CRITICAL: Signal NetworkBootstrapper that PlayerSession is ready
+            PlayerSession.NetworkStarted = true;
+            Debug.Log($"PlayerSession ready - Team: {PlayerSession.Team}, IsHost: {PlayerSession.IsHost}");
+            
             SceneManager.LoadScene(_sceneToLoad);
+        }
+    }
+    
+    private void OnDestroy()
+    {
+        if (_matchListener != null)
+        {
+            _matchListener.Stop();
+            _matchListener = null;
         }
     }
 
@@ -47,7 +64,7 @@ public class MatchMaker : MonoBehaviour
             }
             else
             {
-                Debug.LogError($"Firebase Hatasý: {dependencyStatus}");
+                Debug.LogError($"Firebase Hatasi: {dependencyStatus}");
             }
         });
     }
@@ -55,25 +72,27 @@ public class MatchMaker : MonoBehaviour
     void InitializeFirebaseAndStart()
     {
         db = FirebaseFirestore.DefaultInstance;
-
-
         auth = FirebaseAuth.DefaultInstance;
 
-#if UNITY_EDITOR
-        // Editörde Rastgele ID
-        PlayerSession.UserId = "Editor_User_" + Random.Range(100, 999);
-        Debug.LogWarning($"Editör ID: {PlayerSession.UserId}");
-        // async void yerine Task kullanýp hatayý yakalamak için özel çaðrý
-        RunSafeJoin();
-#else
-        // Build
+        // FIXED: Always use Firebase Auth (both Editor and Build)
         if (auth.CurrentUser == null)
         {
+            Debug.Log("Firebase Anonymous Auth baslatiliyor...");
             auth.SignInAnonymouslyAsync().ContinueWith(authTask => 
             {
-                if (authTask.IsCanceled || authTask.IsFaulted) return;
+                if (authTask.IsCanceled || authTask.IsFaulted)
+                {
+                    Debug.LogError("Firebase Auth BASARISIZ!");
+                    if (authTask.Exception != null)
+                    {
+                        Debug.LogError(authTask.Exception);
+                    }
+                    return;
+                }
+                
                 _mainThreadContext.Post(_ => {
                     PlayerSession.UserId = auth.CurrentUser.UserId;
+                    Debug.Log($"Auth basarili! User ID: {PlayerSession.UserId}");
                     RunSafeJoin();
                 }, null);
             });
@@ -81,12 +100,11 @@ public class MatchMaker : MonoBehaviour
         else
         {
             PlayerSession.UserId = auth.CurrentUser.UserId;
+            Debug.Log($"Mevcut kullanici: {PlayerSession.UserId}");
             RunSafeJoin();
         }
-#endif
     }
 
-    // async void hatasýný önlemek için sarmalayýcý fonksiyon
     async void RunSafeJoin()
     {
         try
@@ -95,37 +113,51 @@ public class MatchMaker : MonoBehaviour
         }
         catch (System.Exception e)
         {
-            Debug.LogError($"HATA OLUÞTU: {e.Message}\n{e.StackTrace}");
+            Debug.LogError($"HATA OLUSTU: {e.Message}\n{e.StackTrace}");
+            _isGameReadyToStart = false;
         }
     }
 
     async Task JoinOrCreateMatch()
     {
-        Debug.Log("Firestore sorgusu baþlýyor...");
+        Debug.Log("Firestore sorgusu basliyor...");
 
-        
-
-        Debug.Log("Maç aranýyor...");
-        QuerySnapshot matches = await db.Collection("matches")
-            .WhereEqualTo("status", "waiting")
-            .Limit(1)
-            .GetSnapshotAsync();
-
-        if (matches.Count > 0)
+        try
         {
-            Debug.Log("Bekleyen maç bulundu!");
-            DocumentSnapshot match = matches.Documents.First();
-            bool joined = await AssignTeam(match.Reference, match.Id);
+            Debug.Log("Mac araniyor...");
+            
+            QuerySnapshot matches = await db.Collection("matches")
+                .WhereEqualTo("status", "waiting")
+                .Limit(1)
+                .GetSnapshotAsync();
+            
+            Debug.Log($"Query completed! Found {matches.Count} matches");
 
-            if (!joined)
+            if (matches.Count > 0)
             {
-                Debug.Log("Maça girilemedi (Dolu olabilir), yeni kuruluyor...");
+                Debug.Log("Bekleyen mac bulundu!");
+                DocumentSnapshot match = matches.Documents.First();
+                bool joined = await AssignTeam(match.Reference, match.Id);
+
+                if (!joined)
+                {
+                    Debug.Log("Maca girilemedi (Dolu olabilir), yeni kuruluyor...");
+                    await CreateMatch();
+                }
+            }
+            else
+            {
+                Debug.Log("Mac bulunamadi, yeni olusturuluyor...");
                 await CreateMatch();
             }
         }
-        else
+        catch (System.Exception e)
         {
-            Debug.Log("Maç bulunamadý, yeni oluþturuluyor...");
+            Debug.LogError($"FIRESTORE ERROR: {e.Message}");
+            Debug.LogError($"Stack trace: {e.StackTrace}");
+            
+            // Fallback: create new match
+            Debug.Log("Creating new match after error...");
             await CreateMatch();
         }
     }
@@ -142,7 +174,9 @@ public class MatchMaker : MonoBehaviour
         var data = new Dictionary<string, object>
         {
             { "status", "waiting" },
-            { "players", players }
+            { "players", players },
+            { "createdAt", FieldValue.ServerTimestamp },
+            { "expiresAt", FieldValue.ServerTimestamp }
         };
 
         await matchRef.SetAsync(data);
@@ -151,80 +185,133 @@ public class MatchMaker : MonoBehaviour
         PlayerSession.Team = "Blue";
         PlayerSession.IsHost = true;
 
-        Debug.Log("HOST: Maç oluþturuldu ve bekliniyor.");
-        _isGameReadyToStart = true;
+        Debug.Log($"HOST: Mac olusturuldu (ID: {matchRef.Id}). Bekleniyor...");
+        
+        ListenForMatchReady(matchRef);
     }
 
     async Task<bool> AssignTeam(DocumentReference matchRef, string matchId)
     {
-        // Transaction kullanarak veri tutarlýlýðýný saðla
-        return await db.RunTransactionAsync(async transaction =>
+        bool transactionSuccess = false;
+        
+        try
         {
-            DocumentSnapshot snapshot = await transaction.GetSnapshotAsync(matchRef);
-
-            // Veriyi güvenli çekme
-            Dictionary<string, object> players = null;
-            if (snapshot.Exists && snapshot.ContainsField("players"))
+            transactionSuccess = await db.RunTransactionAsync(async transaction =>
             {
-                players = snapshot.GetValue<Dictionary<string, object>>("players");
-            }
+                DocumentSnapshot snapshot = await transaction.GetSnapshotAsync(matchRef);
 
-            if (players == null) players = new Dictionary<string, object>();
+                Dictionary<string, object> players = null;
+                if (snapshot.Exists && snapshot.ContainsField("players"))
+                {
+                    players = snapshot.GetValue<Dictionary<string, object>>("players");
+                }
 
-            if (players.Count >= 2)
+                if (players == null) players = new Dictionary<string, object>();
+
+                if (players.Count >= 2)
+                {
+                    Debug.LogWarning("Mac dolmus!");
+                    return false;
+                }
+
+                string team = players.Values.Contains("Blue") ? "Red" : "Blue";
+
+                if (players.ContainsKey(PlayerSession.UserId))
+                {
+                    players[PlayerSession.UserId] = team;
+                }
+                else
+                {
+                    players.Add(PlayerSession.UserId, team);
+                }
+
+                var updates = new Dictionary<string, object>
+                {
+                    { "players", players }
+                };
+
+                if (players.Count == 2)
+                {
+                    updates.Add("status", "playing");
+                }
+
+                transaction.Update(matchRef, updates);
+
+                PlayerSession.MatchId = matchId;
+                PlayerSession.Team = team;
+                PlayerSession.IsHost = (team == "Blue");
+
+                Debug.Log($"CLIENT: Maca katildi. Takim: {team}");
+
+                return true;
+            });
+            
+            if (transactionSuccess)
             {
-                Debug.LogWarning("Maç dolmuþ!");
-                return false;
-            }
-
-            // Takým belirleme
-            string team = players.Values.Contains("Blue") ? "Red" : "Blue";
-
-            // Local Dictionary güncellemesi
-            if (players.ContainsKey(PlayerSession.UserId))
-            {
-                players[PlayerSession.UserId] = team;
-            }
-            else
-            {
-                players.Add(PlayerSession.UserId, team);
-            }
-
-            var updates = new Dictionary<string, object>
-            {
-                { "players", players }
-            };
-
-            if (players.Count == 2)
-            {
-                updates.Add("status", "playing");
-            }
-
-            transaction.Update(matchRef, updates);
-
-            // Session ayarlarý
-            PlayerSession.MatchId = matchId;
-            PlayerSession.Team = team;
-            PlayerSession.IsHost = (team == "Blue");
-
-            Debug.Log($"CLIENT: Maça katýldý. Takým: {team}");
-
-            return true;
-        }).ContinueWith(task =>
-        {
-            if (task.IsFaulted || task.IsCanceled)
-            {
-                Debug.LogError("Transaction Baþarýsýz: " + task.Exception);
-                return false;
-            }
-
-            if (task.Result)
-            {
-                // Baþarýlý olursa sahneyi yükle
                 _isGameReadyToStart = true;
                 return true;
             }
+            
             return false;
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError("Transaction BASARISIZ: " + e.Message);
+            if (e.InnerException != null)
+            {
+                Debug.LogError("Inner Exception: " + e.InnerException.Message);
+            }
+            
+            _isGameReadyToStart = false;
+            return false;
+        }
+    }
+    
+    private void ListenForMatchReady(DocumentReference matchRef)
+    {
+        Debug.Log("Ikinci oyuncu bekleniyor...");
+        
+        _matchListener = matchRef.Listen(snapshot => 
+        {
+            if (snapshot.Exists && snapshot.ContainsField("status"))
+            {
+                string status = snapshot.GetValue<string>("status");
+                Debug.Log($"Match status guncellendi: {status}");
+                
+                if (status == "playing")
+                {
+                    _mainThreadContext.Post(_ => {
+                        Debug.Log("Iki oyuncu da hazir! Oyun basliyor...");
+                        _isGameReadyToStart = true;
+                        
+                        if (_matchListener != null)
+                        {
+                            _matchListener.Stop();
+                            _matchListener = null;
+                        }
+                        
+                        // ADDED: Delete match after 10 seconds
+                        StartCoroutine(DeleteMatchAfterDelay(matchRef, 10f));
+                    }, null);
+                }
+            }
+        });
+    }
+    
+    // ADDED: Auto-delete match document to prevent reuse
+    private IEnumerator DeleteMatchAfterDelay(DocumentReference matchRef, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        
+        matchRef.DeleteAsync().ContinueWith(task => {
+            if (task.IsCompleted)
+            {
+                Debug.Log("Match document deleted from Firebase (cleanup)");
+            }
+            else if (task.IsFaulted)
+            {
+                Debug.LogWarning("Failed to delete match: " + task.Exception);
+            }
         });
     }
 }
