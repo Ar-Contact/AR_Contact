@@ -9,8 +9,8 @@ public class NetworkBootstrapper : MonoBehaviour
     private static NetworkBootstrapper _instance;
     
     [Header("Network Configuration")]
-    [Tooltip("IP address to connect to as client (127.0.0.1 for same machine, or LAN IP for different devices)")]
-    public string hostIPAddress = "127.0.0.1";
+    [Tooltip("IP address to connect to as client")]
+    public string hostIPAddress = "192.168.0.14";
     
     [Tooltip("Port for network connections")]
     public ushort networkPort = 7777;
@@ -100,13 +100,21 @@ public class NetworkBootstrapper : MonoBehaviour
             return;
         }
 
+        // DIAGNOSTIC: Show what team is starting
+        Debug.Log("═══════════════════════════════════════");
+        Debug.Log($"NETWORK START: Team = '{PlayerSession.Team}'");
+        Debug.Log($"IsHost = {PlayerSession.IsHost}");
+        Debug.Log("═══════════════════════════════════════");
+
         // Start Host or Client based on team
         if (PlayerSession.Team == "Blue")
         {
+            Debug.Log("→ Starting as HOST (Blue Team)");
             StartAsHost(transport);
         }
         else if (PlayerSession.Team == "Red")
         {
+            Debug.Log("→ Starting as CLIENT (Red Team)");
             StartAsClient(transport);
         }
         else
@@ -122,6 +130,13 @@ public class NetworkBootstrapper : MonoBehaviour
         
         try
         {
+            // CRITICAL: Check if port is already in use
+            if (NetworkManager.Singleton.IsServer || NetworkManager.Singleton.IsHost)
+            {
+                Debug.LogWarning("HOST already running! Skipping duplicate start.");
+                return;
+            }
+            
             // Configure transport for host (listen on all interfaces)
             transport.SetConnectionData("0.0.0.0", networkPort);
             
@@ -135,9 +150,12 @@ public class NetworkBootstrapper : MonoBehaviour
             }
             else
             {
-                Debug.LogError($"HOST BASLATILIMADI! Port {networkPort} kullan�mda olabilir veya baska bir hata olustu.");
+                Debug.LogError($"HOST BASLATILIMADI! Port {networkPort} kullanımda olabilir veya baska bir hata olustu.");
                 Debug.LogError("Cozum: Unity Editor'u ve build'i kapatip tekrar deneyin, veya farkli bir port kullananin.");
                 PlayerSession.NetworkStarted = false;
+                
+                // ADDED: Shutdown to clean up failed state
+                NetworkManager.Singleton.Shutdown();
             }
         }
         catch (System.Exception e)
@@ -145,6 +163,13 @@ public class NetworkBootstrapper : MonoBehaviour
             Debug.LogError($"HOST baslatilirken hata olustu: {e.Message}");
             Debug.LogError(e.StackTrace);
             PlayerSession.NetworkStarted = false;
+            
+            // ADDED: Shutdown on exception
+            try
+            {
+                NetworkManager.Singleton?.Shutdown();
+            }
+            catch { }
         }
     }
     
@@ -155,6 +180,13 @@ public class NetworkBootstrapper : MonoBehaviour
         
         try
         {
+            // CRITICAL: Check if already connected or connecting
+            if (NetworkManager.Singleton.IsClient || NetworkManager.Singleton.IsConnectedClient)
+            {
+                Debug.LogWarning("CLIENT already running or connected! Skipping duplicate start.");
+                return;
+            }
+            
             // FIXED: Use configurable IP address instead of hardcoded localhost
             transport.SetConnectionData(hostIPAddress, networkPort);
             
@@ -172,6 +204,9 @@ public class NetworkBootstrapper : MonoBehaviour
                 Debug.LogError("CLIENT BASLATILIMADI! Baglanti baslatma basarisiz.");
                 Debug.LogError($"Cozum: Host'un {hostIPAddress}:{networkPort} adresinde calistigindan emin olun.");
                 PlayerSession.NetworkStarted = false;
+                
+                // ADDED: Shutdown to clean up failed state
+                NetworkManager.Singleton.Shutdown();
             }
         }
         catch (System.Exception e)
@@ -179,6 +214,13 @@ public class NetworkBootstrapper : MonoBehaviour
             Debug.LogError($"CLIENT baslatilirken hata olustu: {e.Message}");
             Debug.LogError(e.StackTrace);
             PlayerSession.NetworkStarted = false;
+            
+            // ADDED: Shutdown on exception
+            try
+            {
+                NetworkManager.Singleton?.Shutdown();
+            }
+            catch { }
         }
     }
     

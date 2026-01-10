@@ -11,12 +11,29 @@ public class PlayerUnitSpawner : NetworkBehaviour
     [Header("Kirmizi Takim Askerleri (Sirasiyla)")]
     public List<GameObject> redTeamUnits;
 
+    // DIAGNOSTIC: Check if NetworkObject is properly spawned
+    private void Start()
+    {
+        Debug.Log("=== PlayerUnitSpawner Network Status ===");
+        Debug.Log($"IsServer: {IsServer}");
+        Debug.Log($"IsClient: {IsClient}");
+        Debug.Log($"IsOwner: {IsOwner}");
+        Debug.Log($"IsSpawned: {IsSpawned}");
+        Debug.Log($"NetworkObjectId: {NetworkObjectId}");
+        Debug.Log("========================================");
+    }
+
     // UI (DragAndDrop) bu fonksiyonu cag�racak
     public void RequestSpawnUnit(int unitIndex, Vector3 position)
     {
-        // ADDED: Debug logging to see if method is called
-        Debug.Log($"RequestSpawnUnit called! UnitIndex: {unitIndex}, Position: {position}");
-        Debug.Log($"IsOwner: {IsOwner}, PlayerSession.Team: {PlayerSession.Team}");
+        // DIAGNOSTIC: This should show on BOTH host AND client when called
+        Debug.Log("╔═══════════════════════════════════════════════════════╗");
+        Debug.Log("║  RequestSpawnUnit CALLED!                            ║");
+        Debug.Log("╚═══════════════════════════════════════════════════════╝");
+        Debug.Log($"[RequestSpawnUnit] UnitIndex: {unitIndex}, Position: {position}");
+        Debug.Log($"[RequestSpawnUnit] IsServer: {IsServer}, IsClient: {IsClient}");
+        Debug.Log($"[RequestSpawnUnit] IsOwner: {IsOwner}, IsSpawned: {IsSpawned}");
+        Debug.Log($"[RequestSpawnUnit] PlayerSession.Team: {PlayerSession.Team}");
         
         // FIXED: Removed IsOwner check - use RequireOwnership=false in ServerRpc instead
         string myTeam = PlayerSession.Team;
@@ -27,8 +44,9 @@ public class PlayerUnitSpawner : NetworkBehaviour
             return;
         }
         
-        Debug.Log($"Sending SpawnUnitServerRpc... Team: {myTeam}, UnitIndex: {unitIndex}");
+        Debug.Log($"[RequestSpawnUnit] Sending SpawnUnitServerRpc... Team: {myTeam}, UnitIndex: {unitIndex}");
         SpawnUnitServerRpc(unitIndex, position, myTeam);
+        Debug.Log($"[RequestSpawnUnit] SpawnUnitServerRpc call sent!");
     }
 
     // FIXED: Added RequireOwnership = false to allow any client to spawn

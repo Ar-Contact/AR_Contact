@@ -1,12 +1,11 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using Unity.Netcode;
 
 public class DragAndDropSpawner : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    [Header("Birim Ayarlar�")]
-    public int unitIndex = 0; // Listede ka��nc� s�rada? (0: Ok�u/B�y�c�)
+    [Header("Birim Ayarları")]
+    public int unitIndex = 0; // Listede kaçıncı sırada? (0: Okçu/Büyücü)
     public int birimMaliyeti = 50;
 
     [Header("Gereklilikler")]
@@ -47,32 +46,61 @@ public class DragAndDropSpawner : MonoBehaviour, IBeginDragHandler, IDragHandler
 
     private void TrySpawnUnit()
     {
+        Debug.Log("►►► TrySpawnUnit CALLED! ◄◄◄");
+        Debug.Log($"Camera.main: {(Camera.main != null ? "EXISTS" : "NULL")}");
+        Debug.Log($"Input.mousePosition: {Input.mousePosition}");
+        
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
+        
+        Debug.Log($"Raycast starting from: {ray.origin}, direction: {ray.direction}");
 
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, groundLayer))
         {
-            // Para Kontrol�
+            Debug.Log($"✓ Raycast HIT! Position: {hit.point}, Object: {hit.collider.name}");
+            // Para Kontrolü
             if (CurrencyManager.Instance.ParaHarcayabilirMi(birimMaliyeti))
             {
-                // LOCAL PLAYER'I BUL VE EM�R VER
-                if (NetworkManager.Singleton.LocalClient != null &&
-                    NetworkManager.Singleton.LocalClient.PlayerObject != null)
+                // FIXED: Find PlayerUnitSpawner on MainPlayer (scene object)
+                // MainPlayer is NOT a spawned PlayerObject, it's in the scene
+                GameObject mainPlayer = GameObject.Find("MainPlayer");
+                
+                if (mainPlayer == null)
                 {
-                    var myPlayerObject = NetworkManager.Singleton.LocalClient.PlayerObject;
-                    var spawner = myPlayerObject.GetComponent<PlayerUnitSpawner>();
+                    Debug.LogError("╔═════════════════════════════════════════╗");
+                    Debug.LogError("║ MainPlayer GameObject NOT FOUND!       ║");
+                    Debug.LogError("╚═════════════════════════════════════════╝");
+                    return;
+                }
+                
+                var spawner = mainPlayer.GetComponent<PhotonPlayerUnitSpawner>();
 
-                    if (spawner != null)
-                    {
-                        spawner.RequestSpawnUnit(unitIndex, hit.point);
-                        Debug.Log("Sunucuya emir verildi!");
-                    }
+                if (spawner != null)
+                {
+                    Debug.Log($"╔═════════════════════════════════════════╗");
+                    Debug.Log($"║ DragDrop: Spawner FOUND!               ║");
+                    Debug.Log($"║ Calling RequestSpawnUnit(index: {unitIndex})   ║");
+                    Debug.Log($"╚═════════════════════════════════════════╝");
+                    
+                    spawner.RequestSpawnUnit(unitIndex, hit.point);
+                    Debug.Log("✓ Sunucuya emir verildi!");
+                }
+                else
+                {
+                    Debug.LogError("╔═════════════════════════════════════════╗");
+                    Debug.LogError("║ PhotonPlayerUnitSpawner NOT on MainPlayer! ║");
+                    Debug.LogError("╚═════════════════════════════════════════╝");
                 }
             }
             else
             {
-                Debug.Log("PARAN YETMED�!");
+                Debug.Log("PARAN YETMEDI!");
             }
+        }
+        else
+        {
+            Debug.LogWarning("✗ Raycast MISSED! No ground hit detected.");
+            Debug.LogWarning($"Ground Layer Mask: {groundLayer.value}");
         }
     }
 }

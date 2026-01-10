@@ -16,7 +16,6 @@ public class MatchMaker : MonoBehaviour
 
     private SynchronizationContext _mainThreadContext;
     private bool _isGameReadyToStart = false;
-    private string _sceneToLoad = "Scenes/SampleScene";
     
     private ListenerRegistration _matchListener;
 
@@ -30,13 +29,19 @@ public class MatchMaker : MonoBehaviour
         if (_isGameReadyToStart)
         {
             _isGameReadyToStart = false;
-            Debug.Log("Sahne yukleniyor...");
             
-            // CRITICAL: Signal NetworkBootstrapper that PlayerSession is ready
+            Debug.Log("╔═══════════════════════════════════════════╗");
+            Debug.Log("║ MATCHMAKER: GAME READY TO START!        ║");
+            Debug.Log("╚═══════════════════════════════════════════╝");
+            
+            // CRITICAL: Signal PhotonNetworkBootstrapper that PlayerSession is ready
+            // PhotonNetworkBootstrapper will handle Photon connection and scene loading
             PlayerSession.NetworkStarted = true;
-            Debug.Log($"PlayerSession ready - Team: {PlayerSession.Team}, IsHost: {PlayerSession.IsHost}");
-            
-            SceneManager.LoadScene(_sceneToLoad);
+            Debug.Log($"✓ PlayerSession.NetworkStarted = true");
+            Debug.Log($"✓ Team: {PlayerSession.Team}");
+            Debug.Log($"✓ IsHost: {PlayerSession.IsHost}");
+            Debug.Log($"✓ MatchId: {PlayerSession.MatchId}");
+            Debug.Log("→ PhotonNetworkBootstrapper will now connect to Photon and join room...");
         }
     }
     
@@ -109,56 +114,128 @@ public class MatchMaker : MonoBehaviour
     {
         try
         {
-            await JoinOrCreateMatch();
+            // SOLUTION: Use Photon's matchmaking instead of Firebase
+            // Firebase Firestore is broken in Windows builds (async crash)
+            Debug.Log("Using Photon matchmaking (Firebase Firestore disabled for builds)...");
+            
+            // Generate a random match ID for Photon room
+            PlayerSession.MatchId = System.Guid.NewGuid().ToString().Substring(0, 8);
+            
+            // Signal that we're ready to connect to Photon
+            // PhotonNetworkBootstrapper will handle team assignment based on IsMasterClient
+            _isGameReadyToStart = true;
+            
+            Debug.Log($"Match ID generated: {PlayerSession.MatchId}");
+            Debug.Log("Ready to connect to Photon. Team will be assigned after joining room.");
         }
         catch (System.Exception e)
         {
-            Debug.LogError($"HATA OLUSTU: {e.Message}\n{e.StackTrace}");
+            Debug.LogError($"Error: {e.Message}\n{e.StackTrace}");
             _isGameReadyToStart = false;
         }
     }
 
     async Task JoinOrCreateMatch()
     {
-        Debug.Log("Firestore sorgusu basliyor...");
+        Debug.Log("═══════════════════════════════════════");
+        Debug.Log("MATCHMAKER: JoinOrCreateMatch started");
+        Debug.Log("═══════════════════════════════════════");
 
         try
         {
-            Debug.Log("Mac araniyor...");
+            Debug.Log("[STEP 1] Checking Firestore connection...");
             
-            QuerySnapshot matches = await db.Collection("matches")
+            if (db == null)
+            {
+                Debug.LogError("CRITICAL: Firestore db is NULL! Cannot query.");
+                Debug.LogError("Solution: Ensure Firebase is initialized properly.");
+                return;
+            }
+            
+            Debug.Log("[STEP 2] Building Firestore query...");
+            var matchesQuery = db.Collection("matches")
                 .WhereEqualTo("status", "waiting")
-                .Limit(1)
-                .GetSnapshotAsync();
+                .Limit(1);
             
-            Debug.Log($"Query completed! Found {matches.Count} matches");
+            Debug.Log("[STEP 3] Executing GetSnapshotAsync...");
+            Debug.Log("WARNING: If build freezes here, check Firestore permissions!");
+            
+            QuerySnapshot matches = null;
+            
+            try
+            {
+                matches = await matchesQuery.GetSnapshotAsync();
+                Debug.Log($"[STEP 4] ✓ Query completed successfully! Found {matches.Count} matches");
+            }
+            catch (System.Exception queryEx)
+            {
+                Debug.LogError($"[STEP 4] ✗ GetSnapshotAsync FAILED!");
+                Debug.LogError($"Exception Type: {queryEx.GetType().Name}");
+                Debug.LogError($"Message: {queryEx.Message}");
+                Debug.LogError($"Stack: {queryEx.StackTrace}");
+                
+                if (queryEx.InnerException != null)
+                {
+                    Debug.LogError($"Inner Exception: {queryEx.InnerException.Message}");
+                }
+                
+                Debug.Log("[FALLBACK] Creating new match instead of querying...");
+                await CreateMatch();
+                return;
+            }
 
             if (matches.Count > 0)
             {
-                Debug.Log("Bekleyen mac bulundu!");
+                Debug.Log("[STEP 5] Waiting match found! Attempting to join...");
                 DocumentSnapshot match = matches.Documents.First();
+                
+                Debug.Log($"Match ID: {match.Id}");
+                Debug.Log($"Match exists: {match.Exists}");
+                
                 bool joined = await AssignTeam(match.Reference, match.Id);
 
                 if (!joined)
                 {
-                    Debug.Log("Maca girilemedi (Dolu olabilir), yeni kuruluyor...");
+                    Debug.Log("[STEP 6] Join failed (match full?), creating new match...");
                     await CreateMatch();
+                }
+                else
+                {
+                    Debug.Log("[STEP 6] ✓ Successfully joined existing match!");
                 }
             }
             else
             {
-                Debug.Log("Mac bulunamadi, yeni olusturuluyor...");
+                Debug.Log("[STEP 5] No waiting matches found, creating new match...");
                 await CreateMatch();
             }
         }
         catch (System.Exception e)
         {
-            Debug.LogError($"FIRESTORE ERROR: {e.Message}");
+            Debug.LogError("╔═══════════════════════════════════════════╗");
+            Debug.LogError("║ CRITICAL ERROR IN JoinOrCreateMatch      ║");
+            Debug.LogError("╚═══════════════════════════════════════════╝");
+            Debug.LogError($"Exception Type: {e.GetType().Name}");
+            Debug.LogError($"Message: {e.Message}");
             Debug.LogError($"Stack trace: {e.StackTrace}");
             
-            // Fallback: create new match
-            Debug.Log("Creating new match after error...");
-            await CreateMatch();
+            if (e.InnerException != null)
+            {
+                Debug.LogError($"Inner Exception Type: {e.InnerException.GetType().Name}");
+                Debug.LogError($"Inner Message: {e.InnerException.Message}");
+            }
+            
+            Debug.Log("[EMERGENCY FALLBACK] Attempting to create new match...");
+            
+            try
+            {
+                await CreateMatch();
+            }
+            catch (System.Exception createEx)
+            {
+                Debug.LogError($"EMERGENCY FALLBACK ALSO FAILED: {createEx.Message}");
+                Debug.LogError("Application is in an unrecoverable state!");
+            }
         }
     }
 
