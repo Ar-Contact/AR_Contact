@@ -23,7 +23,7 @@ public class LLM : MonoBehaviour
     }
 
     // API Keyini buraya yapistir
-    private string apiKey = "AIzaSyCddXMsQPagBs37b8bx7HuVg_LAsRzG8H4"; 
+    private string apiKey = "API KEY"; 
 
     private string apiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent";
     
