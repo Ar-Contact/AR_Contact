@@ -12,7 +12,12 @@ public class AiBearAttackState : AIState
 
     public void Enter(AiAgent agent)
     {
-        agent.navMeshAgent.ResetPath();
+        // Güvenli ResetPath
+        if (agent.navMeshAgent.isActiveAndEnabled && agent.navMeshAgent.isOnNavMesh)
+        {
+            agent.navMeshAgent.ResetPath();
+        }
+
         agent.animator.SetFloat("Speed", 0f);
         agent.animator.SetBool("IsAttacking", true);
 

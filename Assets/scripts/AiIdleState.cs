@@ -12,7 +12,12 @@ public class AiIdleState : AIState
 
     public void Enter(AiAgent agent)
     {
-        agent.navMeshAgent.ResetPath();
+        // EKLENEN KONTROL: Agent aktifse ve NavMesh üzerindeyse yolu sýfýrla
+        if (agent.navMeshAgent.isActiveAndEnabled && agent.navMeshAgent.isOnNavMesh)
+        {
+            agent.navMeshAgent.ResetPath();
+        }
+
         agent.animator.SetFloat("Speed", 0f);
         timer = 0f;
     }

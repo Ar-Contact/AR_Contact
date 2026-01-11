@@ -3,27 +3,39 @@
   "WorkspaceRootPath": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\assets\\scripts\\archer\\aiarcheragent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\assets\\scripts\\aiattackstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\aiattackstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|c:\\users\\samet\\desktop\\arg\\ar_contact\\assets\\scripts\\aichasestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\aichasestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\assets\\scripts\\aiagent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\aiagent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|c:\\users\\samet\\desktop\\arg\\ar_contact\\assets\\scripts\\archer\\aiarcheragent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\archer\\aiarcheragent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|c:\\users\\samet\\desktop\\arg\\ar_contact\\assets\\scripts\\archer\\arrowprojectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\assets\\scripts\\archer\\arrowprojectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\archer\\arrowprojectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|c:\\users\\samet\\desktop\\arg\\ar_contact\\assets\\scripts\\archer\\aiarcherattackstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\assets\\scripts\\archer\\aiarcherattackstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\archer\\aiarcherattackstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|c:\\users\\samet\\desktop\\arg\\ar_contact\\assets\\scripts\\archer\\aiarcherchasestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\assets\\scripts\\archer\\aiarcherchasestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\archer\\aiarcherchasestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|c:\\users\\samet\\desktop\\arg\\ar_contact\\assets\\scripts\\magician\\spellprojectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\assets\\scripts\\magician\\spellprojectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\magician\\spellprojectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|c:\\users\\samet\\desktop\\arg\\ar_contact\\assets\\scripts\\ragdoll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\assets\\scripts\\ragdoll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ragdoll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -31,7 +43,7 @@
       "RelativeMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|c:\\users\\samet\\desktop\\arg\\ar_contact\\assets\\scripts\\hitbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\assets\\scripts\\hitbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\hitbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -47,16 +59,8 @@
       "RelativeMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\beast\\aibear.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\assets\\scripts\\aiagent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\aiagent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\assets\\scripts\\beast\\aibearattackstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\beast\\aibearattackstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\assets\\scripts\\aiattackstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\aiattackstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\assets\\scripts\\multiplayer\\photonplayerunitspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -70,50 +74,122 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ArrowProjectile.cs",
-              "DocumentMoniker": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Archer\\ArrowProjectile.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Archer\\ArrowProjectile.cs",
-              "ToolTip": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Archer\\ArrowProjectile.cs",
-              "RelativeToolTip": "Assets\\scripts\\Archer\\ArrowProjectile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAsAAAAAAAAAA==",
+              "Title": "AiChaseState.cs",
+              "DocumentMoniker": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\AiChaseState.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\AiChaseState.cs",
+              "ToolTip": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\AiChaseState.cs",
+              "RelativeToolTip": "Assets\\scripts\\AiChaseState.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAiwDoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-11T02:19:51.661Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AiArcherChaseState.cs",
-              "DocumentMoniker": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Archer\\AiArcherChaseState.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Archer\\AiArcherChaseState.cs",
-              "ToolTip": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Archer\\AiArcherChaseState.cs",
-              "RelativeToolTip": "Assets\\scripts\\Archer\\AiArcherChaseState.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAiwCQAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-11T02:19:40.784Z",
+              "WhenOpened": "2026-01-11T11:41:05.937Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "AiArcherAttackState.cs",
-              "DocumentMoniker": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Archer\\AiArcherAttackState.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Archer\\AiArcherAttackState.cs",
-              "ToolTip": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Archer\\AiArcherAttackState.cs",
-              "RelativeToolTip": "Assets\\scripts\\Archer\\AiArcherAttackState.cs",
-              "ViewState": "AgIAAEEAAAAAAAAAAAAcwF4AAAABAAAAAAAAAA==",
+              "Title": "AiAgent.cs",
+              "DocumentMoniker": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\AiAgent.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\AiAgent.cs",
+              "ToolTip": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\AiAgent.cs",
+              "RelativeToolTip": "Assets\\scripts\\AiAgent.cs",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAcwJ4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-11T02:19:28.815Z",
+              "WhenOpened": "2026-01-10T23:28:42.076Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "AiAttackState.cs",
+              "DocumentMoniker": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\AiAttackState.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\AiAttackState.cs",
+              "ToolTip": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\AiAttackState.cs",
+              "RelativeToolTip": "Assets\\scripts\\AiAttackState.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAcwFcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-11T00:06:07.383Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "HitBox.cs",
+              "DocumentMoniker": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\HitBox.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\HitBox.cs",
+              "ToolTip": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\HitBox.cs",
+              "RelativeToolTip": "Assets\\scripts\\HitBox.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-11T01:51:14.581Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SpellProjectile.cs",
+              "DocumentMoniker": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Magician\\SpellProjectile.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Magician\\SpellProjectile.cs",
+              "ToolTip": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Magician\\SpellProjectile.cs",
+              "RelativeToolTip": "Assets\\scripts\\Magician\\SpellProjectile.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAiwCEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-11T01:39:50.888Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AiMagicianAgent.cs",
+              "DocumentMoniker": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Magician\\AiMagicianAgent.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Magician\\AiMagicianAgent.cs",
+              "ToolTip": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Magician\\AiMagicianAgent.cs",
+              "RelativeToolTip": "Assets\\scripts\\Magician\\AiMagicianAgent.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAiwEwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-11T00:02:53.383Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AiMagicianAttackState.cs",
+              "DocumentMoniker": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Magician\\AiMagicianAttackState.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Magician\\AiMagicianAttackState.cs",
+              "ToolTip": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Magician\\AiMagicianAttackState.cs",
+              "RelativeToolTip": "Assets\\scripts\\Magician\\AiMagicianAttackState.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAcwGgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-11T00:05:05.919Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AiBear.cs",
+              "DocumentMoniker": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Beast\\AiBear.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Beast\\AiBear.cs",
+              "ToolTip": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Beast\\AiBear.cs",
+              "RelativeToolTip": "Assets\\scripts\\Beast\\AiBear.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwB4AAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-11T00:02:43.012Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Ragdoll.cs",
+              "DocumentMoniker": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Ragdoll.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Ragdoll.cs",
+              "ToolTip": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Ragdoll.cs",
+              "RelativeToolTip": "Assets\\scripts\\Ragdoll.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAA0wCAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-11T02:10:50.404Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "AiArcherAgent.cs",
               "DocumentMoniker": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Archer\\AiArcherAgent.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Archer\\AiArcherAgent.cs",
@@ -127,84 +203,42 @@
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Ragdoll.cs",
-              "DocumentMoniker": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Ragdoll.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Ragdoll.cs",
-              "ToolTip": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Ragdoll.cs",
-              "RelativeToolTip": "Assets\\scripts\\Ragdoll.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAA0wCAAAAAAAAAAAAAAAA==",
+              "Title": "AiArcherAttackState.cs",
+              "DocumentMoniker": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Archer\\AiArcherAttackState.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Archer\\AiArcherAttackState.cs",
+              "ToolTip": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Archer\\AiArcherAttackState.cs",
+              "RelativeToolTip": "Assets\\scripts\\Archer\\AiArcherAttackState.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAcwF4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-11T02:10:50.404Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "HitBox.cs",
-              "DocumentMoniker": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\HitBox.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\HitBox.cs",
-              "ToolTip": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\HitBox.cs",
-              "RelativeToolTip": "Assets\\scripts\\HitBox.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-11T01:51:14.581Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "SpellProjectile.cs",
-              "DocumentMoniker": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Magician\\SpellProjectile.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Magician\\SpellProjectile.cs",
-              "ToolTip": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Magician\\SpellProjectile.cs",
-              "RelativeToolTip": "Assets\\scripts\\Magician\\SpellProjectile.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAiwCEAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-11T01:39:50.888Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "AiMagicianAgent.cs",
-              "DocumentMoniker": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Magician\\AiMagicianAgent.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Magician\\AiMagicianAgent.cs",
-              "ToolTip": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Magician\\AiMagicianAgent.cs",
-              "RelativeToolTip": "Assets\\scripts\\Magician\\AiMagicianAgent.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAiwEwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-11T00:02:53.383Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "AiMagicianAttackState.cs",
-              "DocumentMoniker": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Magician\\AiMagicianAttackState.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Magician\\AiMagicianAttackState.cs",
-              "ToolTip": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Magician\\AiMagicianAttackState.cs",
-              "RelativeToolTip": "Assets\\scripts\\Magician\\AiMagicianAttackState.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAcwGgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-11T00:05:05.919Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "AiBear.cs",
-              "DocumentMoniker": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Beast\\AiBear.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Beast\\AiBear.cs",
-              "ToolTip": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Beast\\AiBear.cs",
-              "RelativeToolTip": "Assets\\scripts\\Beast\\AiBear.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwB4AAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-11T00:02:43.012Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-11T02:19:28.815Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "AiArcherChaseState.cs",
+              "DocumentMoniker": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Archer\\AiArcherChaseState.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Archer\\AiArcherChaseState.cs",
+              "ToolTip": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Archer\\AiArcherChaseState.cs",
+              "RelativeToolTip": "Assets\\scripts\\Archer\\AiArcherChaseState.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAiwCQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-11T02:19:40.784Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ArrowProjectile.cs",
+              "DocumentMoniker": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Archer\\ArrowProjectile.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Archer\\ArrowProjectile.cs",
+              "ToolTip": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Archer\\ArrowProjectile.cs",
+              "RelativeToolTip": "Assets\\scripts\\Archer\\ArrowProjectile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-11T02:19:51.661Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "Health.cs",
               "DocumentMoniker": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Health.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Health.cs",
@@ -212,24 +246,11 @@
               "RelativeToolTip": "Assets\\scripts\\Health.cs",
               "ViewState": "AgIAAFQAAAAAAAAAAAAiwHIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-10T23:29:49.539Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T23:29:49.539Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "AiAttackState.cs",
-              "DocumentMoniker": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\AiAttackState.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\AiAttackState.cs",
-              "ToolTip": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\AiAttackState.cs",
-              "RelativeToolTip": "Assets\\scripts\\AiAttackState.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAcwFcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-11T00:06:07.383Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "PhotonPlayerUnitSpawner.cs",
               "DocumentMoniker": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Multiplayer\\PhotonPlayerUnitSpawner.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Multiplayer\\PhotonPlayerUnitSpawner.cs",
@@ -241,20 +262,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "AiAgent.cs",
-              "DocumentMoniker": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\AiAgent.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\AiAgent.cs",
-              "ToolTip": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\AiAgent.cs",
-              "RelativeToolTip": "Assets\\scripts\\AiAgent.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAYwEYAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-10T23:28:42.076Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "AiBearAttackState.cs",
               "DocumentMoniker": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Beast\\AiBearAttackState.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Beast\\AiBearAttackState.cs",
