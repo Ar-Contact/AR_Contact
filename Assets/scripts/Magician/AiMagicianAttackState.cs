@@ -90,24 +90,15 @@ public class AiMagicianAttackState : AIState
         agent.animator.SetBool("spell", false);
     }
 
-    private void CastSpell(
-        AiMagicianAgent agent,
-        Vector3 direction,
-        Transform target
-    )
+    private void CastSpell(AiMagicianAgent agent, Vector3 direction, Transform target)
     {
         if (agent.magicPrefab == null || agent.magicSpawnPoint == null) return;
 
-        GameObject spellObj = Object.Instantiate(
-            agent.magicPrefab,
-            agent.magicSpawnPoint.position,
-            Quaternion.LookRotation(direction)
-        );
+        // Hedefin ViewID'sini al
+        int targetViewID = target.GetComponent<Photon.Pun.PhotonView>().ViewID;
 
-        SpellProjectile spell = spellObj.GetComponent<SpellProjectile>();
-        if (spell != null)
-        {
-            spell.Initialize(agent.attackDamage, target);
-        }
+        // Kendi ekranýmýzda dahil herkesin RPC_CastSpell fonksiyonunu çalýþtýrmasýný saðla
+        // Böylece mermi her ekranda 1 kez ve senkronize oluþur
+        agent.GetComponent<Photon.Pun.PhotonView>().RPC("RPC_CastSpell", Photon.Pun.RpcTarget.All, direction, targetViewID);
     }
 }

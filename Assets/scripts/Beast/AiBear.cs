@@ -2,51 +2,55 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Photon.Pun; // Photon kütüphanesini eklemeyi unutma
 
-// BURADAKİ ": AiAgent" İFADESİ ZORUNLUDUR.
-// Bunu silersek StateMachine, bu scripti kabul etmez ve hata verir.
 public class AiBearAgent : AiAgent
 {
-    // Değişkenleri (navMeshAgent vb.) burada tekrar tanımlamıyoruz
-    // çünkü ": AiAgent" diyerek onları zaten almış olduk.
-
     void Start()
     {
-        // 1. BİLEŞENLERİ BAĞLA
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         health = GetComponent<Health>();
 
-        // NavMesh ayarı
+        if (!GetComponent<PhotonView>().IsMine)
+        {
+            // Sahibi değilsek NavMesh'i tamamen kapatıyoruz ki 
+            // PhotonTransformView pozisyonu güncelleyebilsin.
+            if (navMeshAgent != null)
+            {
+                navMeshAgent.isStopped = true;
+                navMeshAgent.enabled = false;
+            }
+        }
+
         navMeshAgent.stoppingDistance = attackDistance;
 
-        
-
-        // 3. BEYNİ (STATE MACHINE) KUR
-        // ": AiAgent" sayesinde 'this' komutu hata vermiyor.
         stateMachine = new AiStateMachine(this);
-
-        // 4. DURUMLARI EKLE
         stateMachine.RegisterState(new AiIdleState());
         stateMachine.RegisterState(new AiChaseState());
-
-        // ÖZEL: Normal Attack yerine Ayı Saldırısını yüklüyoruz
         stateMachine.RegisterState(new AiBearAttackState());
 
-        // Başlangıç durumu
         stateMachine.ChangeState(AIStateId.idle);
     }
 
     void Update()
     {
-        // ÖLÜM KONTROLÜ
+        // KRİTİK: Sadece sahibi AI mantığını ve hedef aramayı yürütsün
+        if (!GetComponent<PhotonView>().IsMine) return;
+
         if (health != null && health.isDead)
         {
             navMeshAgent.enabled = false;
-            return; // Öldüyse aşağıya inme, çık.
+            return;
         }
 
-        // BEYNİ GÜNCELLE (Saldıracak mı, kovalayacak mı karar verir)
+        // Hedef yoksa otomatik tara (AiAgent'dan gelen mantık)
+        if (targetTransform == null)
+        {
+            FindClosestEnemy(); // Bu fonksiyon AiAgent içinde IsMine kontrolü içeriyor
+            return;
+        }
+
         stateMachine.Update();
     }
 }

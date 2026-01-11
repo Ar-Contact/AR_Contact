@@ -3,14 +3,16 @@ using UnityEngine;
 public class ArrowProjectile : MonoBehaviour
 {
     public float speed = 20f;
-
     private float damage;
     private Transform target;
+    private GameObject owner; // EKLENDÝ: Oku atan kiþi
 
-    public void Initialize(float damageAmount, Transform targetTransform)
+    // Initialize fonksiyonuna 'GameObject shooter' parametresini ekledik
+    public void Initialize(float damageAmount, Transform targetTransform, GameObject shooter)
     {
         damage = damageAmount;
         target = targetTransform;
+        owner = shooter; // Oku ataný kaydet
 
         Destroy(gameObject, 5f);
     }
@@ -36,15 +38,21 @@ public class ArrowProjectile : MonoBehaviour
 
         if (hitBox != null && hitBox.health != null)
         {
-            if (hitBox.health.transform == target)
+            if (hitBox.health.isDead) return;
+
+            // KRÝTÝK KONTROL: Eðer çarptýðýmýz þey, oku atan kiþinin ta kendisiyse HASAR VERME
+            if (hitBox.health.gameObject == owner)
             {
-                hitBox.OnArrowHit(damage, transform.forward);
-                Destroy(gameObject);
-                return;
+                return; // Kendi kendimizi vurmayý engelledik
             }
+
+            hitBox.OnArrowHit(damage, transform.forward);
+            Debug.Log("Ok Gerçek Hedefe Çarptý: " + other.name);
+            Destroy(gameObject);
+            return;
         }
 
-        // Duvar / zemin
+        // Engel veya zemin
         Destroy(gameObject);
     }
 }

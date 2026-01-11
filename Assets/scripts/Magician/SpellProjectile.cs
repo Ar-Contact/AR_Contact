@@ -34,15 +34,18 @@ public class SpellProjectile : MonoBehaviour
     {
         if (other.isTrigger) return;
 
-        // SADECE kendi hedefimizi vururuz
-        if (other.transform != target) return;
-
+        // Hedefin kendisi mi yoksa vücudunun bir parçasý mý kontrol et
         HitBox hitBox = other.GetComponent<HitBox>();
+
+        // Eðer çarptýðýmýz þeyin bir HitBox'ý varsa ve o HitBox bizim hedefimize aitse
         if (hitBox != null && hitBox.health != null)
         {
-            hitBox.OnArrowHit(damage, transform.forward);
+            if (hitBox.health.transform == target)
+            {
+                Debug.Log("Mermi Çarptý: " + other.name);
+                hitBox.OnArrowHit(damage, transform.forward);
+                Destroy(gameObject);
+            }
         }
-
-        Destroy(gameObject);
     }
 }

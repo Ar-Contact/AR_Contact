@@ -41,6 +41,10 @@ MonoBehaviour:
   - RespawnSpaceship
   - NotifySpawnRPC
   - SetUnitTagRPC
+  - TakeDamageRPC
+  - RPC_CastSpell
+  - SyncTargetRPC
+  - RPC_ShootArrow
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

@@ -48,15 +48,8 @@ public class Health : MonoBehaviour
     {
         if (isDead) return;
 
-        currentHealth -= amount;
-        healthBar.SetHealthBarPertencage(currentHealth / maxHealth);
-
-        if (currentHealth <= 0.0f && !isDead)
-        {
-            Die();
-        }
-
-        blinkTimer = blinkDuration;
+        // SADECE RPC GÖNDER - Baþka hiçbir þey yapma!
+        GetComponent<Photon.Pun.PhotonView>().RPC("TakeDamageRPC", Photon.Pun.RpcTarget.All, amount, direction);
     }
 
     private void Die()
@@ -100,5 +93,23 @@ public class Health : MonoBehaviour
         float lerp = Mathf.Clamp01(blinkTimer / blinkDuration);
         float intensity = (lerp * blinkIntensity) + 1.0f;
         skinnedMeshRenderer.material.color = Color.white * intensity;
+    }
+    [Photon.Pun.PunRPC]
+    public void TakeDamageRPC(float amount, Vector3 direction)
+    {
+        // Can düþürme mantýðý SADECE burada çalýþmalý
+        if (isDead) return;
+
+        currentHealth -= amount;
+
+        if (healthBar != null)
+            healthBar.SetHealthBarPertencage(currentHealth / maxHealth);
+
+        if (currentHealth <= 0.0f && !isDead)
+        {
+            Die();
+        }
+
+        blinkTimer = blinkDuration;
     }
 }

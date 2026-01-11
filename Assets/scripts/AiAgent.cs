@@ -22,14 +22,21 @@ public class AiAgent : MonoBehaviour
         animator = GetComponent<Animator>();
         health = GetComponent<Health>();
 
+        // NavMeshAgent'ý kapatmak yerine, durdurmayý deneyelim
+        if (!GetComponent<Photon.Pun.PhotonView>().IsMine)
+        {
+            if (navMeshAgent != null)
+            {
+                navMeshAgent.isStopped = true;
+                navMeshAgent.enabled = false;
+            }
+        }
+
         navMeshAgent.stoppingDistance = attackDistance;
-
         stateMachine = new AiStateMachine(this);
-
         stateMachine.RegisterState(new AiIdleState());
         stateMachine.RegisterState(new AiChaseState());
         stateMachine.RegisterState(new AiAttackState());
-
         stateMachine.ChangeState(AIStateId.idle);
     }
 
@@ -38,6 +45,8 @@ public class AiAgent : MonoBehaviour
 
     void Update()
     {
+        if (!GetComponent<Photon.Pun.PhotonView>().IsMine) return; // Sadece sahibi hareket ettirsin
+
         if (health != null && health.isDead)
         {
             navMeshAgent.enabled = false;
@@ -59,8 +68,11 @@ public class AiAgent : MonoBehaviour
         stateMachine.Update();
     }
     
-    private void FindClosestEnemy()
+    public void FindClosestEnemy()
     {
+        // Eðer IsMine deðilse bu objeyi biz yönetmiyoruz demektir, hedef aramayý býrak
+        if (!GetComponent<Photon.Pun.PhotonView>().IsMine) return;
+
         // Determine enemy tag based on my tag
         string myTag = gameObject.tag;
         string enemyTag = "";
@@ -117,8 +129,30 @@ public class AiAgent : MonoBehaviour
         }
     }
 
+    // AiAgent.cs içine bu RPC fonksiyonunu ekle
     public void SetTarget(Transform target)
     {
         targetTransform = target;
+
+        // Eðer biz sahibiysek, hedefimizi diðer oyunculara da bildir
+        if (GetComponent<Photon.Pun.PhotonView>().IsMine && target != null)
+        {
+            Photon.Pun.PhotonView targetView = target.GetComponent<Photon.Pun.PhotonView>();
+            if (targetView != null)
+            {
+                GetComponent<Photon.Pun.PhotonView>().RPC("SyncTargetRPC", Photon.Pun.RpcTarget.Others, targetView.ViewID);
+            }
+        }
+    }
+
+    [Photon.Pun.PunRPC]
+    public void SyncTargetRPC(int targetViewID)
+    {
+        // Diðer oyuncular sahibin seçtiði hedefi kendi ekranlarýnda bulur
+        Photon.Pun.PhotonView targetView = Photon.Pun.PhotonView.Find(targetViewID);
+        if (targetView != null)
+        {
+            targetTransform = targetView.transform;
+        }
     }
 }

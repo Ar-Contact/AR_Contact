@@ -1,3 +1,4 @@
+using Photon.Pun;
 using UnityEngine;
 
 public class AiArcherAttackState : AIState
@@ -80,18 +81,15 @@ public class AiArcherAttackState : AIState
         agent.animator.SetBool("IsAttacking", false);
     }
 
+    // ShootArrow fonksiyonunu þu þekilde deðiþtir knk:
     private void ShootArrow(AiArcherAgent agent, Vector3 targetDirection)
     {
-        if (agent.arrowPrefab != null && agent.arrowSpawnPoint != null)
+        if (agent.arrowPrefab != null && agent.arrowSpawnPoint != null && agent.targetTransform != null)
         {
-            GameObject arrowObj = Object.Instantiate(agent.arrowPrefab, agent.arrowSpawnPoint.position, Quaternion.LookRotation(targetDirection));
+            int targetViewID = agent.targetTransform.GetComponent<PhotonView>().ViewID;
 
-            ArrowProjectile arrowScript = arrowObj.GetComponent<ArrowProjectile>();
-
-            if (arrowScript != null)
-            {
-                arrowScript.Initialize(agent.attackDamage, agent.targetTransform);
-            }
+            // Oku herkesin ekranýnda oluþturmasý için RPC gönderiyoruz
+            agent.GetComponent<PhotonView>().RPC("RPC_ShootArrow", RpcTarget.All, targetDirection, targetViewID);
         }
     }
 }
