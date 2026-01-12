@@ -2621,6 +2621,7 @@ GameObject:
   - component: {fileID: -1186024578746729056}
   - component: {fileID: -2577124746635926333}
   - component: {fileID: 6744411874466939207}
+  - component: {fileID: 1542956660649417516}
   m_Layer: 0
   m_Name: BearBlue
   m_TagString: BlueTeam
@@ -2819,6 +2820,18 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 0
+--- !u!114 &1542956660649417516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6273435658143956638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6435155143e2de4ea71b8078c3cd795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6321795162368716301
 GameObject:
   m_ObjectHideFlags: 0

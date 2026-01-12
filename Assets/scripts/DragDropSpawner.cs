@@ -1,12 +1,11 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 public class DragAndDropSpawner : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [Header("Birim Ayarları")]
-    public int unitIndex = 0; // Listede kaçıncı sırada? (0: Okçu/Büyücü)
-    public int birimMaliyeti = 50;
+    public int unitIndex = 0;
+    public int birimMaliyeti = 10;
 
     [Header("Gereklilikler")]
     public LayerMask groundLayer;
@@ -26,6 +25,7 @@ public class DragAndDropSpawner : MonoBehaviour, IBeginDragHandler, IDragHandler
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if (ArenaManager.Instance != null && ArenaManager.Instance.isWarStarted) return;
         originalPos = rectTransform.anchoredPosition;
         canvasGroup.alpha = 0.6f;
         canvasGroup.blocksRaycasts = false;
@@ -33,6 +33,7 @@ public class DragAndDropSpawner : MonoBehaviour, IBeginDragHandler, IDragHandler
 
     public void OnDrag(PointerEventData eventData)
     {
+        if (ArenaManager.Instance != null && ArenaManager.Instance.isWarStarted) return;
         rectTransform.anchoredPosition += eventData.delta / parentCanvas.scaleFactor;
     }
 
@@ -41,66 +42,54 @@ public class DragAndDropSpawner : MonoBehaviour, IBeginDragHandler, IDragHandler
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
         rectTransform.anchoredPosition = originalPos;
+
+        if (ArenaManager.Instance != null && ArenaManager.Instance.isWarStarted) return;
+
         TrySpawnUnit();
     }
 
     private void TrySpawnUnit()
     {
-        Debug.Log("►►► TrySpawnUnit CALLED! ◄◄◄");
-        Debug.Log($"Camera.main: {(Camera.main != null ? "EXISTS" : "NULL")}");
-        Debug.Log($"Input.mousePosition: {Input.mousePosition}");
-        
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        
-        Debug.Log($"Raycast starting from: {ray.origin}, direction: {ray.direction}");
 
+        // Maske kullanarak sadece Ground layer'ına çarpıyoruz
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, groundLayer))
         {
-            Debug.Log($"✓ Raycast HIT! Position: {hit.point}, Object: {hit.collider.name}");
-            // Para Kontrolü
+            // Çarptığın objenin ismini temizle (boşlukları sil)
+            string hitName = hit.transform.name.Trim();
+            string playerTeam = PlayerSession.Team;
+
+            // --- KRİTİK HATA AYIKLAMA (Console'da ne yazdığına bak) ---
+            Debug.Log($"<color=yellow>DENEME:</color> Çarpılan: [{hitName}] | Takım: [{playerTeam}]");
+
+            // KONTROL 1: Mavi takımsan ve isminde "Red" geçiyorsa ENGELLE
+            if (playerTeam == "Blue" && hitName.Contains("Red"))
+            {
+                Debug.LogError("ENGELLENDİ: Mavi Takım Kırmızı Sahaya Koyamaz!");
+                return;
+            }
+
+            // KONTROL 2: Kırmızı takımsan ve isminde "Blue" geçiyorsa ENGELLE
+            if (playerTeam == "Red" && hitName.Contains("Blue"))
+            {
+                Debug.LogError("ENGELLENDİ: Kırmızı Takım Mavi Sahaya Koyamaz!");
+                return;
+            }
+
+            // --- PARA VE SPAWN KONTROLÜ ---
             if (CurrencyManager.Instance.ParaHarcayabilirMi(birimMaliyeti))
             {
-                // FIXED: Find PlayerUnitSpawner on MainPlayer (scene object)
-                // MainPlayer is NOT a spawned PlayerObject, it's in the scene
                 GameObject mainPlayer = GameObject.Find("MainPlayer");
-                
-                if (mainPlayer == null)
+                if (mainPlayer != null)
                 {
-                    Debug.LogError("╔═════════════════════════════════════════╗");
-                    Debug.LogError("║ MainPlayer GameObject NOT FOUND!       ║");
-                    Debug.LogError("╚═════════════════════════════════════════╝");
-                    return;
-                }
-                
-                var spawner = mainPlayer.GetComponent<PhotonPlayerUnitSpawner>();
-
-                if (spawner != null)
-                {
-                    Debug.Log($"╔═════════════════════════════════════════╗");
-                    Debug.Log($"║ DragDrop: Spawner FOUND!               ║");
-                    Debug.Log($"║ Calling RequestSpawnUnit(index: {unitIndex})   ║");
-                    Debug.Log($"╚═════════════════════════════════════════╝");
-                    
-                    spawner.RequestSpawnUnit(unitIndex, hit.point);
-                    Debug.Log("✓ Sunucuya emir verildi!");
-                }
-                else
-                {
-                    Debug.LogError("╔═════════════════════════════════════════╗");
-                    Debug.LogError("║ PhotonPlayerUnitSpawner NOT on MainPlayer! ║");
-                    Debug.LogError("╚═════════════════════════════════════════╝");
+                    var spawner = mainPlayer.GetComponent<PhotonPlayerUnitSpawner>();
+                    if (spawner != null)
+                    {
+                        spawner.RequestSpawnUnit(unitIndex, hit.point);
+                    }
                 }
             }
-            else
-            {
-                Debug.Log("PARAN YETMEDI!");
-            }
-        }
-        else
-        {
-            Debug.LogWarning("✗ Raycast MISSED! No ground hit detected.");
-            Debug.LogWarning($"Ground Layer Mask: {groundLayer.value}");
         }
     }
 }

@@ -1974,6 +1974,7 @@ GameObject:
   - component: {fileID: 7466590087429925582}
   - component: {fileID: -2269532880714351289}
   - component: {fileID: -6246530315487250905}
+  - component: {fileID: -8339095424422344670}
   m_Layer: 0
   m_Name: BearRed
   m_TagString: RedTeam
@@ -2172,6 +2173,18 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 0
+--- !u!114 &-8339095424422344670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5798087221978914444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6435155143e2de4ea71b8078c3cd795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6098109461333618299
 GameObject:
   m_ObjectHideFlags: 0
