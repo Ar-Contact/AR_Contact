@@ -4,171 +4,87 @@ using System.Collections.Generic;
 
 public class PhotonPlayerUnitSpawner : MonoBehaviourPunCallbacks
 {
-    [Header("Mavi Takim Askerleri (Sirasiyla)")]
-    public List<string> blueTeamUnitPrefabNames; // Prefab names in Resources folder
-    
-    [Header("Kirmizi Takim Askerleri (Sirasiyla)")]
-    public List<string> redTeamUnitPrefabNames; // Prefab names in Resources folder
-    
-    // Note: photonView is inherited from MonoBehaviourPun base class
+    [Header("Mavi Takim Askerleri")]
+    public List<string> blueTeamUnitPrefabNames;
 
-    private void Awake()
+    [Header("Kirmizi Takim Askerleri")]
+    public List<string> redTeamUnitPrefabNames;
+
+    private Transform arenaTransform;
+
+    // UI'dan gelen istek buraya düşer
+    public void RequestSpawnUnit(int unitIndex, Vector3 worldPosition)
     {
-        // Verify PhotonView exists (inherited photonView property)
-        if (photonView == null)
+        if (!PhotonNetwork.InRoom) return;
+
+        // Arenayı bul (Tag: Arena)
+        if (arenaTransform == null)
         {
-            Debug.LogError("PhotonView component missing! Please add PhotonView component to this GameObject.");
+            GameObject arenaObj = GameObject.FindGameObjectWithTag("Arena");
+            if (arenaObj != null) arenaTransform = arenaObj.transform;
         }
-    }
 
-    private void Start()
-    {
-        Debug.Log("=== PhotonPlayerUnitSpawner Status ===");
-        Debug.Log($"PhotonNetwork.IsConnected: {PhotonNetwork.IsConnected}");
-        Debug.Log($"PhotonNetwork.InRoom: {PhotonNetwork.InRoom}");
-        Debug.Log($"PhotonNetwork.IsMasterClient: {PhotonNetwork.IsMasterClient}");
-        Debug.Log($"PlayerSession.Team: {PlayerSession.Team}");
-        Debug.Log("======================================");
-    }
-
-    /// <summary>
-    /// Called by UI (DragAndDrop) to spawn a unit
-    /// </summary>
-    public void RequestSpawnUnit(int unitIndex, Vector3 position)
-    {
-        Debug.Log("╔═══════════════════════════════════════════════════════╗");
-        Debug.Log("║  RequestSpawnUnit CALLED!                            ║");
-        Debug.Log("╚═══════════════════════════════════════════════════════╝");
-        Debug.Log($"[RequestSpawnUnit] UnitIndex: {unitIndex}, Position: {position}");
-        Debug.Log($"[RequestSpawnUnit] PhotonNetwork.InRoom: {PhotonNetwork.InRoom}");
-        Debug.Log($"[RequestSpawnUnit] PlayerSession.Team: {PlayerSession.Team}");
-        
-        if (!PhotonNetwork.InRoom)
-        {
-            Debug.LogError("Cannot spawn unit - not in a Photon room!");
-            return;
-        }
-        
         string myTeam = PlayerSession.Team;
-        
-        if (string.IsNullOrEmpty(myTeam))
-        {
-            Debug.LogError("PlayerSession.Team is NULL or EMPTY! Cannot spawn unit.");
-            return;
-        }
-        
-        // Get the prefab name based on team and index
         string prefabName = GetPrefabName(myTeam, unitIndex);
-        
-        if (string.IsNullOrEmpty(prefabName))
+        if (string.IsNullOrEmpty(prefabName)) return;
+
+        // --- ÖNEMLİ KISIM: AR POZİSYON HESABI ---
+        // Senin tıkladığın Dünya koordinatını, Arenanın içine göre (Local) çeviriyoruz.
+        Vector3 localPos = worldPosition;
+        if (arenaTransform != null)
         {
-            Debug.LogError($"Invalid unit index {unitIndex} for team {myTeam}");
-            return;
+            localPos = arenaTransform.InverseTransformPoint(worldPosition);
         }
-        
-        Debug.Log($"[RequestSpawnUnit] Spawning {prefabName} for team {myTeam}");
-        
-        // Spawn using Photon - all clients will see it automatically
-        SpawnUnit(prefabName, position, myTeam);
+
+        // RPC ile herkese "Arenanın şurasına (Local) koy" diyoruz
+        photonView.RPC("SpawnUnitRPC", RpcTarget.All, prefabName, localPos, myTeam);
+    }
+
+    [PunRPC]
+    private void SpawnUnitRPC(string prefabName, Vector3 localPos, string team)
+    {
+        // 1. Kendi Arenamı bul
+        if (arenaTransform == null)
+        {
+            GameObject arenaObj = GameObject.FindGameObjectWithTag("Arena");
+            if (arenaObj != null) arenaTransform = arenaObj.transform;
+        }
+
+        // 2. Local -> World (Benim masamdaki konuma çevir)
+        Vector3 spawnPos = localPos;
+        if (arenaTransform != null)
+        {
+            spawnPos = arenaTransform.TransformPoint(localPos);
+        }
+
+        // 3. Sadece Master Client Instantiate yapsın
+        if (PhotonNetwork.IsMasterClient)
+        {
+            GameObject unit = PhotonNetwork.Instantiate("NetworkPrefabs/" + prefabName, spawnPos, Quaternion.identity);
+
+            if (unit != null)
+            {
+                PhotonView unitPV = unit.GetComponent<PhotonView>();
+                // Herkeste Tag'i güncelle
+                photonView.RPC("SetUnitTagRPC", RpcTarget.AllBuffered, unitPV.ViewID, team);
+            }
+        }
+    }
+
+    [PunRPC]
+    private void SetUnitTagRPC(int viewID, string team)
+    {
+        PhotonView targetView = PhotonView.Find(viewID);
+        if (targetView != null)
+        {
+            targetView.gameObject.tag = team + "Team";
+        }
     }
 
     private string GetPrefabName(string team, int unitIndex)
     {
-        if (team == "Blue")
-        {
-            if (unitIndex >= 0 && unitIndex < blueTeamUnitPrefabNames.Count)
-            {
-                return blueTeamUnitPrefabNames[unitIndex];
-            }
-        }
-        else if (team == "Red")
-        {
-            if (unitIndex >= 0 && unitIndex < redTeamUnitPrefabNames.Count)
-            {
-                return redTeamUnitPrefabNames[unitIndex];
-            }
-        }
-        
+        if (team == "Blue" && unitIndex < blueTeamUnitPrefabNames.Count) return blueTeamUnitPrefabNames[unitIndex];
+        if (team == "Red" && unitIndex < redTeamUnitPrefabNames.Count) return redTeamUnitPrefabNames[unitIndex];
         return null;
-    }
-
-    private void SpawnUnit(string prefabName, Vector3 position, string team)
-    {
-        Debug.Log($"[PHOTON] PhotonNetwork.Instantiate: {prefabName} at {position}");
-        
-        try
-        {
-            // PhotonNetwork.Instantiate requires prefab to be in Resources folder
-            // Path format: "NetworkPrefabs/PrefabName" if stored in Resources/NetworkPrefabs/
-            string resourcePath = $"NetworkPrefabs/{prefabName}";
-            
-            GameObject spawnedUnit = PhotonNetwork.Instantiate(
-                resourcePath,
-                position,
-                Quaternion.identity
-            );
-            
-            if (spawnedUnit != null)
-            {
-                Debug.Log($"✓ SUCCESS! Unit '{prefabName}' spawned via Photon!");
-                Debug.Log($"  PhotonView ID: {spawnedUnit.GetComponent<PhotonView>()?.ViewID}");
-                Debug.Log($"  Position: {spawnedUnit.transform.position}");
-                
-                // CRITICAL: Set team tag for AI enemy detection
-                string tagName = team + "Team"; // Converts "Blue" → "BlueTeam", "Red" → "RedTeam"
-                spawnedUnit.tag = tagName;
-                Debug.Log($"  ✓ Tag set to: {tagName}");
-                
-                // Notify all players via RPC to set tags on their clients too
-                PhotonView unitPhotonView = spawnedUnit.GetComponent<PhotonView>();
-                if (unitPhotonView != null)
-                {
-                    photonView.RPC("SetUnitTagRPC", RpcTarget.AllBuffered, unitPhotonView.ViewID, team);
-                }
-                
-                // Notify all players for debugging
-                photonView.RPC("NotifySpawnRPC", RpcTarget.All, prefabName, position, team);
-            }
-            else
-            {
-                Debug.LogError($"✗ PhotonNetwork.Instantiate returned NULL for '{resourcePath}'!");
-            }
-        }
-        catch (System.Exception e)
-        {
-            Debug.LogError($"✗ Photon spawn FAILED: {e.Message}");
-            Debug.LogError($"Stack trace: {e.StackTrace}");
-            Debug.LogError($"SOLUTION:");
-            Debug.LogError($"  1. Ensure '{prefabName}' exists in Resources/NetworkPrefabs/ folder");
-            Debug.LogError($"  2. Prefab MUST have PhotonView component");
-            Debug.LogError($"  3. PhotonView must have unique View ID (can be 0 for dynamic spawning)");
-        }
-    }
-
-    [PunRPC]
-    private void SetUnitTagRPC(int photonViewID, string team)
-    {
-        // Find the spawned unit by PhotonView ID
-        PhotonView unitView = PhotonView.Find(photonViewID);
-        if (unitView != null)
-        {
-            string tagName = team + "Team"; // Converts "Blue" → "BlueTeam", "Red" → "RedTeam"
-            unitView.gameObject.tag = tagName;
-            Debug.Log($"[RPC] Set tag '{tagName}' on {unitView.gameObject.name} (ViewID: {photonViewID})");
-        }
-        else
-        {
-            Debug.LogWarning($"[RPC] Could not find PhotonView {photonViewID} to set tag!");
-        }
-    }
-    
-    [PunRPC]
-    private void NotifySpawnRPC(string unitName, Vector3 spawnPosition, string spawnTeam)
-    {
-        Debug.Log($"[RPC RECEIVED] Unit spawned notification:");
-        Debug.Log($"  Unit: {unitName}");
-        Debug.Log($"  Team: {spawnTeam}");
-        Debug.Log($"  Position: {spawnPosition}");
-        Debug.Log($"  Received by: {PlayerSession.Team} team");
     }
 }

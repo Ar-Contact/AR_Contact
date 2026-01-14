@@ -2,6 +2,8 @@
 using UnityEngine.UI;
 using UnityEngine.AI;
 using System.Collections;
+using UnityEngine.XR.ARFoundation; // AR Kütüphanesi Eklendi
+using UnityEngine.XR.ARSubsystems; // AR Durumları için Eklendi
 
 public class ArenaManager : MonoBehaviour
 {
@@ -11,67 +13,121 @@ public class ArenaManager : MonoBehaviour
     public GameObject dragBluePanel;
     public GameObject dragRedPanel;
 
-    [Header("Kameralar")]
-    public GameObject blueCamera;
-    public GameObject redCamera;
-
-    [Header("Zamanlayıcı & Round UI")]
+    [Header("UI Textleri")]
     public Text timerText;
     public Text stateText;
     public Text roundText;
 
     [HideInInspector]
     public bool isWarStarted = false;
+    public bool isArenaPlaced = false;
 
     private float timeRemaining;
     private int currentRound = 1;
     private const int MAX_ROUNDS = 5;
     private bool gameOver = false;
 
-    void Awake() { Instance = this; }
+    // LOGLAMA İÇİN YENİ DEĞİŞKENLER
+    private ARSession arSession;
+
+    void Awake()
+    {
+        Instance = this;
+    }
 
     void Start()
     {
-        SetInitialCameraAndPanels();
-        StartCoroutine(SystemLoop());
-    }
-
-    private void SetInitialCameraAndPanels()
-    {
-        blueCamera.SetActive(false);
-        redCamera.SetActive(false);
+        // Panelleri kapat
         dragBluePanel.SetActive(false);
         dragRedPanel.SetActive(false);
 
-        string team = string.IsNullOrEmpty(PlayerSession.Team) ? "Blue" : PlayerSession.Team;
+        // --- AR DIAGNOSTIC (TANI) BAŞLATIYORUZ ---
+        arSession = FindObjectOfType<ARSession>();
+        StartCoroutine(CheckARStatusLoop());
+    }
 
-        if (team == "Blue") blueCamera.SetActive(true);
-        else redCamera.SetActive(true);
+    // --- KAMERA DURUMUNU EKRANA YAZAN FONKSİYON ---
+    IEnumerator CheckARStatusLoop()
+    {
+        // Oyun başlayana veya arena yerleşene kadar durumu kontrol et
+        while (!isArenaPlaced)
+        {
+            if (arSession == null)
+            {
+                arSession = FindObjectOfType<ARSession>();
+                stateText.text = "HATA: AR Session Bulunamadı!\nXR Origin ekli mi?";
+                stateText.color = Color.red;
+            }
+            else
+            {
+                // AR Session Durumunu Kontrol Et
+                if (ARSession.state == ARSessionState.None || ARSession.state == ARSessionState.CheckingAvailability)
+                {
+                    stateText.text = "AR Sistemi Kontrol Ediliyor...";
+                }
+                else if (ARSession.state == ARSessionState.NeedsInstall)
+                {
+                    stateText.text = "UYARI: ARCore/ARKit Yüklenmeli!";
+                }
+                else if (ARSession.state == ARSessionState.Installing)
+                {
+                    stateText.text = "AR Yazılımı Yükleniyor...";
+                }
+                else if (ARSession.state == ARSessionState.Ready)
+                {
+                    stateText.text = "AR Hazır! Kamera Başlatılıyor...";
+                }
+                else if (ARSession.state == ARSessionState.SessionInitializing)
+                {
+                    stateText.text = "Kamera Görüntüsü Bekleniyor...";
+                }
+                else if (ARSession.state == ARSessionState.SessionTracking)
+                {
+                    // Her şey yolunda!
+                    stateText.text = "KAMERA AKTİF!\nLütfen Zemini Tara ve Çift Tıkla.";
+                    stateText.color = Color.green; // Yazıyı yeşil yap
+                }
+            }
+            yield return new WaitForSeconds(0.5f); // Yarım saniyede bir güncelle
+        }
+    }
+
+    public void StartGameAfterPlacement()
+    {
+        isArenaPlaced = true;
+        stateText.color = Color.white; // Yazı rengini düzelt
+
+        string team = string.IsNullOrEmpty(PlayerSession.Team) ? "Blue" : PlayerSession.Team;
+        Debug.Log($"[ArenaManager] Oyun Başlatılıyor. Takım: {team}");
+
+        StartCoroutine(SystemLoop());
     }
 
     IEnumerator SystemLoop()
     {
+        // 1. Arenanın yerleşmesini bekle
+        while (!isArenaPlaced) yield return null;
+
+        Debug.Log("[ArenaManager] Sistem Döngüsü Başladı.");
+
         while (currentRound <= MAX_ROUNDS && !gameOver)
         {
             if (roundText != null) roundText.text = "ROUND: " + currentRound + " / " + MAX_ROUNDS;
 
-            // --- EKONOMİ GÜNCELLEMESİ (İsteğin Burası) ---
-            // Eğer 1. round değilse, hazırlık başlarken 100 puan ver
-            if (currentRound > 1)
+            // --- EKONOMİ ---
+            if (currentRound > 1 && CurrencyManager.Instance != null)
             {
-                if (CurrencyManager.Instance != null)
-                {
-                    CurrencyManager.Instance.ParaKazan(100);
-                    Debug.Log("Yeni Round Bonusu: 100 Puan Eklendi!");
-                }
+                CurrencyManager.Instance.ParaKazan(100);
             }
 
-            // --- HAZIRLIK SÜRESİ (30 Saniye) ---
+            // --- HAZIRLIK ---
             isWarStarted = false;
             UpdatePanelVisibility(true);
             ToggleAllUnits(false);
 
             stateText.text = "HAZIRLIK ZAMANI";
+            Debug.Log($"[Round {currentRound}] Hazırlık Başladı.");
+
             timeRemaining = 30f;
             while (timeRemaining > 0)
             {
@@ -80,12 +136,14 @@ public class ArenaManager : MonoBehaviour
                 yield return null;
             }
 
-            // --- SAVAŞ SÜRESİ (90 Saniye) ---
+            // --- SAVAŞ ---
             isWarStarted = true;
             UpdatePanelVisibility(false);
             ToggleAllUnits(true);
 
             stateText.text = "SAVAŞ BAŞLADI!";
+            Debug.Log($"[Round {currentRound}] Savaş Başladı.");
+
             timeRemaining = (currentRound == MAX_ROUNDS) ? 999999f : 90f;
 
             while (timeRemaining > 0)
@@ -94,12 +152,11 @@ public class ArenaManager : MonoBehaviour
                 else timerText.text = Mathf.CeilToInt(timeRemaining).ToString();
 
                 timeRemaining -= Time.deltaTime;
-
                 if (CheckUnitsRemaining()) break;
-
                 yield return null;
             }
 
+            // --- ROUND SONU ---
             if (currentRound == MAX_ROUNDS)
             {
                 DetermineWinner();
@@ -108,30 +165,9 @@ public class ArenaManager : MonoBehaviour
             else
             {
                 currentRound++;
-                // Round biterken kısa bir bekleme (isteğe bağlı)
                 yield return new WaitForSeconds(1f);
             }
         }
-    }
-
-    private bool CheckUnitsRemaining()
-    {
-        if (timeRemaining > 88f && currentRound != MAX_ROUNDS) return false;
-
-        int blueCount = GameObject.FindGameObjectsWithTag("BlueTeam").Length;
-        int redCount = GameObject.FindGameObjectsWithTag("RedTeam").Length;
-
-        return (blueCount == 0 || redCount == 0);
-    }
-
-    private void DetermineWinner()
-    {
-        int blueCount = GameObject.FindGameObjectsWithTag("BlueTeam").Length;
-        int redCount = GameObject.FindGameObjectsWithTag("RedTeam").Length;
-
-        if (blueCount > redCount) stateText.text = "MAVİ TAKIM KAZANDI!";
-        else if (redCount > blueCount) stateText.text = "KIRMIZI TAKIM KAZANDI!";
-        else stateText.text = "BERABERE!";
     }
 
     private void UpdatePanelVisibility(bool show)
@@ -139,6 +175,23 @@ public class ArenaManager : MonoBehaviour
         string team = string.IsNullOrEmpty(PlayerSession.Team) ? "Blue" : PlayerSession.Team;
         if (team == "Blue") dragBluePanel.SetActive(show);
         else dragRedPanel.SetActive(show);
+    }
+
+    private bool CheckUnitsRemaining()
+    {
+        if (timeRemaining > 88f && currentRound != MAX_ROUNDS) return false;
+        int blueCount = GameObject.FindGameObjectsWithTag("BlueTeam").Length;
+        int redCount = GameObject.FindGameObjectsWithTag("RedTeam").Length;
+        return (blueCount == 0 || redCount == 0);
+    }
+
+    private void DetermineWinner()
+    {
+        int blueCount = GameObject.FindGameObjectsWithTag("BlueTeam").Length;
+        int redCount = GameObject.FindGameObjectsWithTag("RedTeam").Length;
+        if (blueCount > redCount) stateText.text = "MAVİ TAKIM KAZANDI!";
+        else if (redCount > blueCount) stateText.text = "KIRMIZI TAKIM KAZANDI!";
+        else stateText.text = "BERABERE!";
     }
 
     public void ToggleAllUnits(bool activate)

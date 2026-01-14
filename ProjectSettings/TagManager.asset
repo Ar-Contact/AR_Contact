@@ -9,6 +9,7 @@ TagManager:
   - Bullet
   - RedGround
   - BlueGround
+  - Arena
   layers:
   - Default
   - TransparentFX
@@ -40,7 +41,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - XR Simulation
   - 
   m_SortingLayers:
   - name: Default

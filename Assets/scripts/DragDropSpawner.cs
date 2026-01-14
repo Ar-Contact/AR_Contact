@@ -7,13 +7,14 @@ public class DragAndDropSpawner : MonoBehaviour, IBeginDragHandler, IDragHandler
     public int unitIndex = 0;
     public int birimMaliyeti = 10;
 
-    [Header("Gereklilikler")]
-    public LayerMask groundLayer;
+    [Header("Layer Ayarı (DİKKAT)")]
+    public LayerMask groundLayer; // Inspector'da "Ground" layerını seçmelisin!
 
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
     private Vector2 originalPos;
     private Canvas parentCanvas;
+    private Camera arCamera; // AR Kamerası
 
     private void Awake()
     {
@@ -21,14 +22,18 @@ public class DragAndDropSpawner : MonoBehaviour, IBeginDragHandler, IDragHandler
         canvasGroup = GetComponent<CanvasGroup>();
         parentCanvas = GetComponentInParent<Canvas>();
         if (canvasGroup == null) canvasGroup = gameObject.AddComponent<CanvasGroup>();
+
+        arCamera = Camera.main; // Sahnedeki XR Origin kamerasını bulur
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        // Savaş başladıysa (veya hazırlık değilse) sürükletme
         if (ArenaManager.Instance != null && ArenaManager.Instance.isWarStarted) return;
+
         originalPos = rectTransform.anchoredPosition;
         canvasGroup.alpha = 0.6f;
-        canvasGroup.blocksRaycasts = false;
+        canvasGroup.blocksRaycasts = false; // Arkadaki zemine tıklayabilelim
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -41,7 +46,7 @@ public class DragAndDropSpawner : MonoBehaviour, IBeginDragHandler, IDragHandler
     {
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
-        rectTransform.anchoredPosition = originalPos;
+        rectTransform.anchoredPosition = originalPos; // İkon yerine döner
 
         if (ArenaManager.Instance != null && ArenaManager.Instance.isWarStarted) return;
 
@@ -50,44 +55,38 @@ public class DragAndDropSpawner : MonoBehaviour, IBeginDragHandler, IDragHandler
 
     private void TrySpawnUnit()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        // Parmağın (veya mouse'un) olduğu yerden AR dünyasına ışın at
+        Ray ray = arCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        // Maske kullanarak sadece Ground layer'ına çarpıyoruz
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity, groundLayer))
+        // Sadece "Ground" layer'ına çarp
+        if (Physics.Raycast(ray, out hit, 100f, groundLayer))
         {
-            // Çarptığın objenin ismini temizle (boşlukları sil)
-            string hitName = hit.transform.name.Trim();
             string playerTeam = PlayerSession.Team;
+            string hitTag = hit.transform.tag; // BlueGround veya RedGround
 
-            // --- KRİTİK HATA AYIKLAMA (Console'da ne yazdığına bak) ---
-            Debug.Log($"<color=yellow>DENEME:</color> Çarpılan: [{hitName}] | Takım: [{playerTeam}]");
+            Debug.Log($"Vurulan Zemin: {hitTag} | Benim Takımım: {playerTeam}");
 
-            // KONTROL 1: Mavi takımsan ve isminde "Red" geçiyorsa ENGELLE
-            if (playerTeam == "Blue" && hitName.Contains("Red"))
+            // --- BÖLGE KONTROLÜ (Senin Taglerinle) ---
+            if (playerTeam == "Blue" && hitTag == "RedGround")
             {
-                Debug.LogError("ENGELLENDİ: Mavi Takım Kırmızı Sahaya Koyamaz!");
+                Debug.LogWarning("Mavi Takım Kırmızı Sahaya Koyamaz!");
+                return;
+            }
+            if (playerTeam == "Red" && hitTag == "BlueGround")
+            {
+                Debug.LogWarning("Kırmızı Takım Mavi Sahaya Koyamaz!");
                 return;
             }
 
-            // KONTROL 2: Kırmızı takımsan ve isminde "Blue" geçiyorsa ENGELLE
-            if (playerTeam == "Red" && hitName.Contains("Blue"))
-            {
-                Debug.LogError("ENGELLENDİ: Kırmızı Takım Mavi Sahaya Koyamaz!");
-                return;
-            }
-
-            // --- PARA VE SPAWN KONTROLÜ ---
+            // --- PARA VE DOĞURMA ---
             if (CurrencyManager.Instance.ParaHarcayabilirMi(birimMaliyeti))
             {
-                GameObject mainPlayer = GameObject.Find("MainPlayer");
-                if (mainPlayer != null)
+                var spawner = FindObjectOfType<PhotonPlayerUnitSpawner>();
+                if (spawner != null)
                 {
-                    var spawner = mainPlayer.GetComponent<PhotonPlayerUnitSpawner>();
-                    if (spawner != null)
-                    {
-                        spawner.RequestSpawnUnit(unitIndex, hit.point);
-                    }
+                    // Tıklanan noktayı gönder
+                    spawner.RequestSpawnUnit(unitIndex, hit.point);
                 }
             }
         }
