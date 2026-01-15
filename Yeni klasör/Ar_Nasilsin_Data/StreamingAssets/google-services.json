@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "793929635128",
+    "project_id": "ar-combat-last-c4857",
+    "storage_bucket": "ar-combat-last-c4857.firebasestorage.app",
+    "firebase_url" : "https://ar-combat-last-c4857.firebaseio.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:793929635128:android:f6b77c872dc324097d5dcd",
+        "android_client_info": {
+          "package_name": "com.DefaultCompany.Myproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVHhn6WHfNCOnMoFu7qPGgaY-HnnmK5MY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

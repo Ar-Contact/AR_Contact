@@ -1,22 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\epos_\\OneDrive\\Masa\u00FCst\u00FC\\git\u015Feysi\\AR_Contact\\",
+  "WorkspaceRootPath": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\epos_\\OneDrive\\Masa\u00FCst\u00FC\\git\u015Feysi\\AR_Contact\\Assets\\scripts\\ArenaManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\scripts\\ArenaManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\assets\\scripts\\multiplayer\\photonplayerunitspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\multiplayer\\photonplayerunitspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\epos_\\OneDrive\\Masa\u00FCst\u00FC\\git\u015Feysi\\AR_Contact\\Assets\\scripts\\CurrencyManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\scripts\\CurrencyManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\assets\\arplacement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|solutionrelative:assets\\arplacement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\epos_\\OneDrive\\Masa\u00FCst\u00FC\\git\u015Feysi\\AR_Contact\\Assets\\scripts\\DragDropSpawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\scripts\\DragDropSpawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\assets\\scripts\\arenamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\arenamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\epos_\\OneDrive\\Masa\u00FCst\u00FC\\git\u015Feysi\\AR_Contact\\Assets\\scripts\\UnitAutoFreeze.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\scripts\\UnitAutoFreeze.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Assets\\scripts\\DragDropSpawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|solutionrelative:Assets\\scripts\\DragDropSpawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|c:\\users\\cnr13\\documents\\github\\ar_contact\\assets\\scripts\\multiplayer\\matchmaker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\multiplayer\\matchmaker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\assets\\scripts\\multiplayer\\photonnetworkbootstrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\multiplayer\\photonnetworkbootstrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,56 +34,85 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CurrencyManager.cs",
-              "DocumentMoniker": "C:\\Users\\epos_\\OneDrive\\Masa\u00FCst\u00FC\\git\u015Feysi\\AR_Contact\\Assets\\scripts\\CurrencyManager.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\CurrencyManager.cs",
-              "ToolTip": "C:\\Users\\epos_\\OneDrive\\Masa\u00FCst\u00FC\\git\u015Feysi\\AR_Contact\\Assets\\scripts\\CurrencyManager.cs",
-              "RelativeToolTip": "Assets\\scripts\\CurrencyManager.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAADwvz4AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "PhotonNetworkBootstrapper.cs",
+              "DocumentMoniker": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Assets\\scripts\\Multiplayer\\PhotonNetworkBootstrapper.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Multiplayer\\PhotonNetworkBootstrapper.cs",
+              "ToolTip": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Assets\\scripts\\Multiplayer\\PhotonNetworkBootstrapper.cs",
+              "RelativeToolTip": "Assets\\scripts\\Multiplayer\\PhotonNetworkBootstrapper.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwBEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-12T18:26:28.927Z",
+              "WhenOpened": "2026-01-15T00:38:50.216Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MatchMaker.cs",
+              "DocumentMoniker": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Assets\\scripts\\Multiplayer\\MatchMaker.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Multiplayer\\MatchMaker.cs",
+              "ToolTip": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Assets\\scripts\\Multiplayer\\MatchMaker.cs",
+              "RelativeToolTip": "Assets\\scripts\\Multiplayer\\MatchMaker.cs",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAkwJIAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-15T00:38:43.208Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UnitAutoFreeze.cs",
-              "DocumentMoniker": "C:\\Users\\epos_\\OneDrive\\Masa\u00FCst\u00FC\\git\u015Feysi\\AR_Contact\\Assets\\scripts\\UnitAutoFreeze.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\UnitAutoFreeze.cs",
-              "ToolTip": "C:\\Users\\epos_\\OneDrive\\Masa\u00FCst\u00FC\\git\u015Feysi\\AR_Contact\\Assets\\scripts\\UnitAutoFreeze.cs",
-              "RelativeToolTip": "Assets\\scripts\\UnitAutoFreeze.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvxEAAAA+AAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "ARPlacement.cs",
+              "DocumentMoniker": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Assets\\ARPlacement.cs",
+              "RelativeDocumentMoniker": "Assets\\ARPlacement.cs",
+              "ToolTip": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Assets\\ARPlacement.cs",
+              "RelativeToolTip": "Assets\\ARPlacement.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAgwFoAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-12T16:48:29.013Z",
+              "WhenOpened": "2026-01-14T23:54:23.113Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ArenaManager.cs",
-              "DocumentMoniker": "C:\\Users\\epos_\\OneDrive\\Masa\u00FCst\u00FC\\git\u015Feysi\\AR_Contact\\Assets\\scripts\\ArenaManager.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\ArenaManager.cs",
-              "ToolTip": "C:\\Users\\epos_\\OneDrive\\Masa\u00FCst\u00FC\\git\u015Feysi\\AR_Contact\\Assets\\scripts\\ArenaManager.cs",
-              "RelativeToolTip": "Assets\\scripts\\ArenaManager.cs",
-              "ViewState": "AgIAAIIAAAAAAAAAAADwv5cAAAA8AAAAAAAAAA==",
+              "Title": "PhotonPlayerUnitSpawner.cs",
+              "DocumentMoniker": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Assets\\scripts\\Multiplayer\\PhotonPlayerUnitSpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Multiplayer\\PhotonPlayerUnitSpawner.cs",
+              "ToolTip": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Assets\\scripts\\Multiplayer\\PhotonPlayerUnitSpawner.cs",
+              "RelativeToolTip": "Assets\\scripts\\Multiplayer\\PhotonPlayerUnitSpawner.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAQwFYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-12T14:36:51.571Z",
+              "WhenOpened": "2026-01-14T23:45:38.502Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "ArenaManager.cs",
+              "DocumentMoniker": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Assets\\scripts\\ArenaManager.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\ArenaManager.cs",
+              "ToolTip": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Assets\\scripts\\ArenaManager.cs",
+              "RelativeToolTip": "Assets\\scripts\\ArenaManager.cs",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAQwIkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T23:45:24.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "DragDropSpawner.cs",
-              "DocumentMoniker": "C:\\Users\\epos_\\OneDrive\\Masa\u00FCst\u00FC\\git\u015Feysi\\AR_Contact\\Assets\\scripts\\DragDropSpawner.cs",
+              "DocumentMoniker": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Assets\\scripts\\DragDropSpawner.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\DragDropSpawner.cs",
-              "ToolTip": "C:\\Users\\epos_\\OneDrive\\Masa\u00FCst\u00FC\\git\u015Feysi\\AR_Contact\\Assets\\scripts\\DragDropSpawner.cs",
+              "ToolTip": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Assets\\scripts\\DragDropSpawner.cs",
               "RelativeToolTip": "Assets\\scripts\\DragDropSpawner.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAADwv14AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAACwAAAAAAAAAAAAgwEgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-12T14:36:15.944Z",
               "EditorCaption": ""

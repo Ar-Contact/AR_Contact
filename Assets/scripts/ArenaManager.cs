@@ -11,10 +11,6 @@ public class ArenaManager : MonoBehaviour
     public GameObject dragBluePanel;
     public GameObject dragRedPanel;
 
-    [Header("Kameralar")]
-    public GameObject blueCamera;
-    public GameObject redCamera;
-
     [Header("Zamanlayıcı & Round UI")]
     public Text timerText;
     public Text stateText;
@@ -22,6 +18,8 @@ public class ArenaManager : MonoBehaviour
 
     [HideInInspector]
     public bool isWarStarted = false;
+    [HideInInspector]
+    public bool isArenaPlaced = false; // Arena kuruldu mu kontrolü
 
     private float timeRemaining;
     private int currentRound = 1;
@@ -32,21 +30,24 @@ public class ArenaManager : MonoBehaviour
 
     void Start()
     {
-        SetInitialCameraAndPanels();
+        // Başlangıçta her şeyi kapat, ARPlacement arenayı kurunca başlayacak
+        dragBluePanel.SetActive(false);
+        dragRedPanel.SetActive(false);
+    }
+
+    // Arena kurulduğunda ARPlacement bu fonksiyonu çağıracak
+    public void StartGameLoop()
+    {
+        if (isArenaPlaced) return;
+        isArenaPlaced = true;
+        SetInitialPanels();
         StartCoroutine(SystemLoop());
     }
 
-    private void SetInitialCameraAndPanels()
+    private void SetInitialPanels()
     {
-        blueCamera.SetActive(false);
-        redCamera.SetActive(false);
-        dragBluePanel.SetActive(false);
-        dragRedPanel.SetActive(false);
-
         string team = string.IsNullOrEmpty(PlayerSession.Team) ? "Blue" : PlayerSession.Team;
-
-        if (team == "Blue") blueCamera.SetActive(true);
-        else redCamera.SetActive(true);
+        UpdatePanelVisibility(true);
     }
 
     IEnumerator SystemLoop()
@@ -55,18 +56,10 @@ public class ArenaManager : MonoBehaviour
         {
             if (roundText != null) roundText.text = "ROUND: " + currentRound + " / " + MAX_ROUNDS;
 
-            // --- EKONOMİ GÜNCELLEMESİ (İsteğin Burası) ---
-            // Eğer 1. round değilse, hazırlık başlarken 100 puan ver
-            if (currentRound > 1)
-            {
-                if (CurrencyManager.Instance != null)
-                {
-                    CurrencyManager.Instance.ParaKazan(100);
-                    Debug.Log("Yeni Round Bonusu: 100 Puan Eklendi!");
-                }
-            }
+            if (currentRound > 1 && CurrencyManager.Instance != null)
+                CurrencyManager.Instance.ParaKazan(100);
 
-            // --- HAZIRLIK SÜRESİ (30 Saniye) ---
+            // HAZIRLIK
             isWarStarted = false;
             UpdatePanelVisibility(true);
             ToggleAllUnits(false);
@@ -80,7 +73,7 @@ public class ArenaManager : MonoBehaviour
                 yield return null;
             }
 
-            // --- SAVAŞ SÜRESİ (90 Saniye) ---
+            // SAVAŞ
             isWarStarted = true;
             UpdatePanelVisibility(false);
             ToggleAllUnits(true);
@@ -94,46 +87,16 @@ public class ArenaManager : MonoBehaviour
                 else timerText.text = Mathf.CeilToInt(timeRemaining).ToString();
 
                 timeRemaining -= Time.deltaTime;
-
                 if (CheckUnitsRemaining()) break;
-
                 yield return null;
             }
 
-            if (currentRound == MAX_ROUNDS)
-            {
-                DetermineWinner();
-                gameOver = true;
-            }
-            else
-            {
-                currentRound++;
-                // Round biterken kısa bir bekleme (isteğe bağlı)
-                yield return new WaitForSeconds(1f);
-            }
+            if (currentRound == MAX_ROUNDS) { DetermineWinner(); gameOver = true; }
+            else { currentRound++; yield return new WaitForSeconds(1f); }
         }
     }
 
-    private bool CheckUnitsRemaining()
-    {
-        if (timeRemaining > 88f && currentRound != MAX_ROUNDS) return false;
-
-        int blueCount = GameObject.FindGameObjectsWithTag("BlueTeam").Length;
-        int redCount = GameObject.FindGameObjectsWithTag("RedTeam").Length;
-
-        return (blueCount == 0 || redCount == 0);
-    }
-
-    private void DetermineWinner()
-    {
-        int blueCount = GameObject.FindGameObjectsWithTag("BlueTeam").Length;
-        int redCount = GameObject.FindGameObjectsWithTag("RedTeam").Length;
-
-        if (blueCount > redCount) stateText.text = "MAVİ TAKIM KAZANDI!";
-        else if (redCount > blueCount) stateText.text = "KIRMIZI TAKIM KAZANDI!";
-        else stateText.text = "BERABERE!";
-    }
-
+    // ... Diğer yardımcı fonksiyonlar (CheckUnitsRemaining, DetermineWinner, ToggleAllUnits) aynı kalabilir ...
     private void UpdatePanelVisibility(bool show)
     {
         string team = string.IsNullOrEmpty(PlayerSession.Team) ? "Blue" : PlayerSession.Team;
@@ -152,8 +115,24 @@ public class ArenaManager : MonoBehaviour
     private void ApplyUnitState(GameObject unit, bool state)
     {
         NavMeshAgent nma = unit.GetComponent<NavMeshAgent>();
-        MonoBehaviour ai = unit.GetComponent("AiAgent") as MonoBehaviour;
         if (nma != null) nma.enabled = state;
-        if (ai != null) ai.enabled = state;
+        // AI scriptini de burada kontrol edebilirsin
+    }
+
+    private bool CheckUnitsRemaining()
+    {
+        if (timeRemaining > 88f && currentRound != MAX_ROUNDS) return false;
+        int blueCount = GameObject.FindGameObjectsWithTag("BlueTeam").Length;
+        int redCount = GameObject.FindGameObjectsWithTag("RedTeam").Length;
+        return (blueCount == 0 || redCount == 0);
+    }
+
+    private void DetermineWinner()
+    {
+        int blueCount = GameObject.FindGameObjectsWithTag("BlueTeam").Length;
+        int redCount = GameObject.FindGameObjectsWithTag("RedTeam").Length;
+        if (blueCount > redCount) stateText.text = "MAVİ TAKIM KAZANDI!";
+        else if (redCount > blueCount) stateText.text = "KIRMIZI TAKIM KAZANDI!";
+        else stateText.text = "BERABERE!";
     }
 }

@@ -6,12 +6,12 @@ using System.Collections.Generic;
 
 public class MatchMaker : MonoBehaviourPunCallbacks
 {
-    [Header("UI Panels")]
+    [Header("UI Panelleri")]
     public GameObject mainPanel;
     public GameObject createRoomPanel;
     public GameObject roomListPanel;
 
-    [Header("UI Elements")]
+    [Header("UI Elemanları")]
     public InputField roomNameInput;
     public Transform roomListContent;
     public GameObject roomItemPrefab;
@@ -21,6 +21,9 @@ public class MatchMaker : MonoBehaviourPunCallbacks
 
     private void Start()
     {
+        // ÖNEMLİ: Master sahne yükleyince diğeri de otomatik yüklensin
+        PhotonNetwork.AutomaticallySyncScene = true;
+
         PlayerSession.NetworkStarted = false;
         if (!PhotonNetwork.IsConnected)
         {
@@ -72,12 +75,8 @@ public class MatchMaker : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinLobby();
     }
 
-    // KRİTİK DÜZELTME BURADA
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
     {
-        Debug.Log($"[LOBİ] Güncelleme geldi. Paket boyutu: {roomList.Count}");
-
-        // 1. Önce hafızadaki listeyi (cache) güncelle
         foreach (RoomInfo room in roomList)
         {
             if (room.RemovedFromList)
@@ -89,36 +88,25 @@ public class MatchMaker : MonoBehaviourPunCallbacks
                 cachedRoomList[room.Name] = room;
             }
         }
-
-        // 2. UI listesini temizle ve hafızadaki güncel listeye göre yeniden çiz
         UpdateRoomListView();
     }
 
     private void UpdateRoomListView()
     {
-        // Mevcut butonları temizle
         foreach (Transform child in roomListContent)
         {
             Destroy(child.gameObject);
         }
 
-        // Hafızadaki tüm geçerli odaları ekrana bas
         foreach (var entry in cachedRoomList)
         {
             RoomInfo room = entry.Value;
-
-            // Oda gizli veya doluysa gösterme
             if (!room.IsVisible || room.PlayerCount >= room.MaxPlayers)
                 continue;
 
             GameObject item = Instantiate(roomItemPrefab, roomListContent);
             item.transform.localScale = Vector3.one;
-
-            Text roomText = item.GetComponentInChildren<Text>();
-            if (roomText != null)
-            {
-                roomText.text = $"{room.Name} ({room.PlayerCount}/{room.MaxPlayers})";
-            }
+            item.GetComponentInChildren<Text>().text = $"{room.Name} ({room.PlayerCount}/{room.MaxPlayers})";
 
             string rName = room.Name;
             item.GetComponent<Button>().onClick.AddListener(() => JoinRoom(rName));
@@ -127,9 +115,9 @@ public class MatchMaker : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        // Odaya girince hafızayı temizle (lobiye dönünce taze başlasın)
         cachedRoomList.Clear();
 
+        // Takım Belirleme
         if (PhotonNetwork.IsMasterClient)
         {
             PlayerSession.Team = "Blue";
@@ -144,8 +132,22 @@ public class MatchMaker : MonoBehaviourPunCallbacks
         PlayerSession.MatchId = PhotonNetwork.CurrentRoom.Name;
         PlayerSession.NetworkStarted = true;
 
-        if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
+        // Odaya girince sayıyı kontrol et (İkinci oyuncu doğrudan burayı tetikler)
+        CheckPlayersAndStart();
+    }
+
+    // Yeni bir oyuncu odaya girdiğinde (Master tarafında çalışır)
+    public override void OnPlayerEnteredRoom(Player newPlayer)
+    {
+        CheckPlayersAndStart();
+    }
+
+    private void CheckPlayersAndStart()
+    {
+        // Sadece Master Client yükleme yapabilir ve sayı 2 olmalıdır
+        if (PhotonNetwork.IsMasterClient && PhotonNetwork.CurrentRoom.PlayerCount == 2)
         {
+            Debug.Log("Oda Doldu! Sahne yükleniyor...");
             PhotonNetwork.LoadLevel("SampleScene");
         }
     }
