@@ -512,7 +512,7 @@ GameObject:
   - component: {fileID: 3930059598312778566}
   - component: {fileID: -1171923283901458183}
   m_Layer: 0
-  m_Name: MagicianRed
+  m_Name: "b\xFCy\xFCk"
   m_TagString: RedTeam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -528,7 +528,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -23.92, y: -10.4, z: 41.11}
-  m_LocalScale: {x: 0.5, y: 2.3, z: 2.3}
+  m_LocalScale: {x: 0.09, y: 0.09, z: 0.09}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2131333164238955855}

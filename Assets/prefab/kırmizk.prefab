@@ -2689,7 +2689,7 @@ GameObject:
   - component: {fileID: 6518233305650743116}
   - component: {fileID: -3523558493033839141}
   m_Layer: 0
-  m_Name: agentRed
+  m_Name: "k\u0131rmizk"
   m_TagString: RedTeam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

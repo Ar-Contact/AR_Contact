@@ -1,9 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.AI;
 using System.Collections;
-using UnityEngine.XR.ARFoundation; // AR durumlarını okumak için
-using UnityEngine.XR.ARSubsystems;
 
 public class ArenaManager : MonoBehaviour
 {
@@ -18,20 +15,16 @@ public class ArenaManager : MonoBehaviour
     public Text stateText;
     public Text roundText;
 
-    [HideInInspector] public bool isWarStarted = false;
-    [HideInInspector] public bool isArenaPlaced = false;
+    public bool isWarStarted = false;
+    public bool isArenaPlaced = false;
 
     void Awake() { Instance = this; }
 
-    // Arena yerleştiğinde TiklaVeYerlestir tarafından çağrılır
     public void StartGameAfterPlacement()
     {
         if (isArenaPlaced) return;
         isArenaPlaced = true;
-
-        if (stateText != null) stateText.text = "ARENA YERLEŞTİ!";
-
-        StopAllCoroutines();
+        if (stateText != null) stateText.text = "SAVAŞ ALANI HAZIR!";
         StartCoroutine(SystemLoop());
     }
 
@@ -42,51 +35,42 @@ public class ArenaManager : MonoBehaviour
         {
             if (roundText != null) roundText.text = "ROUND: " + currentRound;
 
-            // --- HAZIRLIK AŞAMASI ---
+            // --- HAZIRLIK ---
             isWarStarted = false;
-            UpdatePanelVisibility(true); // Takımına göre paneli aç
-            if (stateText != null) stateText.text = "HAZIRLIK ZAMANI";
+            UpdatePanelVisibility(true);
+            stateText.text = "BİRLİKLERİNİ YERLEŞTİR!";
 
             float time = 30f;
             while (time > 0)
             {
-                if (timerText != null) timerText.text = Mathf.CeilToInt(time).ToString();
+                timerText.text = Mathf.CeilToInt(time).ToString();
                 time -= Time.deltaTime;
                 yield return null;
             }
 
-            // --- SAVAŞ AŞAMASI ---
+            // --- SAVAŞ ---
             isWarStarted = true;
-            UpdatePanelVisibility(false); // Sürükleme panellerini kapat
-            if (stateText != null) stateText.text = "SAVAŞ BAŞLADI!";
-
+            UpdatePanelVisibility(false);
+            stateText.text = "SAVAŞ BAŞLADI!";
             yield return new WaitForSeconds(90f);
 
             currentRound++;
         }
-
-        if (stateText != null) stateText.text = "OYUN BİTTİ!";
+        stateText.text = "MAÇ BİTTİ!";
     }
 
     private void UpdatePanelVisibility(bool show)
     {
-        string team = PlayerSession.Team; // "Blue" veya "Red" olmalı
-
-        if (string.IsNullOrEmpty(team))
-        {
-            Debug.LogWarning("Takım henüz seçilmemiş!");
-            return;
-        }
-
+        string team = PlayerSession.Team;
         if (team == "Blue")
         {
-            if (dragBluePanel != null) dragBluePanel.SetActive(show);
-            if (dragRedPanel != null) dragRedPanel.SetActive(false);
+            dragBluePanel.SetActive(show);
+            dragRedPanel.SetActive(false);
         }
         else if (team == "Red")
         {
-            if (dragRedPanel != null) dragRedPanel.SetActive(show);
-            if (dragBluePanel != null) dragBluePanel.SetActive(false);
+            dragRedPanel.SetActive(show);
+            dragBluePanel.SetActive(false);
         }
     }
 }

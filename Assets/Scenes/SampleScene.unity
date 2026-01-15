@@ -423,6 +423,8 @@ GameObject:
   - component: {fileID: 285088741}
   - component: {fileID: 285088745}
   - component: {fileID: 285088746}
+  - component: {fileID: 285088747}
+  - component: {fileID: 285088748}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
@@ -518,6 +520,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arenaPrefab: {fileID: 5049317514932536441, guid: c3926cde53d45d14f870fa5e2e6afd6c, type: 3}
   clickInterval: 0.5
+--- !u!114 &285088747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285088739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 728ad7fae8e460a4ba41265c7308d757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AnchorPrefab: {fileID: 0}
+--- !u!114 &285088748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285088739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 1
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &302619048
 GameObject:
   m_ObjectHideFlags: 0
@@ -1398,7 +1435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4b19703b0780794088d6e7eb8e99364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitIndex: 2
+  unitPrefab: {fileID: 2823080846458923344, guid: 3e2d0508c79548143a35296df3aaa41b, type: 3}
   birimMaliyeti: 10
   groundLayer:
     serializedVersion: 2
@@ -1916,7 +1953,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4b19703b0780794088d6e7eb8e99364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitIndex: 1
+  unitPrefab: {fileID: 4849666216971477230, guid: 5c3e93259fc8c52408fec6ee24456461, type: 3}
   birimMaliyeti: 10
   groundLayer:
     serializedVersion: 2
@@ -2108,7 +2145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4b19703b0780794088d6e7eb8e99364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitIndex: 2
+  unitPrefab: {fileID: 6273435658143956638, guid: 2e7918a68e3ec1447a2cd0faccad4602, type: 3}
   birimMaliyeti: 50
   groundLayer:
     serializedVersion: 2
@@ -2766,7 +2803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4b19703b0780794088d6e7eb8e99364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitIndex: 1
+  unitPrefab: {fileID: 5503970041398975675, guid: d81275e1074d28d43aebf8b12edc385b, type: 3}
   birimMaliyeti: 20
   groundLayer:
     serializedVersion: 2
@@ -2860,7 +2897,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4b19703b0780794088d6e7eb8e99364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitIndex: 0
+  unitPrefab: {fileID: 2316076030336529670, guid: 6f8673b94c71bca4d9da49131fe8327a, type: 3}
   birimMaliyeti: 20
   groundLayer:
     serializedVersion: 2
@@ -3287,7 +3324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4b19703b0780794088d6e7eb8e99364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitIndex: 0
+  unitPrefab: {fileID: 5798087221978914444, guid: f267c839a0bae6544bef50cf90188abf, type: 3}
   birimMaliyeti: 50
   groundLayer:
     serializedVersion: 2
