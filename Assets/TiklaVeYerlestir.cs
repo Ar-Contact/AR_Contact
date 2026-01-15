@@ -5,13 +5,12 @@ using UnityEngine.XR.ARSubsystems;
 
 [RequireComponent(typeof(ARRaycastManager))]
 [RequireComponent(typeof(ARPlaneManager))]
-public class TiklaVeYerleştir : MonoBehaviour
+public class TiklaVeYerlestir : MonoBehaviour
 {
     [Header("Ayarlar")]
-    public GameObject secilenPrefab; // Buranın boş kalmadığından emin ol!
+    public GameObject secilenPrefab;
     public float kameraOnuMesafe = 1.0f;
 
-    private GameObject sahnedeOlanObje;
     private ARRaycastManager raycastManager;
     private ARPlaneManager planeManager;
     private List<ARRaycastHit> carpismaListesi = new List<ARRaycastHit>();
@@ -21,46 +20,35 @@ public class TiklaVeYerleştir : MonoBehaviour
     {
         raycastManager = GetComponent<ARRaycastManager>();
         planeManager = GetComponent<ARPlaneManager>();
-
-        if (secilenPrefab == null)
-        {
-            Debug.LogError("HATA: 'secilenPrefab' alanı boş! Lütfen Inspector'dan bir obje sürükleyin.");
-        }
     }
 
     void Update()
     {
         if (objeYerlesildiMi) return;
 
-        // Mobil Dokunma
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
-            ObjeYerleştir(Input.GetTouch(0).position);
+            ObjeYerlestir(Input.GetTouch(0).position);
         }
 
-        // Editör Mouse Tıklama
 #if UNITY_EDITOR
         if (Input.GetMouseButtonDown(0))
         {
-            ObjeYerleştir(Input.mousePosition);
+            ObjeYerlestir(Input.mousePosition);
         }
 #endif
     }
 
-    void ObjeYerleştir(Vector2 ekranPozisyonu)
+    void ObjeYerlestir(Vector2 ekranPozisyonu)
     {
-        Debug.Log("Tıklama algılandı, işlem başlıyor...");
         Pose hedefPose;
 
-        // PlaneWithinBounds ve PlaneWithinPolygon'u kapsar, daha garantidir.
-        if (raycastManager.Raycast(ekranPozisyonu, carpismaListesi, TrackableType.AllTypes))
+        if (raycastManager.Raycast(ekranPozisyonu, carpismaListesi, TrackableType.PlaneWithinPolygon))
         {
             hedefPose = carpismaListesi[0].pose;
-            Debug.Log("Zemin algılandı: " + hedefPose.position);
         }
         else
         {
-            Debug.LogWarning("Zemin bulunamadı! Obje kameranın önüne yerleştiriliyor.");
             Camera cam = Camera.main;
             Vector3 pozisyon = cam.transform.position + cam.transform.forward * kameraOnuMesafe;
             Quaternion rotasyon = Quaternion.LookRotation(-cam.transform.forward);
@@ -69,9 +57,9 @@ public class TiklaVeYerleştir : MonoBehaviour
 
         if (secilenPrefab != null)
         {
-            sahnedeOlanObje = Instantiate(secilenPrefab, hedefPose.position, hedefPose.rotation);
+            GameObject sahnedeOlanObje = Instantiate(secilenPrefab, hedefPose.position, hedefPose.rotation);
 
-            // Objeyi dik tut ve kameraya baktır
+            // Kameraya bakma düzeltmesi
             Vector3 lookPos = Camera.main.transform.position;
             lookPos.y = sahnedeOlanObje.transform.position.y;
             sahnedeOlanObje.transform.LookAt(lookPos);
@@ -84,6 +72,8 @@ public class TiklaVeYerleştir : MonoBehaviour
     void SistemiKilitle()
     {
         objeYerlesildiMi = true;
+
+        // Plane'leri kapat
         if (planeManager != null)
         {
             planeManager.enabled = false;
@@ -92,6 +82,13 @@ public class TiklaVeYerleştir : MonoBehaviour
                 plane.gameObject.SetActive(false);
             }
         }
-        Debug.Log("İŞLEM TAMAM: Obje yerleştirildi ve sistem kilitlendi.");
+
+        // --- ARENA MANAGER'I TETİKLE ---
+        if (ArenaManager.Instance != null)
+        {
+            ArenaManager.Instance.StartGameAfterPlacement();
+        }
+
+        Debug.Log("Arena yerleşti ve ArenaManager tetiklendi.");
     }
 }

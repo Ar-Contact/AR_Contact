@@ -5,25 +5,18 @@ public class UnitAutoFreeze : MonoBehaviour
 {
     void Start()
     {
-        // ArenaManager'a bakýyoruz: Savaþ henüz baþlamadýysa (Hazýrlýk aþamasýndaysak)
+        // Eðer hazýrlýk aþamasýndaysak (Savaþ baþlamadýysa)
         if (ArenaManager.Instance != null && !ArenaManager.Instance.isWarStarted)
         {
-            // 1. TÝK: NavMeshAgent (Hareket bileþeni) kapatýlýr
+            // Hareket sistemini kapat
             NavMeshAgent nma = GetComponent<NavMeshAgent>();
-            if (nma != null)
-            {
-                nma.enabled = false; // IsTrigger zeminde olsa bile hareket etmez
-            }
+            if (nma != null) nma.enabled = false;
 
-            // 2. TÝK: AiAgent (Saldýrý ve Zeka scripti) kapatýlýr
-            // Inspector'daki tam ismiyle çaðýrýyoruz
+            // Zeka/Saldýrý sistemini kapat
             MonoBehaviour ai = GetComponent("AiAgent") as MonoBehaviour;
-            if (ai != null)
-            {
-                ai.enabled = false; // Hedef aramaz ve ateþ etmez
-            }
+            if (ai != null) ai.enabled = false;
 
-            Debug.Log(gameObject.name + " donduruldu. Savaþ baþladýðýnda ArenaManager tarafýndan uyandýrýlacak.");
+            Debug.Log(gameObject.name + " hazýrlýk için donduruldu.");
         }
     }
 }
