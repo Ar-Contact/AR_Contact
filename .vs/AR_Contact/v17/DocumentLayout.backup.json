@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|solutionrelative:assets\\tiklaveyerlestir.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|c:\\users\\cnr13\\documents\\github\\ar_contact\\assets\\ararenaplacement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\assets\\ararenaplacement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|solutionrelative:assets\\ararenaplacement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -60,7 +60,7 @@
               "RelativeDocumentMoniker": "Assets\\TiklaVeYerlestir.cs",
               "ToolTip": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Assets\\TiklaVeYerlestir.cs",
               "RelativeToolTip": "Assets\\TiklaVeYerlestir.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAkwF8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAkwF0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-14T16:03:51.159Z",
               "EditorCaption": ""
@@ -111,8 +111,7 @@
               "RelativeToolTip": "Assets\\ARArenaPlacement.cs",
               "ViewState": "AgIAAHAAAAAAAAAAAAAkwH4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T20:56:49.77Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-13T20:56:49.77Z"
             },
             {
               "$type": "Document",
