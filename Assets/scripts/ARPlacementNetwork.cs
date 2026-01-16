@@ -1,128 +1,145 @@
-using System.Collections.Generic;
+Ôªøusing System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
-using UnityEngine.EventSystems;
+using UnityEngine.UI;
 using Photon.Pun;
+using UnityEngine.EventSystems;
 
+[RequireComponent(typeof(ARRaycastManager))]
+[RequireComponent(typeof(ARPlaneManager))]
+[RequireComponent(typeof(ARAnchorManager))]
 public class ARPlacementNetwork : MonoBehaviourPunCallbacks
 {
-    [Header("AR Ayarlar˝")]
-    public GameObject arenaPrefab;
-    public float clickInterval = 0.5f;
+    [Header("Ayarlar")]
+    public GameObject secilenPrefab;
+    public Text debugText;
+
+    private const string NETWORK_PREFABS_PATH = "NetworkPrefabs";
 
     private ARRaycastManager raycastManager;
-    private ARAnchorManager anchorManager;
     private ARPlaneManager planeManager;
-    private float lastClickTime;
-    private List<ARRaycastHit> hits = new List<ARRaycastHit>();
+    private ARAnchorManager anchorManager;
+    private List<ARRaycastHit> carpismaListesi = new List<ARRaycastHit>();
 
-    private string selectedAskerResourceName;
+    // --- Kƒ∞Lƒ∞T DEƒûƒ∞≈ûKENƒ∞ ---
+    private bool arenaYerlesti = false;
 
     void Start()
     {
         raycastManager = GetComponent<ARRaycastManager>();
-        anchorManager = GetComponent<ARAnchorManager>();
         planeManager = GetComponent<ARPlaneManager>();
+        anchorManager = GetComponent<ARAnchorManager>();
+
+        LogYaz("SCRIPT AKTƒ∞F! L√ºtfen sarƒ± noktalara tƒ±kla...");
     }
 
     void Update()
     {
-        if (Input.touchCount > 0 && EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId)) return;
+        // EƒûER ARENA ZATEN YERLE≈ûTƒ∞YSE Hƒ∞√áBƒ∞R ≈ûEY YAPMA VE √áIK
+        if (arenaYerlesti) return;
 
-        if (!ArenaManager.Instance.isArenaPlaced)
+        // Eƒüer ArenaManager tarafƒ±nda oyun ba≈üladƒ±ysa da dur
+        if (ArenaManager.Instance != null && ArenaManager.Instance.isArenaPlaced) return;
+
+        if ((Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) || (Application.isEditor && Input.GetMouseButtonDown(0)))
         {
-            if (PhotonNetwork.IsMasterClient) HandleArenaPlacement();
-        }
-        else if (!ArenaManager.Instance.isWarStarted)
-        {
-            HandleUnitPlacement();
+            // 1. Master Client Kontrol√º
+            if (!PhotonNetwork.IsMasterClient)
+            {
+                LogYaz("‚ùå HATA: Sadece Master Client arena koyabilir!");
+                return;
+            }
+
+            Vector2 touchPos = (Input.touchCount > 0) ? Input.GetTouch(0).position : (Vector2)Input.mousePosition;
+
+            if (IsPointerOverUI(touchPos)) return;
+
+            if (raycastManager.Raycast(touchPos, carpismaListesi, TrackableType.PlaneWithinPolygon))
+            {
+                LogYaz("‚úÖ ZEMƒ∞N BULUNDU! Yerle≈ütiriliyor...");
+                ObjeYerlestir(carpismaListesi[0].pose);
+            }
+            else
+            {
+                LogYaz("‚ö†Ô∏è SARI ZEMƒ∞N BULUNAMADI! Sarƒ± noktalara tƒ±kla.");
+            }
         }
     }
 
-    private void HandleArenaPlacement()
+    private bool IsPointerOverUI(Vector2 pos)
     {
-        if (Input.GetMouseButtonDown(0))
+        PointerEventData eventData = new PointerEventData(EventSystem.current);
+        eventData.position = pos;
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventData, results);
+        return results.Count > 0;
+    }
+
+    void ObjeYerlestir(Pose pose)
+    {
+        if (secilenPrefab == null) return;
+
+        string yol = $"{NETWORK_PREFABS_PATH}/{secilenPrefab.name}";
+        GameObject obj = PhotonNetwork.Instantiate(yol, pose.position, pose.rotation);
+
+        if (obj != null)
         {
-            float timeSinceLastClick = Time.time - lastClickTime;
-            if (timeSinceLastClick <= clickInterval)
-            {
-                if (raycastManager.Raycast(Input.mousePosition, hits, TrackableType.PlaneWithinPolygon))
-                {
-                    Pose hitPose = hits[0].pose;
-                    ARAnchor anchor = anchorManager.AddAnchor(hitPose);
+            LogYaz("üéâ ARENA YERLE≈ûTƒ∞! Artƒ±k deƒüi≈ütirilemez.");
 
-                    if (anchor != null)
-                    {
-                        // ÷NEML›: Prefab ismini Resources/ iÁindeki tam yoluna gˆre ver
-                        GameObject spawnedArena = PhotonNetwork.Instantiate(arenaPrefab.name, hitPose.position, hitPose.rotation);
-                        spawnedArena.transform.SetParent(anchor.transform);
+            // --- Kƒ∞Lƒ∞Dƒ∞ KAPATIYORUZ ---
+            arenaYerlesti = true;
+            // --------------------------
 
-                        photonView.RPC("RPC_StartGameForAll", RpcTarget.AllBuffered);
-                    }
-                }
-            }
-            lastClickTime = Time.time;
+            ARAnchor anchor = anchorManager.AddAnchor(pose);
+            if (anchor != null) obj.transform.SetParent(anchor.transform);
+
+            photonView.RPC("RPC_Kapat", RpcTarget.AllBuffered);
         }
     }
 
     [PunRPC]
-    private void RPC_StartGameForAll()
+    void RPC_Kapat()
     {
-        // 1. AR «izgilerini Kapat
+        // Diƒüer oyuncularda da kilidi kapat
+        arenaYerlesti = true;
+
+        LogYaz("üöÄ Oyun Ba≈üladƒ± RPC!");
         if (planeManager != null)
         {
             planeManager.enabled = false;
-            foreach (var plane in planeManager.trackables) plane.gameObject.SetActive(false);
+            foreach (var p in planeManager.trackables) p.gameObject.SetActive(false);
         }
 
-        // 2. Kameray˝ Hizala
-        HizalaKamerayiArenaya();
+        Hizala();
 
-        // 3. Dˆng¸y¸ Ba˛lat
         if (ArenaManager.Instance != null) ArenaManager.Instance.StartGameAfterPlacement();
     }
 
-    private void HizalaKamerayiArenaya()
+    void Hizala()
     {
-        // Arena prefab˝na "Arena" tag'i vermeyi unutma!
         GameObject arena = GameObject.FindWithTag("Arena");
         if (arena == null) return;
 
         string team = PlayerSession.Team;
-        Transform targetPos = null;
+        Transform target = (team == "Blue") ? arena.transform.Find("Pos_Blue") : arena.transform.Find("Pos_Red");
 
-        // Arena prefab˝ iÁinde "Pos_Blue" ve "Pos_Red" isimli bo˛ objeler olmal˝
-        if (team == "Blue") targetPos = arena.transform.Find("Pos_Blue");
-        else if (team == "Red") targetPos = arena.transform.Find("Pos_Red");
-
-        if (targetPos != null)
+        if (target != null)
         {
-            // XR Origin'i bul (›smi hiyerar˛ide neyse o olmal˝)
-            GameObject xrOrigin = GameObject.Find("XR Origin (AR)");
-            if (xrOrigin != null)
+            GameObject xr = GameObject.Find("XR Origin");
+            if (xr == null) xr = GameObject.Find("XR Origin (AR)");
+
+            if (xr != null)
             {
-                xrOrigin.transform.position = targetPos.position;
-                xrOrigin.transform.rotation = targetPos.rotation;
-                Debug.Log($"Kamera {team} konumuna ba˛ar˝yla ta˛˝nd˝.");
+                xr.transform.position = target.position;
+                xr.transform.rotation = Quaternion.Euler(0, target.eulerAngles.y, 0);
             }
         }
     }
 
-    private void HandleUnitPlacement()
+    void LogYaz(string msj)
     {
-        if (string.IsNullOrEmpty(selectedAskerResourceName)) return;
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (raycastManager.Raycast(Input.mousePosition, hits, TrackableType.AllTypes))
-            {
-                // Resources/NetworkPrefabs/AskerIsmi ˛eklinde yolunu kontrol et
-                string path = "NetworkPrefabs/" + selectedAskerResourceName;
-                PhotonNetwork.Instantiate(path, hits[0].pose.position, hits[0].pose.rotation);
-            }
-        }
+        if (debugText != null) debugText.text = msj;
+        Debug.Log(msj);
     }
-
-    public void SetSelectedAsker(string prefabName) => selectedAskerResourceName = prefabName;
 }

@@ -1,38 +1,35 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-using Photon.Pun; // Photon kütüphanesi şart
+using Photon.Pun;
 
 public class DragAndDropSpawner : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [Header("Birim Ayarları")]
-    // ARTIK BURADAN PREFABI SEÇEBİLİRSİN
-    // Önemli: Bu prefab Assets/Resources klasöründe olmalı!
-    public GameObject unitPrefab;
+    public int unitIndex;
     public int birimMaliyeti = 10;
 
     [Header("Layer Ayarı")]
-    public LayerMask groundLayer;
+    public LayerMask groundLayer; // DİKKAT: Inspector'da "Ground" seçili olmalı!
 
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
     private Vector2 originalPos;
     private Canvas parentCanvas;
     private Camera arCamera;
+    private PhotonPlayerUnitSpawner centralSpawner;
 
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
         parentCanvas = GetComponentInParent<Canvas>();
-        if (canvasGroup == null) canvasGroup = gameObject.AddComponent<CanvasGroup>();
-
         arCamera = Camera.main;
+        centralSpawner = FindObjectOfType<PhotonPlayerUnitSpawner>();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         if (ArenaManager.Instance != null && ArenaManager.Instance.isWarStarted) return;
-
         originalPos = rectTransform.anchoredPosition;
         canvasGroup.alpha = 0.6f;
         canvasGroup.blocksRaycasts = false;
@@ -60,40 +57,49 @@ public class DragAndDropSpawner : MonoBehaviour, IBeginDragHandler, IDragHandler
         Ray ray = arCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
+        // Işın atıyoruz
         if (Physics.Raycast(ray, out hit, 100f, groundLayer))
         {
             string playerTeam = PlayerSession.Team;
             string hitTag = hit.transform.tag;
+            string hitLayer = LayerMask.LayerToName(hit.transform.gameObject.layer);
 
-            // Bölge Kontrolü
-            if ((playerTeam == "Blue" && hitTag == "RedGround") ||
-                (playerTeam == "Red" && hitTag == "BlueGround"))
+            // --- HATA AYIKLAMA LOGU ---
+            // Nereye tıkladığını görmek için bunu ekledik
+            Debug.Log($"Işın Çarptı -> Obje: {hit.transform.name}, Tag: {hitTag}, Layer: {hitLayer}");
+
+            bool isPlacementValid = false;
+
+            if (playerTeam == "Blue" && hitTag == "BlueGround") isPlacementValid = true;
+            else if (playerTeam == "Red" && hitTag == "RedGround") isPlacementValid = true;
+
+            if (!isPlacementValid)
             {
-                Debug.LogWarning("Düşman sahasına asker koyamazsın!");
+                Debug.LogWarning($"❌ YANLIŞ BÖLGE! Senin Takımın: {playerTeam}, Tıklanan Tag: {hitTag}");
                 return;
             }
 
-            // Para ve Doğurma Kontrolü
+            // Para ve Oluşturma
             if (CurrencyManager.Instance.ParaHarcayabilirMi(birimMaliyeti))
             {
-                if (unitPrefab != null)
+                if (centralSpawner != null)
                 {
-                    // ARTIK DOĞRUDAN İSİM GÖNDERİYORUZ
-                    SpawnManager(unitPrefab.name, hit.point);
-                }
-                else
-                {
-                    Debug.LogError("HATA: Inspector'dan Unit Prefab atanmamış!");
+                    Vector3 spawnPos = hit.point;
+                    spawnPos.y += 0.05f; // Yerin dibine girmesin
+                    centralSpawner.RequestSpawnUnit(unitIndex, spawnPos);
+                    Debug.Log("✅ Asker koyma isteği gönderildi.");
                 }
             }
+            else
+            {
+                Debug.Log("💰 Yetersiz Bakiye!");
+            }
         }
-    }
-
-    private void SpawnManager(string prefabName, Vector3 spawnPos)
-    {
-        // Photon ile ağına gönderiyoruz. 
-        // Prefabın Resources klasöründe olması hayati önem taşır!
-        PhotonNetwork.Instantiate(prefabName, spawnPos, Quaternion.identity);
-        Debug.Log(prefabName + " başarıyla spawn edildi.");
+        else
+        {
+            // BURASI ÇALIŞIYORSA SORUN LAYER VEYA COLLIDER AYARINDADIR
+            Debug.LogError("🚨 HATA: Işın hiçbir 'Ground' objesine çarpmadı!");
+            Debug.LogError("Kontrol Et: 1. Arena zeminlerinde Collider var mı? 2. Arena zeminlerinin Layer'ı 'Ground' mu? 3. Scriptteki Ground Layer 'Ground' seçili mi?");
+        }
     }
 }

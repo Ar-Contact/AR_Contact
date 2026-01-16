@@ -1,5 +1,16 @@
 {
   "dependencies": {
+    "com.google.ar.core.arfoundation.extensions": {
+      "version": "https://github.com/google-ar/arcore-unity-extensions.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.xr.arfoundation": "4.1.5",
+        "com.unity.xr.arcore": "4.1.5",
+        "com.unity.xr.arkit": "4.1.5"
+      },
+      "hash": "f2fa041ed9ee61f3cef6710ed2aee69ace4d384b"
+    },
     "com.unity.ai.navigation": {
       "version": "1.1.7",
       "depth": 0,
@@ -359,6 +370,27 @@
         "com.unity.xr.core-utils": "2.2.1",
         "com.unity.modules.subsystems": "1.0.0",
         "com.unity.xr.legacyinputhelpers": "2.1.11"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.xr.oculus": {
+      "version": "4.5.2",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.xr.management": "4.4.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.xr.openxr": {
+      "version": "1.14.3",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.inputsystem": "1.6.3",
+        "com.unity.xr.core-utils": "2.3.0",
+        "com.unity.xr.management": "4.4.0",
+        "com.unity.xr.legacyinputhelpers": "2.1.2"
       },
       "url": "https://packages.unity.com"
     },

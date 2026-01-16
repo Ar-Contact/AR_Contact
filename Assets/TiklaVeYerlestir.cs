@@ -1,4 +1,4 @@
-ï»¿using System.Collections.Generic;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
@@ -9,7 +9,6 @@ public class TiklaVeYerlestir : MonoBehaviour
 {
     [Header("Ayarlar")]
     public GameObject secilenPrefab;
-    public float kameraOnuMesafe = 1.0f;
 
     private ARRaycastManager raycastManager;
     private ARPlaneManager planeManager;
@@ -26,46 +25,37 @@ public class TiklaVeYerlestir : MonoBehaviour
     {
         if (objeYerlesildiMi) return;
 
+        // Sadece dokunma baþladýðýnda çalýþsýn
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
             ObjeYerlestir(Input.GetTouch(0).position);
         }
-
-#if UNITY_EDITOR
-        if (Input.GetMouseButtonDown(0))
-        {
-            ObjeYerlestir(Input.mousePosition);
-        }
-#endif
     }
 
     void ObjeYerlestir(Vector2 ekranPozisyonu)
     {
-        Pose hedefPose;
-
+        // Sadece PLANE (Zemin) algýlandýysa iþlem yap
         if (raycastManager.Raycast(ekranPozisyonu, carpismaListesi, TrackableType.PlaneWithinPolygon))
         {
-            hedefPose = carpismaListesi[0].pose;
+            Pose hedefPose = carpismaListesi[0].pose;
+
+            if (secilenPrefab != null)
+            {
+                GameObject sahnedeOlanObje = Instantiate(secilenPrefab, hedefPose.position, hedefPose.rotation);
+
+                // Kameraya bakma düzeltmesi (Sadece Y ekseninde döndür ki yamuk durmasýn)
+                Vector3 lookPos = Camera.main.transform.position;
+                lookPos.y = sahnedeOlanObje.transform.position.y; // Yükseklik ayný kalsýn
+                sahnedeOlanObje.transform.LookAt(lookPos);
+                sahnedeOlanObje.transform.Rotate(0, 180, 0);
+
+                SistemiKilitle();
+            }
         }
         else
         {
-            Camera cam = Camera.main;
-            Vector3 pozisyon = cam.transform.position + cam.transform.forward * kameraOnuMesafe;
-            Quaternion rotasyon = Quaternion.LookRotation(-cam.transform.forward);
-            hedefPose = new Pose(pozisyon, rotasyon);
-        }
-
-        if (secilenPrefab != null)
-        {
-            GameObject sahnedeOlanObje = Instantiate(secilenPrefab, hedefPose.position, hedefPose.rotation);
-
-            // Kameraya bakma dÃ¼zeltmesi
-            Vector3 lookPos = Camera.main.transform.position;
-            lookPos.y = sahnedeOlanObje.transform.position.y;
-            sahnedeOlanObje.transform.LookAt(lookPos);
-            sahnedeOlanObje.transform.Rotate(0, 180, 0);
-
-            SistemiKilitle();
+            // Zemin algýlanmadýysa kullanýcýya uyarý verebilirsin veya hiçbir þey yapmazsýn.
+            Debug.LogWarning("Lütfen sarý zemin noktalarýnýn üzerine týklayýn!");
         }
     }
 
@@ -81,14 +71,14 @@ public class TiklaVeYerlestir : MonoBehaviour
             {
                 plane.gameObject.SetActive(false);
             }
-        }
+        }   
 
-        // --- ARENA MANAGER'I TETÄ°KLE ---
+        // --- ARENA MANAGER'I TETÝKLE ---
         if (ArenaManager.Instance != null)
         {
             ArenaManager.Instance.StartGameAfterPlacement();
         }
 
-        Debug.Log("Arena yerleÅŸti ve ArenaManager tetiklendi.");
+        Debug.Log("Arena yerleþti ve ArenaManager tetiklendi.");
     }
 }

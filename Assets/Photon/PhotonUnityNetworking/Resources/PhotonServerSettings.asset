@@ -47,6 +47,14 @@ MonoBehaviour:
   - RPC_ShootArrow
   - SpawnUnitRPC
   - RPC_StartGameForAll
+  - SyncUnitToArenaRPC
+  - RPC_SetWarState
+  - RPC_UpdateRound
+  - RPC_UpdateTimer
+  - RPC_WakeUpSoldiers
+  - a
+  - RPC_SistemiKilitleVeBaslat
+  - RPC_Kapat
   DisableAutoOpenWizard: 1
-  ShowSettings: 0
+  ShowSettings: 1
   DevRegionSetOnce: 1

@@ -285,6 +285,7 @@ GameObject:
   - component: {fileID: 214073091}
   - component: {fileID: 214073093}
   - component: {fileID: 214073094}
+  - component: {fileID: 214073095}
   m_Layer: 0
   m_Name: MainPlayer
   m_TagString: Untagged
@@ -342,13 +343,30 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  Synchronization: 0
+  Synchronization: 3
   OwnershipTransfer: 1
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 214073095}
   sceneViewId: 7
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &214073095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214073089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &249240290
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,10 +439,10 @@ GameObject:
   - component: {fileID: 285088743}
   - component: {fileID: 285088742}
   - component: {fileID: 285088741}
-  - component: {fileID: 285088745}
   - component: {fileID: 285088746}
   - component: {fileID: 285088747}
   - component: {fileID: 285088748}
+  - component: {fileID: 285088749}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
@@ -492,20 +510,6 @@ Transform:
   - {fileID: 1069030887}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &285088745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285088739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18d9b2d13dfe68c43a3af7ec0ed4a1ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  secilenPrefab: {fileID: 5049317514932536441, guid: c3926cde53d45d14f870fa5e2e6afd6c, type: 3}
-  kameraOnuMesafe: 1
 --- !u!114 &285088746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,8 +522,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d86d520092e602845a56cbd999cec283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arenaPrefab: {fileID: 5049317514932536441, guid: c3926cde53d45d14f870fa5e2e6afd6c, type: 3}
-  clickInterval: 0.5
+  secilenPrefab: {fileID: 5049317514932536441, guid: 03bca4d23bdc3f7489f1650d4c9cf69a, type: 3}
+  debugText: {fileID: 0}
 --- !u!114 &285088747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -555,6 +559,19 @@ MonoBehaviour:
   sceneViewId: 1
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &285088749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285088739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a85b61939a6c46479e00e5d99f969eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anchorManager: {fileID: 285088747}
 --- !u!1 &302619048
 GameObject:
   m_ObjectHideFlags: 0
@@ -1396,6 +1413,7 @@ GameObject:
   - component: {fileID: 721651012}
   - component: {fileID: 721651011}
   - component: {fileID: 721651010}
+  - component: {fileID: 721651013}
   m_Layer: 5
   m_Name: RedSkel
   m_TagString: Untagged
@@ -1435,7 +1453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4b19703b0780794088d6e7eb8e99364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitPrefab: {fileID: 2823080846458923344, guid: 3e2d0508c79548143a35296df3aaa41b, type: 3}
+  unitIndex: 2
   birimMaliyeti: 10
   groundLayer:
     serializedVersion: 2
@@ -1478,6 +1496,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 721651008}
   m_CullTransparentMesh: 1
+--- !u!225 &721651013
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721651008}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &723581458
 GameObject:
   m_ObjectHideFlags: 0
@@ -1876,6 +1906,7 @@ GameObject:
   - component: {fileID: 1055976792}
   - component: {fileID: 1055976791}
   - component: {fileID: 1055976793}
+  - component: {fileID: 1055976794}
   m_Layer: 5
   m_Name: BlueSkel
   m_TagString: Untagged
@@ -1953,11 +1984,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4b19703b0780794088d6e7eb8e99364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitPrefab: {fileID: 4849666216971477230, guid: 5c3e93259fc8c52408fec6ee24456461, type: 3}
+  unitIndex: 1
   birimMaliyeti: 10
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+--- !u!225 &1055976794
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055976789}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1069030886
 GameObject:
   m_ObjectHideFlags: 0
@@ -2106,6 +2149,7 @@ GameObject:
   - component: {fileID: 1130340774}
   - component: {fileID: 1130340773}
   - component: {fileID: 1130340772}
+  - component: {fileID: 1130340775}
   m_Layer: 5
   m_Name: BlueBeast
   m_TagString: Untagged
@@ -2145,7 +2189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4b19703b0780794088d6e7eb8e99364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitPrefab: {fileID: 6273435658143956638, guid: 2e7918a68e3ec1447a2cd0faccad4602, type: 3}
+  unitIndex: 2
   birimMaliyeti: 50
   groundLayer:
     serializedVersion: 2
@@ -2188,6 +2232,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1130340770}
   m_CullTransparentMesh: 1
+--- !u!225 &1130340775
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130340770}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1143978583
 GameObject:
   m_ObjectHideFlags: 0
@@ -2764,6 +2820,7 @@ GameObject:
   - component: {fileID: 1815984367}
   - component: {fileID: 1815984366}
   - component: {fileID: 1815984365}
+  - component: {fileID: 1815984368}
   m_Layer: 5
   m_Name: RedMage
   m_TagString: Untagged
@@ -2803,7 +2860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4b19703b0780794088d6e7eb8e99364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitPrefab: {fileID: 5503970041398975675, guid: d81275e1074d28d43aebf8b12edc385b, type: 3}
+  unitIndex: 1
   birimMaliyeti: 20
   groundLayer:
     serializedVersion: 2
@@ -2846,6 +2903,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1815984363}
   m_CullTransparentMesh: 1
+--- !u!225 &1815984368
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815984363}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1827516291
 GameObject:
   m_ObjectHideFlags: 0
@@ -2858,6 +2927,7 @@ GameObject:
   - component: {fileID: 1827516295}
   - component: {fileID: 1827516294}
   - component: {fileID: 1827516293}
+  - component: {fileID: 1827516296}
   m_Layer: 5
   m_Name: BlueArch
   m_TagString: Untagged
@@ -2897,7 +2967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4b19703b0780794088d6e7eb8e99364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitPrefab: {fileID: 2316076030336529670, guid: 6f8673b94c71bca4d9da49131fe8327a, type: 3}
+  unitIndex: 0
   birimMaliyeti: 20
   groundLayer:
     serializedVersion: 2
@@ -2940,6 +3010,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1827516291}
   m_CullTransparentMesh: 1
+--- !u!225 &1827516296
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827516291}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1833692884
 GameObject:
   m_ObjectHideFlags: 0
@@ -3285,6 +3367,7 @@ GameObject:
   - component: {fileID: 2032930270}
   - component: {fileID: 2032930269}
   - component: {fileID: 2032930268}
+  - component: {fileID: 2032930271}
   m_Layer: 5
   m_Name: RedBeast
   m_TagString: Untagged
@@ -3324,7 +3407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4b19703b0780794088d6e7eb8e99364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitPrefab: {fileID: 5798087221978914444, guid: f267c839a0bae6544bef50cf90188abf, type: 3}
+  unitIndex: 0
   birimMaliyeti: 50
   groundLayer:
     serializedVersion: 2
@@ -3367,6 +3450,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2032930266}
   m_CullTransparentMesh: 1
+--- !u!225 &2032930271
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032930266}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2070615271
 GameObject:
   m_ObjectHideFlags: 0
@@ -3377,6 +3472,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2070615273}
   - component: {fileID: 2070615272}
+  - component: {fileID: 2070615274}
   m_Layer: 0
   m_Name: TeamBelirle
   m_TagString: Untagged
@@ -3418,6 +3514,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2070615274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2070615271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 2
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
