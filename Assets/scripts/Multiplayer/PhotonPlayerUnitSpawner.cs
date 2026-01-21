@@ -1,15 +1,16 @@
 using Photon.Pun;
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.AI; // NavMesh icin gerekli
 
 public class PhotonPlayerUnitSpawner : MonoBehaviourPunCallbacks
 {
-    [Header("Asker Prefab Listeleri (Resources/NetworkPrefabs İçinde)")]
+    [Header("Asker Prefab Listeleri (Resources/NetworkPrefabs icinde)")]
     public List<string> blueTeamUnitPrefabNames;
     public List<string> redTeamUnitPrefabNames;
 
     private Transform arenaTransform;
-    // Arena henüz taranmamışken gelen karakterleri tutmak için liste
+    // Arena henuz taranmamisken gelen karakterleri tutmak icin liste
     private List<WaitingUnit> waitingUnits = new List<WaitingUnit>();
 
     private struct WaitingUnit
@@ -21,14 +22,14 @@ public class PhotonPlayerUnitSpawner : MonoBehaviourPunCallbacks
 
     private void Update()
     {
-        // Arena henüz bulunamadıysa sürekli aramaya devam et (Dinamik Takip)
+        // Arena henuz bulunamadiysa surekli aramaya devam et (Dinamik Takip)
         if (arenaTransform == null)
         {
             FindArena();
         }
         else if (waitingUnits.Count > 0)
         {
-            // Arena bulunduğu anda bekleyen tüm karakterleri üzerine yerleştir
+            // Arena bulundugu anda bekleyen tum karakterleri uzerine yerlestir
             ProcessWaitingUnits();
         }
     }
@@ -39,7 +40,7 @@ public class PhotonPlayerUnitSpawner : MonoBehaviourPunCallbacks
         if (arenaObj != null)
         {
             arenaTransform = arenaObj.transform;
-            Debug.Log("<color=green>Arena Sahneye Geldi! Birimler Yerleştiriliyor.</color>");
+            Debug.Log("<color=green>Arena Sahneye Geldi! Birimler Yerlestiriliyor.</color>");
         }
     }
 
@@ -65,7 +66,7 @@ public class PhotonPlayerUnitSpawner : MonoBehaviourPunCallbacks
 
         if (string.IsNullOrEmpty(prefabName)) return;
 
-        // Arena taranmışsa yerel pozisyonu hesapla, taranmamışsa dünya pozisyonunu gönder
+        // Arena taranmissa yerel pozisyonu hesapla, taranmamissa dunya pozisyonunu gonder
         Vector3 localPos = worldPosition;
         if (arenaTransform != null)
         {
@@ -80,7 +81,7 @@ public class PhotonPlayerUnitSpawner : MonoBehaviourPunCallbacks
     {
         if (PhotonNetwork.IsMasterClient)
         {
-            // Prefablar mutlaka Resources/NetworkPrefabs klasöründe olmalı
+            // Prefablar mutlaka Resources/NetworkPrefabs klasorunde olmali
             GameObject unit = PhotonNetwork.Instantiate("NetworkPrefabs/" + prefabName, Vector3.zero, Quaternion.identity);
 
             if (unit != null)
@@ -105,8 +106,8 @@ public class PhotonPlayerUnitSpawner : MonoBehaviourPunCallbacks
         }
         else
         {
-            // Arena henüz yok, karakteri listeye al
-            Debug.LogWarning("Arena taranmadığı için birim bekleme listesine alındı.");
+            // Arena henuz yok, karakteri listeye al
+            Debug.LogWarning("Arena taranmadigi icin birim bekleme listesine alindi.");
             waitingUnits.Add(new WaitingUnit { view = targetView, localPos = localPos, team = team });
         }
     }
@@ -116,9 +117,48 @@ public class PhotonPlayerUnitSpawner : MonoBehaviourPunCallbacks
         targetView.transform.SetParent(arenaTransform);
         targetView.transform.localPosition = localPos;
         targetView.transform.localRotation = Quaternion.identity;
-        targetView.transform.localScale = Vector3.one;
+        // localScale artik degistirilmiyor - prefab boyutunu koruyor
         targetView.gameObject.tag = team + "Team";
-        Debug.Log($"Birim {team} takımı olarak Arena'ya yerleşti.");
+
+        // --- NAVMESH SNAP (GUNCELENDI) ---
+        NavMeshAgent agent = targetView.GetComponent<NavMeshAgent>();
+        if (agent != null)
+        {
+            // Agent'i gecici kapat
+            agent.enabled = false;
+            
+            // baseOffset'i sifirla (havada durmayi onler)
+            agent.baseOffset = 0f;
+
+            // NavMesh uzerinde en yakin noktayi bul (Arama mesafesi arttirildi: 5.0f)
+            NavMeshHit hit;
+            if (NavMesh.SamplePosition(targetView.transform.position, out hit, 5.0f, NavMesh.AllAreas))
+            {
+                // Karakteri NavMesh yuzeyine yerlestir
+                targetView.transform.position = hit.position;
+                Debug.Log($"<color=green>[SPAWN] {targetView.gameObject.name} NavMesh'e yerlestirildi. Pozisyon: {hit.position}</color>");
+            }
+            else
+            {
+                // NavMesh bulunamadiysa, Y pozisyonunu arena yuzeyine ayarla
+                Vector3 pos = targetView.transform.position;
+                pos.y = arenaTransform.position.y;
+                targetView.transform.position = pos;
+                Debug.LogWarning($"<color=orange>[SPAWN] {targetView.gameObject.name} NavMesh bulunamadi! Arena yuzeyine yerlestirildi.</color>");
+            }
+
+            // Agent'i geri ac
+            agent.enabled = true;
+            
+            // Agent'in NavMesh'e baglanmasini bekle
+            if (!agent.isOnNavMesh)
+            {
+                Debug.LogWarning($"<color=orange>[SPAWN] {targetView.gameObject.name} hala NavMesh uzerinde degil!</color>");
+            }
+        }
+        // --------------------
+
+        Debug.Log($"Birim {team} takimi olarak Arena'ya yerlesti. (Snapped)");
     }
 
     private string GetPrefabName(string team, int unitIndex)

@@ -2122,8 +2122,11 @@ MonoBehaviour:
   health: {fileID: 0}
   targetTransform: {fileID: 0}
   chaseDistance: 100
-  attackDistance: 4
-  attackDamage: 0
+  attackDistance: 1
+  attackDamage: 5
+  moveSpeed: 2.5
+  baseOffset: 0
+  autoUpdateAnimatorSpeed: 1
 --- !u!114 &6173174650812078657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2164,13 +2167,13 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 1
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: Speed
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: IsAttacking
   m_SynchronizeLayers:
-  - SynchronizeType: 0
+  - SynchronizeType: 2
     LayerIndex: 0
 --- !u!114 &-2024632283465093458
 MonoBehaviour:

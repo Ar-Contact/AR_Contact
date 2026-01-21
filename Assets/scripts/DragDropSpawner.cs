@@ -85,7 +85,8 @@ public class DragAndDropSpawner : MonoBehaviour, IBeginDragHandler, IDragHandler
                 if (centralSpawner != null)
                 {
                     Vector3 spawnPos = hit.point;
-                    spawnPos.y += 0.05f; // Yerin dibine girmesin
+                    // Y ofsetini kaldirdik, NavMesh snap ile duzeltecegiz
+                    // spawnPos.y += 0.05f; 
                     centralSpawner.RequestSpawnUnit(unitIndex, spawnPos);
                     Debug.Log("✅ Asker koyma isteği gönderildi.");
                 }

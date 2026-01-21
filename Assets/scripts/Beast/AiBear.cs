@@ -12,6 +12,12 @@ public class AiBearAgent : AiAgent
         animator = GetComponent<Animator>();
         health = GetComponent<Health>();
 
+        // UYARI: attackDamage 0 ise hasar veremez!
+        if (attackDamage <= 0)
+        {
+            Debug.LogError($"<color=red>[AGENT] {gameObject.name} - UYARI: attackDamage = {attackDamage}! Prefab'da düzelt!</color>");
+        }
+
         if (!GetComponent<PhotonView>().IsMine)
         {
             // Sahibi değilsek NavMesh'i tamamen kapatıyoruz ki 
@@ -23,6 +29,9 @@ public class AiBearAgent : AiAgent
             }
         }
 
+        // Hareket hızı ve baseOffset ayarları (AiAgent'tan miras)
+        navMeshAgent.speed = moveSpeed;
+        navMeshAgent.baseOffset = baseOffset;
         navMeshAgent.stoppingDistance = attackDistance;
 
         stateMachine = new AiStateMachine(this);

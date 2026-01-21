@@ -8,11 +8,14 @@ public class AILocomotion : MonoBehaviour
     NavMeshAgent agent;
     Animator animator;
 
-    // DEÐÝÞTÝRÝLDÝ: 'playerTransform' yerine hedef objenin tag'ini (etiketini)
-    // Inspector'dan alacaðýz.
+    // DEGISTIRILDI: 'playerTransform' yerine hedef objenin tag'ini (etiketini)
+    // Inspector'dan alacagiz.
     public string targetTag;
 
-    // EKLENDÝ: Bulduðumuz hedefin Transform'unu saklamak için bir deðiþken.
+    // EKLENDI: Hiz otomatik guncellemeyi kontrol etmek icin
+    public bool useAutoSpeed = true;
+
+    // EKLENDI: Buldugumuz hedefin Transform'unu saklamak icin bir degisken.
     private Transform targetTransform;
 
     void Start()
@@ -20,36 +23,43 @@ public class AILocomotion : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
 
-        // EKLENDÝ: Oyunu baþlatýrken belirlediðimiz tag'e sahip objeyi bul.
+        // EKLENDI: Oyunu baslatirken belirledigimiz tag'e sahip objeyi bul.
         GameObject targetObject = GameObject.FindWithTag(targetTag);
 
-        // EKLENDÝ: Objeyi bulup bulamadýðýmýzý kontrol et.
+        // EKLENDI: Objeyi bulup bulamadigimizi kontrol et.
         if (targetObject != null)
         {
-            // Eðer bulduysak, transform'unu sakla.
+            // Eger bulduysak, transform'unu sakla.
             targetTransform = targetObject.transform;
         }
         else
         {
-            // Eðer bu tag'e sahip bir obje sahnede yoksa, hata mesajý ver.
-            Debug.LogError("'" + targetTag + "' tag'ine sahip bir obje bulunamadý! " +
-                             "Lütfen AI karakterinin takip edeceði objeyi kontrol edin.", this);
+            // Eger bu tag'e sahip bir obje sahnede yoksa, hata mesaji ver.
+            Debug.LogError("'" + targetTag + "' tag'ine sahip bir obje bulunamadi! " +
+                             "Lutfen AI karakterinin takip edecegi objeyi kontrol edin.", this);
         }
     }
 
     void Update()
     {
-        // DEÐÝÞTÝRÝLDÝ: Sadece bir hedef bulduysak (targetTransform null deðilse)
-        // hedefi takip etmesini söyle.
+        // DEGISTIRILDI: Sadece bir hedef bulduysak (targetTransform null degilse)
+        // hedefi takip etmesini soyle.
         if (targetTransform != null)
         {
             agent.destination = targetTransform.position;
-            animator.SetFloat("Speed", agent.velocity.magnitude);
+            
+            if (useAutoSpeed)
+            {
+                animator.SetFloat("Speed", agent.velocity.magnitude);
+            }
         }
         else
         {
-            // Eðer bir hedefimiz yoksa (bulunamadýysa), hýzý sýfýrla.
-            animator.SetFloat("Speed", 0f);
+            // Eger bir hedefimiz yoksa (bulunamadiysa), hizi sifirla.
+            if (useAutoSpeed)
+            {
+                animator.SetFloat("Speed", 0f);
+            }
         }
     }
 }
