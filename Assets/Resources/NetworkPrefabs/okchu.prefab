@@ -408,6 +408,10 @@ PrefabInstance:
       value: BlueTeam
       objectReference: {fileID: 0}
     - target: {fileID: 4429880864487701603, guid: 1c8950e890f8de640b645d9ccc90ffa4, type: 3}
+      propertyPath: moveSpeed
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4429880864487701603, guid: 1c8950e890f8de640b645d9ccc90ffa4, type: 3}
       propertyPath: arrowPrefab
       value: 
       objectReference: {fileID: 3201834828802100357, guid: 1ea13d70ae553d043ba965d3edc06a4c, type: 3}
@@ -417,7 +421,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4429880864487701603, guid: 1c8950e890f8de640b645d9ccc90ffa4, type: 3}
       propertyPath: attackDamage
-      value: 0
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4429880864487701603, guid: 1c8950e890f8de640b645d9ccc90ffa4, type: 3}
       propertyPath: chaseDistance
@@ -425,7 +429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4429880864487701603, guid: 1c8950e890f8de640b645d9ccc90ffa4, type: 3}
       propertyPath: attackDistance
-      value: 30
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5197016900556111534, guid: 1c8950e890f8de640b645d9ccc90ffa4, type: 3}
       propertyPath: path
@@ -461,7 +465,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6820022724511789896, guid: 1c8950e890f8de640b645d9ccc90ffa4, type: 3}
       propertyPath: m_Speed
-      value: 7
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6820022724511789896, guid: 1c8950e890f8de640b645d9ccc90ffa4, type: 3}
       propertyPath: m_Acceleration

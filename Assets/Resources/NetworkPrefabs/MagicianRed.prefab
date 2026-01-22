@@ -2384,7 +2384,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 7
+  m_Speed: 0.2
   m_Acceleration: 40
   avoidancePriority: 50
   m_AngularSpeed: 750
@@ -2460,9 +2460,9 @@ MonoBehaviour:
   health: {fileID: 0}
   targetTransform: {fileID: 0}
   chaseDistance: 100
-  attackDistance: 30
-  attackDamage: 0
-  moveSpeed: 1.5
+  attackDistance: 2
+  attackDamage: 20
+  moveSpeed: 0.2
   baseOffset: 0
   autoUpdateAnimatorSpeed: 1
   magicPrefab: {fileID: 1133571134653947255, guid: 3babd7ea0d0bb3c499da21b4c9d69367, type: 3}

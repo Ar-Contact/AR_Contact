@@ -5,6 +5,11 @@ public class AiMagicianAttackState : AIState
     private bool hasCastSpell;
     private float previousFrameTime;
 
+    // --- YENİ EKLENDİ: Saldırı Hızı Ayarları ---
+    private float nextAttackTime = 0f; // Bir sonraki saldırının yapılabileceği zaman
+    private float attacksPerMinute = 6f; // Dakikada kaç saldırı yapsın? (Sen 6 istedin)
+    // ------------------------------------------
+
     public AIStateId GetId()
     {
         return AIStateId.Attack;
@@ -13,7 +18,7 @@ public class AiMagicianAttackState : AIState
     public void Enter(AiAgent agent)
     {
         agent.navMeshAgent.ResetPath();
-        
+
         if (agent.autoUpdateAnimatorSpeed)
         {
             agent.animator.SetFloat("Speed", 0f);
@@ -80,8 +85,18 @@ public class AiMagicianAttackState : AIState
 
         if (currentNormalizedTime >= magicianAgent.shootTiming && !hasCastSpell)
         {
-            CastSpell(magicianAgent, direction, agent.targetTransform);
-            hasCastSpell = true;
+            // --- GÜNCELLENDİ: Zaman kontrolü eklendi ---
+            // Şu anki zaman, belirlediğimiz bir sonraki saldırı zamanından büyük mü?
+            if (Time.time >= nextAttackTime)
+            {
+                CastSpell(magicianAgent, direction, agent.targetTransform);
+                hasCastSpell = true;
+
+                // Bir sonraki saldırı zamanını hesapla (60 saniye / 6 = 10 saniye sonra)
+                float delayBetweenAttacks = 60f / attacksPerMinute;
+                nextAttackTime = Time.time + delayBetweenAttacks;
+            }
+            // -------------------------------------------
         }
 
         previousFrameTime = currentNormalizedTime;

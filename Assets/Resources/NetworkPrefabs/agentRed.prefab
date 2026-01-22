@@ -2046,7 +2046,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1
+  m_Speed: 0.2
   m_Acceleration: 40
   avoidancePriority: 50
   m_AngularSpeed: 750
@@ -2097,7 +2097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 536445348da87254bb7090bfc32f17ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 120
   currentHealth: 0
   blinkIntensity: 100
   blinkDuration: 0.5
@@ -2124,7 +2124,7 @@ MonoBehaviour:
   chaseDistance: 100
   attackDistance: 0.5
   attackDamage: 5
-  moveSpeed: 1
+  moveSpeed: 0.2
   baseOffset: 0
   autoUpdateAnimatorSpeed: 1
 --- !u!114 &6173174650812078657

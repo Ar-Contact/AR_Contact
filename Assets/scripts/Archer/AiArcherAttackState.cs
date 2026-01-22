@@ -4,6 +4,11 @@ public class AiArcherAttackState : AIState
 {
     private bool hasShotArrow;
 
+    // --- YENİ EKLENDİ: Saldırı Hızı Ayarları ---
+    private float nextAttackTime = 0f;
+    private float attacksPerMinute = 6f; // Dakikada 6 saldırı (10 saniyede bir)
+    // ------------------------------------------
+
     public AIStateId GetId()
     {
         return AIStateId.Attack;
@@ -64,10 +69,20 @@ public class AiArcherAttackState : AIState
 
             if (normalizedTime >= archerAgent.shootTiming && !hasShotArrow)
             {
-                ShootArrow(archerAgent, direction);
-                hasShotArrow = true;
+                // --- GÜNCELLENDİ: Zamanlayıcı Kontrolü ---
+                // Sadece zamanı geldiyse ok at
+                if (Time.time >= nextAttackTime)
+                {
+                    ShootArrow(archerAgent, direction);
+                    hasShotArrow = true;
+
+                    // Bir sonraki atış zamanını ayarla (60 / 6 = 10 saniye ekle)
+                    nextAttackTime = Time.time + (60f / attacksPerMinute);
+                }
+                // -----------------------------------------
             }
 
+            // Animasyon başa döndüğünde bayrağı sıfırla, böylece bir sonraki döngüde kontrole girebilir
             if (normalizedTime < 0.1f)
             {
                 hasShotArrow = false;

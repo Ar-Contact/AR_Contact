@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|c:\\users\\cnr13\\documents\\github\\ar_contact\\assets\\scripts\\magician\\aimagicianattackstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\magician\\aimagicianattackstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|c:\\users\\cnr13\\documents\\github\\ar_contact\\assets\\scripts\\aiattackstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\aiattackstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|c:\\users\\cnr13\\documents\\github\\ar_contact\\assets\\scripts\\groundsnapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\groundsnapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\assets\\scripts\\aiagent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\aiagent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -19,7 +31,7 @@
       "RelativeMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\debugnavmesh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|c:\\users\\cnr13\\documents\\github\\ar_contact\\assets\\scripts\\dragdropspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\assets\\scripts\\dragdropspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dragdropspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -78,7 +90,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -86,7 +98,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
+              "Title": "AiMagicianAttackState.cs",
+              "DocumentMoniker": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Assets\\scripts\\Magician\\AiMagicianAttackState.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Magician\\AiMagicianAttackState.cs",
+              "ToolTip": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Assets\\scripts\\Magician\\AiMagicianAttackState.cs",
+              "RelativeToolTip": "Assets\\scripts\\Magician\\AiMagicianAttackState.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T10:43:40.904Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AiAttackState.cs",
+              "DocumentMoniker": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Assets\\scripts\\AiAttackState.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\AiAttackState.cs",
+              "ToolTip": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Assets\\scripts\\AiAttackState.cs",
+              "RelativeToolTip": "Assets\\scripts\\AiAttackState.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T10:43:34.818Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GroundSnapper.cs",
+              "DocumentMoniker": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Assets\\scripts\\GroundSnapper.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\GroundSnapper.cs",
+              "ToolTip": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Assets\\scripts\\GroundSnapper.cs",
+              "RelativeToolTip": "Assets\\scripts\\GroundSnapper.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAEwC4AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T08:11:05.975Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "LoadBalancingClient.cs",
               "DocumentMoniker": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Assets\\Photon\\PhotonRealtime\\Code\\LoadBalancingClient.cs",
               "RelativeDocumentMoniker": "Assets\\Photon\\PhotonRealtime\\Code\\LoadBalancingClient.cs",
@@ -98,7 +149,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "ARPlacementNetwork.cs",
               "DocumentMoniker": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Assets\\scripts\\ARPlacementNetwork.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\ARPlacementNetwork.cs",
@@ -110,7 +161,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "PhotonNetworkBootstrapper.cs",
               "DocumentMoniker": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Assets\\scripts\\Multiplayer\\PhotonNetworkBootstrapper.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Multiplayer\\PhotonNetworkBootstrapper.cs",
@@ -122,7 +173,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Health.cs",
               "DocumentMoniker": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Assets\\scripts\\Health.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Health.cs",
@@ -130,12 +181,11 @@
               "RelativeToolTip": "Assets\\scripts\\Health.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-16T09:25:11.977Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-16T09:25:11.977Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Ragdoll.cs",
               "DocumentMoniker": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Assets\\scripts\\Ragdoll.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Ragdoll.cs",
@@ -143,12 +193,11 @@
               "RelativeToolTip": "Assets\\scripts\\Ragdoll.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAAAAQAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-16T09:25:05.936Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-16T09:25:05.936Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "DebugNavMesh.cs",
               "DocumentMoniker": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Assets\\scripts\\DebugNavMesh.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\DebugNavMesh.cs",
@@ -156,12 +205,11 @@
               "RelativeToolTip": "Assets\\scripts\\DebugNavMesh.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-16T09:24:59.261Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-16T09:24:59.261Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "CurrencyManager.cs",
               "DocumentMoniker": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Assets\\scripts\\CurrencyManager.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\CurrencyManager.cs",
@@ -173,7 +221,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "AiAgent.cs",
               "DocumentMoniker": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Assets\\scripts\\AiAgent.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\AiAgent.cs",
@@ -181,12 +229,11 @@
               "RelativeToolTip": "Assets\\scripts\\AiAgent.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-16T04:16:53.595Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-16T04:16:53.595Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "DragDropSpawner.cs",
               "DocumentMoniker": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Assets\\scripts\\DragDropSpawner.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\DragDropSpawner.cs",
@@ -194,12 +241,11 @@
               "RelativeToolTip": "Assets\\scripts\\DragDropSpawner.cs",
               "ViewState": "AgIAAEsAAAAAAAAAAAAkwFYAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T19:30:01.33Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-13T19:30:01.33Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "UnitAutoFreeze.cs",
               "DocumentMoniker": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Assets\\scripts\\UnitAutoFreeze.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\UnitAutoFreeze.cs",
@@ -211,7 +257,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "PunClasses.cs",
               "DocumentMoniker": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Assets\\Photon\\PhotonUnityNetworking\\Code\\PunClasses.cs",
               "RelativeDocumentMoniker": "Assets\\Photon\\PhotonUnityNetworking\\Code\\PunClasses.cs",
@@ -223,7 +269,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "ArenaManager.cs",
               "DocumentMoniker": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Assets\\scripts\\ArenaManager.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\ArenaManager.cs",
@@ -235,7 +281,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "TiklaVeYerlestir.cs",
               "DocumentMoniker": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Assets\\TiklaVeYerlestir.cs",
               "RelativeDocumentMoniker": "Assets\\TiklaVeYerlestir.cs",
@@ -247,7 +293,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "CloudAnchorManager.cs",
               "DocumentMoniker": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Assets\\CloudAnchorManager.cs",
               "RelativeDocumentMoniker": "Assets\\CloudAnchorManager.cs",
@@ -259,7 +305,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "ExternalDependencyResolverHelper.cs",
               "DocumentMoniker": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Library\\PackageCache\\com.google.ar.core.arfoundation.extensions@f2fa041ed9\\Editor\\Scripts\\Internal\\ExternalDependencyResolverHelper.cs",
               "RelativeDocumentMoniker": "Library\\PackageCache\\com.google.ar.core.arfoundation.extensions@f2fa041ed9\\Editor\\Scripts\\Internal\\ExternalDependencyResolverHelper.cs",
@@ -271,7 +317,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "MatchMaker.cs",
               "DocumentMoniker": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Assets\\scripts\\Multiplayer\\MatchMaker.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Multiplayer\\MatchMaker.cs",
@@ -283,7 +329,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "PhotonPlayerUnitSpawner.cs",
               "DocumentMoniker": "C:\\Users\\Cnr13\\Documents\\GitHub\\AR_Contact\\Assets\\scripts\\Multiplayer\\PhotonPlayerUnitSpawner.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Multiplayer\\PhotonPlayerUnitSpawner.cs",

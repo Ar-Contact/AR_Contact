@@ -2031,7 +2031,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 0.1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -2107,9 +2107,9 @@ MonoBehaviour:
   health: {fileID: 0}
   targetTransform: {fileID: 0}
   chaseDistance: 100
-  attackDistance: 5
-  attackDamage: 0
-  moveSpeed: 1.5
+  attackDistance: 0.15
+  attackDamage: 30
+  moveSpeed: 0.1
   baseOffset: 0
   autoUpdateAnimatorSpeed: 1
 --- !u!114 &7466590087429925582
