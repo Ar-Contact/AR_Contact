@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class AiMagicianAttackState : AIState
 {
@@ -13,7 +13,11 @@ public class AiMagicianAttackState : AIState
     public void Enter(AiAgent agent)
     {
         agent.navMeshAgent.ResetPath();
-        agent.animator.SetFloat("Speed", 0f);
+        
+        if (agent.autoUpdateAnimatorSpeed)
+        {
+            agent.animator.SetFloat("Speed", 0f);
+        }
         agent.animator.SetBool("spell", true);
 
         hasCastSpell = false;
@@ -69,13 +73,11 @@ public class AiMagicianAttackState : AIState
 
         float currentNormalizedTime = stateInfo.normalizedTime % 1.0f;
 
-        // Animasyon döngüsü baþa sardýysa
         if (currentNormalizedTime < previousFrameTime)
         {
             hasCastSpell = false;
         }
 
-        // Atýþ zamaný geldiyse
         if (currentNormalizedTime >= magicianAgent.shootTiming && !hasCastSpell)
         {
             CastSpell(magicianAgent, direction, agent.targetTransform);
@@ -94,11 +96,7 @@ public class AiMagicianAttackState : AIState
     {
         if (agent.magicPrefab == null || agent.magicSpawnPoint == null) return;
 
-        // Hedefin ViewID'sini al
         int targetViewID = target.GetComponent<Photon.Pun.PhotonView>().ViewID;
-
-        // Kendi ekranýmýzda dahil herkesin RPC_CastSpell fonksiyonunu çalýþtýrmasýný saðla
-        // Böylece mermi her ekranda 1 kez ve senkronize oluþur
         agent.GetComponent<Photon.Pun.PhotonView>().RPC("RPC_CastSpell", Photon.Pun.RpcTarget.All, direction, targetViewID);
     }
 }

@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -6,11 +6,11 @@ using Photon.Pun; // MUTLAKA EKLE
 
 public class AiMagicianAgent : AiAgent
 {
-    [Header("Büyücü Özel Ayarlarý")]
+    [Header("Bï¿½yï¿½cï¿½ ï¿½zel Ayarlarï¿½")]
     public GameObject magicPrefab;
     public Transform magicSpawnPoint;
 
-    [Header("Animasyon Zamanlamasý")]
+    [Header("Animasyon Zamanlamasï¿½")]
     [Range(0.0f, 1.0f)]
     public float shootTiming = 1.0f;
 
@@ -20,7 +20,7 @@ public class AiMagicianAgent : AiAgent
         animator = GetComponent<Animator>();
         health = GetComponent<Health>();
 
-        // KRÝTÝK: Ayýlardaki mantýðýn aynýsý
+        // KRï¿½Tï¿½K: Ayï¿½lardaki mantï¿½ï¿½ï¿½n aynï¿½sï¿½
         if (!GetComponent<PhotonView>().IsMine)
         {
             if (navMeshAgent != null)
@@ -30,7 +30,11 @@ public class AiMagicianAgent : AiAgent
             }
         }
 
-        navMeshAgent.stoppingDistance = attackDistance; // agent. yerine direkt deðiþken
+        // Hareket hÄ±zÄ± ve baseOffset ayarlarÄ±
+        navMeshAgent.speed = moveSpeed;
+        // baseOffset'i her zaman 0 yap - karakterlerin havada kalmasÄ±nÄ± Ã¶nler
+        navMeshAgent.baseOffset = 0f;
+        navMeshAgent.stoppingDistance = attackDistance;
 
         stateMachine = new AiStateMachine(this);
         stateMachine.RegisterState(new AiIdleState());
@@ -42,7 +46,7 @@ public class AiMagicianAgent : AiAgent
 
     void Update()
     {
-        // KRÝTÝK: Sadece sahibi AI mantýðýný yönetsin
+        // KRï¿½Tï¿½K: Sadece sahibi AI mantï¿½ï¿½ï¿½nï¿½ yï¿½netsin
         if (!GetComponent<PhotonView>().IsMine) return;
 
         if (health != null && health.isDead)
@@ -63,7 +67,7 @@ public class AiMagicianAgent : AiAgent
     [PunRPC]
     public void RPC_CastSpell(Vector3 direction, int targetViewID)
     {
-        // Sahibi olmayan ekranlarda büyü burada oluþur
+        // Sahibi olmayan ekranlarda bï¿½yï¿½ burada oluï¿½ur
         PhotonView targetView = PhotonView.Find(targetViewID);
         if (targetView == null) return;
 

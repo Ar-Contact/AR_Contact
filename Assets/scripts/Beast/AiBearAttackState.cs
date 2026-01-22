@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class AiBearAttackState : AIState
 {
@@ -12,13 +12,15 @@ public class AiBearAttackState : AIState
 
     public void Enter(AiAgent agent)
     {
-        // Güvenli ResetPath
         if (agent.navMeshAgent.isActiveAndEnabled && agent.navMeshAgent.isOnNavMesh)
         {
             agent.navMeshAgent.ResetPath();
         }
 
-        agent.animator.SetFloat("Speed", 0f);
+        if (agent.autoUpdateAnimatorSpeed)
+        {
+            agent.animator.SetFloat("Speed", 0f);
+        }
         agent.animator.SetBool("IsAttacking", true);
 
         hasDealtDamage = false;
@@ -41,7 +43,11 @@ public class AiBearAttackState : AIState
         }
 
         FaceTarget(agent);
-        agent.animator.SetFloat("Speed", 0f);
+        
+        if (agent.autoUpdateAnimatorSpeed)
+        {
+            agent.animator.SetFloat("Speed", 0f);
+        }
 
         float distance = Vector3.Distance(
             agent.transform.position,
@@ -66,7 +72,6 @@ public class AiBearAttackState : AIState
             hasDealtDamage = true;
         }
 
-        // Yeni animasyon döngüsünde tekrar hasar vurabilsin
         if (normalizedTime < damageTiming)
         {
             hasDealtDamage = false;

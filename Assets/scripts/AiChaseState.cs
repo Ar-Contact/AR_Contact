@@ -22,6 +22,15 @@ public class AiChaseState : AIState
         {
             Debug.LogError($"<color=red>[CHASE] {agent.gameObject.name} - Karakter NavMesh UZERINDE DEGIL!</color>");
         }
+        
+        // KRITIK: Agent'ın hareket etmesini sağla
+        if (agent.navMeshAgent.isActiveAndEnabled && agent.navMeshAgent.isOnNavMesh)
+        {
+            agent.navMeshAgent.isStopped = false;
+            agent.navMeshAgent.updatePosition = true;
+            agent.navMeshAgent.updateRotation = true;
+            Debug.Log($"<color=cyan>[CHASE] {agent.gameObject.name} - NavMeshAgent HAREKET ICIN AYARLANDI! isStopped=false</color>");
+        }
     }
 
     public void Update(AiAgent agent)
@@ -53,14 +62,25 @@ public class AiChaseState : AIState
         {
             Debug.Log($"<color=blue>[CHASE] {agent.gameObject.name} - Saldiri mesafesinde! Velocity: {agent.navMeshAgent.velocity.magnitude:F2}</color>");
             
-            if (agent.navMeshAgent.velocity.magnitude < 0.1f)
+            // KRITIK FIX: Velocity kontrolünü kaldırdık - saldırı mesafesindeyken hemen dur ve saldır
+            if (agent.navMeshAgent.isActiveAndEnabled && agent.navMeshAgent.isOnNavMesh)
             {
-                Debug.Log($"<color=blue>[CHASE] {agent.gameObject.name} - Durdu, ATTACK STATE'E GECILIYOR!</color>");
-                agent.stateMachine.ChangeState(AIStateId.Attack);
+                agent.navMeshAgent.isStopped = true;
+                agent.navMeshAgent.ResetPath();
             }
+            
+            Debug.Log($"<color=blue>[CHASE] {agent.gameObject.name} - ATTACK STATE'E GECILIYOR!</color>");
+            agent.stateMachine.ChangeState(AIStateId.Attack);
         }
         else
         {
+            // KRITIK: Agent'ın hareket etmesini sağla
+            if (agent.navMeshAgent.isStopped)
+            {
+                agent.navMeshAgent.isStopped = false;
+                Debug.Log($"<color=yellow>[CHASE] {agent.gameObject.name} - isStopped TRUE idi, FALSE yapildi!</color>");
+            }
+            
             // Hedefe dogru git
             agent.navMeshAgent.SetDestination(agent.targetTransform.position);
             
@@ -82,7 +102,7 @@ public class AiChaseState : AIState
                 );
             }
             
-            Debug.Log($"<color=blue>[CHASE] {agent.gameObject.name} - Hareket ediliyor. Speed: {agent.navMeshAgent.velocity.magnitude:F2}, HasPath: {agent.navMeshAgent.hasPath}</color>");
+            Debug.Log($"<color=blue>[CHASE] {agent.gameObject.name} - Hareket ediliyor. Speed: {agent.navMeshAgent.velocity.magnitude:F2}, HasPath: {agent.navMeshAgent.hasPath}, isStopped: {agent.navMeshAgent.isStopped}</color>");
         }
     }
 

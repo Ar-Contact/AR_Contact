@@ -3456,15 +3456,15 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 7
+  m_Speed: 1
   m_Acceleration: 40
   avoidancePriority: 50
   m_AngularSpeed: 750
-  m_StoppingDistance: 5
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -3532,9 +3532,9 @@ MonoBehaviour:
   health: {fileID: 0}
   targetTransform: {fileID: 0}
   chaseDistance: 100
-  attackDistance: 5
-  attackDamage: 0
-  moveSpeed: 2.5
+  attackDistance: 0.5
+  attackDamage: 5
+  moveSpeed: 1
   baseOffset: 0
   autoUpdateAnimatorSpeed: 1
 --- !u!114 &2748288680087981021

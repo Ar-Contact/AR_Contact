@@ -80,7 +80,8 @@ public class AiAgent : MonoBehaviour
 
         // Hareket hızı ve baseOffset ayarları
         navMeshAgent.speed = moveSpeed;
-        navMeshAgent.baseOffset = baseOffset;
+        // baseOffset'i her zaman 0 yap - karakterlerin havada kalmasını önler
+        navMeshAgent.baseOffset = 0f;
         navMeshAgent.stoppingDistance = attackDistance;
         stateMachine = new AiStateMachine(this);
         stateMachine.RegisterState(new AiIdleState());

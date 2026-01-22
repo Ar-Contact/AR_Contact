@@ -1,14 +1,14 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.AI;
 using Photon.Pun; // MUTLAKA EKLE
 
 public class AiArcherAgent : AiAgent
 {
-    [Header("Okçu Özel Ayarlarý")]
+    [Header("Okï¿½u ï¿½zel Ayarlarï¿½")]
     public GameObject arrowPrefab;
     public Transform arrowSpawnPoint;
 
-    [Header("Animasyon Zamanlamasý")]
+    [Header("Animasyon Zamanlamasï¿½")]
     [Range(0.0f, 1.0f)]
     public float shootTiming = 1.0f;
 
@@ -18,7 +18,7 @@ public class AiArcherAgent : AiAgent
         animator = GetComponent<Animator>();
         health = GetComponent<Health>();
 
-        // KRÝTÝK: Diðer birimlerdeki að kontrolü
+        // KRï¿½Tï¿½K: Diï¿½er birimlerdeki aï¿½ kontrolï¿½
         if (!GetComponent<PhotonView>().IsMine)
         {
             if (navMeshAgent != null)
@@ -28,6 +28,10 @@ public class AiArcherAgent : AiAgent
             }
         }
 
+        // Hareket hÄ±zÄ± ve baseOffset ayarlarÄ±
+        navMeshAgent.speed = moveSpeed;
+        // baseOffset'i her zaman 0 yap - karakterlerin havada kalmasÄ±nÄ± Ã¶nler
+        navMeshAgent.baseOffset = 0f;
         navMeshAgent.stoppingDistance = attackDistance;
 
         stateMachine = new AiStateMachine(this);
@@ -40,7 +44,7 @@ public class AiArcherAgent : AiAgent
 
     void Update()
     {
-        // KRÝTÝK: Sadece sahibi AI mantýðýný yönetsin
+        // KRï¿½Tï¿½K: Sadece sahibi AI mantï¿½ï¿½ï¿½nï¿½ yï¿½netsin
         if (!GetComponent<PhotonView>().IsMine) return;
 
         if (health != null && health.isDead)
@@ -68,7 +72,7 @@ public class AiArcherAgent : AiAgent
         ArrowProjectile arrowScript = arrowObj.GetComponent<ArrowProjectile>();
         if (arrowScript != null)
         {
-            // 'gameObject' parametresini (yani okçuyu) ekledik
+            // 'gameObject' parametresini (yani okï¿½uyu) ekledik
             arrowScript.Initialize(attackDamage, targetView.transform, gameObject);
         }
     }

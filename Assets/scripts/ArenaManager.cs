@@ -112,9 +112,45 @@ public class ArenaManager : MonoBehaviourPunCallbacks
         GameObject[] soldiers = GameObject.FindGameObjectsWithTag(teamTag);
         foreach (GameObject soldier in soldiers)
         {
-            // 1. NavMeshAgent'ı Aç
+            Debug.Log($"<color=yellow>[ACTIVATE] {soldier.name} aktifleştiriliyor...</color>");
+            
+            // 1. NavMeshAgent'ı Aç ve Ayarla
             NavMeshAgent agent = soldier.GetComponent<NavMeshAgent>();
-            if (agent != null) agent.enabled = true;
+            if (agent != null)
+            {
+                // Önce NavMesh pozisyonunu bul
+                NavMeshHit hit;
+                if (NavMesh.SamplePosition(soldier.transform.position, out hit, 5.0f, NavMesh.AllAreas))
+                {
+                    // Agent'ı kapalıyken pozisyonu ayarla
+                    soldier.transform.position = hit.position;
+                    Debug.Log($"<color=green>[ACTIVATE] {soldier.name} NavMesh'e yerleştirildi: {hit.position}</color>");
+                }
+                
+                // Agent'ı aç
+                agent.enabled = true;
+                
+                // Agent ayarları
+                agent.baseOffset = 0f;
+                agent.isStopped = false;
+                agent.updatePosition = true;
+                agent.updateRotation = true;
+                
+                // NavMesh üzerinde olduğunu kontrol et
+                if (!agent.isOnNavMesh)
+                {
+                    Debug.LogWarning($"<color=orange>[ACTIVATE] {soldier.name} hala NavMesh üzerinde değil! Warp deneniyor...</color>");
+                    if (NavMesh.SamplePosition(soldier.transform.position, out hit, 10.0f, NavMesh.AllAreas))
+                    {
+                        agent.Warp(hit.position);
+                        Debug.Log($"<color=green>[ACTIVATE] {soldier.name} Warp ile NavMesh'e yerleştirildi: {hit.position}</color>");
+                    }
+                }
+                else
+                {
+                    Debug.Log($"<color=green>[ACTIVATE] {soldier.name} NavMesh üzerinde! isOnNavMesh=true</color>");
+                }
+            }
 
             // 2. Dondurucu Scripti Kapat
             UnitAutoFreeze freezer = soldier.GetComponent<UnitAutoFreeze>();
@@ -123,6 +159,14 @@ public class ArenaManager : MonoBehaviourPunCallbacks
             // 3. AI Scriptini Aç
             AiAgent ai = soldier.GetComponent<AiAgent>();
             if (ai != null) ai.enabled = true;
+            
+            // 4. GroundSnapper'ı tetikle
+            GroundSnapper snapper = soldier.GetComponent<GroundSnapper>();
+            if (snapper != null)
+            {
+                snapper.ForceSnapToGround();
+                Debug.Log($"<color=cyan>[ACTIVATE] {soldier.name} GroundSnapper tetiklendi</color>");
+            }
         }
     }
 

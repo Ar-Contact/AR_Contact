@@ -120,7 +120,30 @@ public class PhotonPlayerUnitSpawner : MonoBehaviourPunCallbacks
         // localScale artik degistirilmiyor - prefab boyutunu koruyor
         targetView.gameObject.tag = team + "Team";
 
-        // --- NAVMESH SNAP (GUNCELENDI) ---
+        // --- ZEMIN TRANSFORM'UNDAN YUKSEKLIK AL ---
+        // Takima gore dogru zemini bul (Pos_Red veya Pos_Blue)
+        string groundTag = team == "Red" ? "RedGround" : "BlueGround";
+        Transform groundTransform = null;
+        
+        // Arena'nin altindaki zemin objelerini bul
+        foreach (Transform child in arenaTransform)
+        {
+            if (child.CompareTag(groundTag))
+            {
+                groundTransform = child;
+                break;
+            }
+        }
+        
+        // Zemin bulunduysa, o transform'un Y pozisyonunu kullan
+        float groundY = arenaTransform.position.y; // Fallback
+        if (groundTransform != null)
+        {
+            groundY = groundTransform.position.y;
+            Debug.Log($"<color=cyan>[SPAWN] {team} zemin bulundu: {groundTransform.name}, Y: {groundY}</color>");
+        }
+
+        // --- NAVMESH SNAP ---
         NavMeshAgent agent = targetView.GetComponent<NavMeshAgent>();
         if (agent != null)
         {
@@ -130,21 +153,24 @@ public class PhotonPlayerUnitSpawner : MonoBehaviourPunCallbacks
             // baseOffset'i sifirla (havada durmayi onler)
             agent.baseOffset = 0f;
 
-            // NavMesh uzerinde en yakin noktayi bul (Arama mesafesi arttirildi: 5.0f)
+            // Karakterin pozisyonunu zemin yuksekligine ayarla
+            Vector3 pos = targetView.transform.position;
+            pos.y = groundY;
+            targetView.transform.position = pos;
+
+            // NavMesh uzerinde en yakin noktayi bul
             NavMeshHit hit;
-            if (NavMesh.SamplePosition(targetView.transform.position, out hit, 5.0f, NavMesh.AllAreas))
+            if (NavMesh.SamplePosition(targetView.transform.position, out hit, 2.0f, NavMesh.AllAreas))
             {
-                // Karakteri NavMesh yuzeyine yerlestir
-                targetView.transform.position = hit.position;
-                Debug.Log($"<color=green>[SPAWN] {targetView.gameObject.name} NavMesh'e yerlestirildi. Pozisyon: {hit.position}</color>");
+                // NavMesh pozisyonunu kullan ama Y'yi zemin transform'undan al
+                Vector3 finalPos = hit.position;
+                finalPos.y = groundY; // Zemin transform Y'sini kullan
+                targetView.transform.position = finalPos;
+                Debug.Log($"<color=green>[SPAWN] {targetView.gameObject.name} zemine yerlestirildi. Y: {groundY}</color>");
             }
             else
             {
-                // NavMesh bulunamadiysa, Y pozisyonunu arena yuzeyine ayarla
-                Vector3 pos = targetView.transform.position;
-                pos.y = arenaTransform.position.y;
-                targetView.transform.position = pos;
-                Debug.LogWarning($"<color=orange>[SPAWN] {targetView.gameObject.name} NavMesh bulunamadi! Arena yuzeyine yerlestirildi.</color>");
+                Debug.Log($"<color=yellow>[SPAWN] {targetView.gameObject.name} NavMesh bulunamadi, zemin Y kullanildi: {groundY}</color>");
             }
 
             // Agent'i geri ac
@@ -157,6 +183,17 @@ public class PhotonPlayerUnitSpawner : MonoBehaviourPunCallbacks
             }
         }
         // --------------------
+
+        // GroundSnapper ekle - karakterin surekli zemine yapismasi icin
+        GroundSnapper snapper = targetView.GetComponent<GroundSnapper>();
+        if (snapper == null)
+        {
+            snapper = targetView.gameObject.AddComponent<GroundSnapper>();
+            snapper.enableSnapping = true;
+            snapper.groundOffset = 0f;
+            snapper.maxRaycastDistance = 5f;
+            Debug.Log($"<color=cyan>[SPAWN] {targetView.gameObject.name} icin GroundSnapper eklendi.</color>");
+        }
 
         Debug.Log($"Birim {team} takimi olarak Arena'ya yerlesti. (Snapped)");
     }
