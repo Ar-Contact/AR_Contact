@@ -1,22 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\",
+  "WorkspaceRootPath": "C:\\Users\\muham\\Desktop\\son_oyun\\AR_Contact\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|c:\\users\\samet\\desktop\\arg\\ar_contact\\assets\\scripts\\voice\\voicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\voice\\voicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\Plugins\\Android\\AndroidManifest.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Plugins\\Android\\AndroidManifest.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\assets\\scripts\\voice\\micpermission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\voice\\micpermission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\assets\\scripts\\voice\\voicechatmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\voice\\voicechatmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|c:\\users\\muham\\desktop\\son_oyun\\ar_contact\\assets\\scripts\\multiplayer\\matchmaker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\multiplayer\\matchmaker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,52 +19,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "VoiceController.cs",
-              "DocumentMoniker": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Voice\\VoiceController.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Voice\\VoiceController.cs",
-              "ToolTip": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Voice\\VoiceController.cs",
-              "RelativeToolTip": "Assets\\scripts\\Voice\\VoiceController.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAUwCoAAAAjAAAAAAAAAA==",
+              "Title": "MatchMaker.cs",
+              "DocumentMoniker": "C:\\Users\\muham\\Desktop\\son_oyun\\AR_Contact\\Assets\\scripts\\Multiplayer\\MatchMaker.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Multiplayer\\MatchMaker.cs",
+              "ToolTip": "C:\\Users\\muham\\Desktop\\son_oyun\\AR_Contact\\Assets\\scripts\\Multiplayer\\MatchMaker.cs",
+              "RelativeToolTip": "Assets\\scripts\\Multiplayer\\MatchMaker.cs",
+              "ViewState": "AgIAAIsAAAAAAAAAAADwv6cAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T17:08:07.593Z",
+              "WhenOpened": "2026-01-22T19:41:20.215Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AndroidManifest.xml",
-              "DocumentMoniker": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\Plugins\\Android\\AndroidManifest.xml",
-              "RelativeDocumentMoniker": "Assets\\Plugins\\Android\\AndroidManifest.xml",
-              "ToolTip": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\Plugins\\Android\\AndroidManifest.xml",
-              "RelativeToolTip": "Assets\\Plugins\\Android\\AndroidManifest.xml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2026-01-22T15:24:03.777Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MicPermission.cs",
-              "DocumentMoniker": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Voice\\MicPermission.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Voice\\MicPermission.cs",
-              "ToolTip": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Voice\\MicPermission.cs",
-              "RelativeToolTip": "Assets\\scripts\\Voice\\MicPermission.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T15:20:41.362Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "VoiceChatManager.cs",
-              "DocumentMoniker": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Voice\\VoiceChatManager.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Voice\\VoiceChatManager.cs",
-              "ToolTip": "C:\\Users\\Samet\\Desktop\\ARg\\AR_Contact\\Assets\\scripts\\Voice\\VoiceChatManager.cs",
-              "RelativeToolTip": "Assets\\scripts\\Voice\\VoiceChatManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T14:03:45.948Z"
             }
           ]
         }
