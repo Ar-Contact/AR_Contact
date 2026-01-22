@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2022.3/respin/2022.3.62f2-4af31df585-v2' branch; Version is '2022.3.62f2 (7670c08855a9) revision 7762112'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 10  (10.0.19045) 64bit Professional' Language: 'tr' Physical Memory: 16163 MB
+OS: 'Windows 11  (10.0.26200) 64bit CoreSingleLanguage' Language: 'tr' Physical Memory: 15724 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
@@ -11,13 +11,13 @@ C:\Program Files\Unity\Hub\Editor\2022.3.62f2\Editor\Unity.exe
 -name
 AssetImportWorker1
 -projectPath
-D:/ardenemeler/AR_Contact
+C:/Users/Samet/Desktop/ARg/AR_Contact
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-52795
-Successfully changed project path to: D:/ardenemeler/AR_Contact
-D:/ardenemeler/AR_Contact
+54178
+Successfully changed project path to: C:/Users/Samet/Desktop/ARg/AR_Contact
+C:/Users/Samet/Desktop/ARg/AR_Contact
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -49,79 +49,75 @@ D:/ardenemeler/AR_Contact
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [3140]  Target information:
+Player connection [25184]  Target information:
 
-Player connection [3140]  * "[IP] 192.168.56.1 [Port] 0 [Flags] 2 [Guid] 2680304012 [EditorId] 2680304012 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-KJ0AJ7V) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [25184]  * "[IP] 10.90.206.224 [Port] 0 [Flags] 2 [Guid] 3256480094 [EditorId] 3256480094 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-QH63RUE) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [3140]  * "[IP] 26.191.28.9 [Port] 0 [Flags] 2 [Guid] 2680304012 [EditorId] 2680304012 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-KJ0AJ7V) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
-
-Player connection [3140]  * "[IP] 172.16.1.21 [Port] 0 [Flags] 2 [Guid] 2680304012 [EditorId] 2680304012 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-KJ0AJ7V) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
-
-Player connection [3140] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [3140] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [25184] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [25184] Host joined alternative multi-casting on [225.0.0.222:34997]...
 Input System module state changed to: Initialized.
 [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-Refreshing native plugins compatible for Editor in 36.05 ms, found 17 plugins.
-Preloading 1 native plugins for Editor in 0.39 ms.
+Refreshing native plugins compatible for Editor in 1163.47 ms, found 17 plugins.
+Preloading 1 native plugins for Editor in 1.46 ms.
 Initialize engine version: 2022.3.62f2 (7670c08855a9)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.62f2/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path D:/ardenemeler/AR_Contact/Assets
+[Subsystems] Discovering subsystems at path C:/Users/Samet/Desktop/ARg/AR_Contact/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce RTX 3050 Ti Laptop GPU (ID=0x25a0)
+    Renderer: NVIDIA GeForce RTX 3060 Laptop GPU (ID=0x2520)
     Vendor:   NVIDIA
-    VRAM:     3962 MB
-    Driver:   32.0.15.9174
+    VRAM:     5997 MB
+    Driver:   32.0.15.9159
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.62f2/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.62f2/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.62f2/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56168
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56812
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.62f2/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.62f2/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.62f2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.015119 seconds.
-- Loaded All Assemblies, in  0.392 seconds
+Registered in 0.011802 seconds.
+- Loaded All Assemblies, in  3.304 seconds
 Native extension for WindowsStandalone target not found
 [usbmuxd] Start listen thread
 [usbmuxd] Listen thread started
 Native extension for iOS target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 251 ms
+Android Extension - Scanning For ADB Devices 322 ms
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.602 seconds
-Domain Reload Profiling: 993ms
-	BeginReloadAssembly (118ms)
+- Finished resetting the current domain, in  0.717 seconds
+Domain Reload Profiling: 4020ms
+	BeginReloadAssembly (2923ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (34ms)
-	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (86ms)
-	LoadAllAssembliesAndSetupDomain (143ms)
-		LoadAssemblies (113ms)
+	RebuildCommonClasses (48ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (75ms)
+	LoadAllAssembliesAndSetupDomain (243ms)
+		LoadAssemblies (2941ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (141ms)
-			TypeCache.Refresh (139ms)
-				TypeCache.ScanAssembly (127ms)
+		AnalyzeDomain (216ms)
+			TypeCache.Refresh (215ms)
+				TypeCache.ScanAssembly (199ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (1ms)
-	FinalizeReload (602ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (718ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (550ms)
+		SetupLoadedEditorAssemblies (665ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (331ms)
+			InitializePlatformSupportModulesInManaged (446ms)
 			SetLoadedEditorAssemblies (5ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (3ms)
-			ProcessInitializeOnLoadAttributes (161ms)
-			ProcessInitializeOnLoadMethodAttributes (50ms)
+			ProcessInitializeOnLoadAttributes (158ms)
+			ProcessInitializeOnLoadMethodAttributes (53ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -130,7 +126,7 @@ Domain Reload Profiling: 993ms
 Worker process is ready to serve import requests
 Caller must complete domain reload
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.916 seconds
+- Loaded All Assemblies, in  4.168 seconds
 Native extension for WindowsStandalone target not found
 Native extension for iOS target not found
 Native extension for Android target not found
@@ -157,158 +153,40 @@ Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
-- Finished resetting the current domain, in  0.962 seconds
-Domain Reload Profiling: 1876ms
-	BeginReloadAssembly (168ms)
+- Finished resetting the current domain, in  1.233 seconds
+Domain Reload Profiling: 5391ms
+	BeginReloadAssembly (203ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (5ms)
+		DisableScriptedObjects (8ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (27ms)
-	RebuildCommonClasses (38ms)
-	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (60ms)
-	LoadAllAssembliesAndSetupDomain (637ms)
-		LoadAssemblies (403ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (319ms)
-			TypeCache.Refresh (262ms)
-				TypeCache.ScanAssembly (240ms)
-			ScanForSourceGeneratedMonoScriptInfo (39ms)
-			ResolveRequiredComponents (16ms)
-	FinalizeReload (963ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (797ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (26ms)
-			SetLoadedEditorAssemblies (4ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (93ms)
-			ProcessInitializeOnLoadAttributes (530ms)
-			ProcessInitializeOnLoadMethodAttributes (138ms)
-			AfterProcessingInitializeOnLoad (6ms)
-			EditorAssembliesLoaded (1ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (5ms)
-WARNING: Shader Unsupported: 'Hidden/Simulation/URP/Synthetic' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Hidden/Simulation/URP/Synthetic' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Hidden/Simulation/Synthetic Lit' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Hidden/Simulation/Synthetic Lit' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Simulation/Standard Lit' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Simulation/Standard Lit' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Simulation/URP/Room X-Ray' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Simulation/URP/Room X-Ray' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Simulation/Room X-Ray' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Simulation/Room X-Ray' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Simulation/URP/Lit' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Simulation/URP/Lit' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 25.33 ms, found 17 plugins.
-Preloading 1 native plugins for Editor in 0.12 ms.
-Unloading 7869 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 209 unused Assets / (1.5 MB). Loaded Objects now: 8221.
-Memory consumption went from 284.9 MB to 283.3 MB.
-Total: 5.222100 ms (FindLiveObjects: 0.582100 ms CreateObjectMapping: 0.326700 ms MarkObjects: 3.415800 ms  DeleteObjects: 0.896000 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-========================================================================
-Received Prepare
-Caller must complete domain reload
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.612 seconds
-Native extension for WindowsStandalone target not found
-Native extension for iOS target not found
-Native extension for Android target not found
-System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.NullReferenceException: Object reference not set to an instance of an object
-  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x0003d] in .\Library\PackageCache\com.unity.xr.oculus@4.5.2\Runtime\OculusLoader.cs:312 
-  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0008c] in .\Library\PackageCache\com.unity.xr.oculus@4.5.2\Runtime\OculusLoader.cs:297 
-  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
-  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <1071a2cb0cb3433aae80a793c277a048>:0 
-   --- End of inner exception stack trace ---
-  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <1071a2cb0cb3433aae80a793c277a048>:0 
-  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <1071a2cb0cb3433aae80a793c277a048>:0 
-  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x000a5] in <4b8f645257c94d1296f440a10c6f388e>:0 
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:LogError (object)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
-
-Mono: successfully reloaded assembly
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-- Finished resetting the current domain, in  1.359 seconds
-Domain Reload Profiling: 1968ms
-	BeginReloadAssembly (154ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (5ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (44ms)
-	RebuildCommonClasses (28ms)
+		CreateAndSetChildDomain (34ms)
+	RebuildCommonClasses (45ms)
 	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (38ms)
-	LoadAllAssembliesAndSetupDomain (380ms)
-		LoadAssemblies (398ms)
+	initialDomainReloadingComplete (63ms)
+	LoadAllAssembliesAndSetupDomain (3837ms)
+		LoadAssemblies (3590ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (57ms)
-			TypeCache.Refresh (16ms)
-				TypeCache.ScanAssembly (3ms)
-			ScanForSourceGeneratedMonoScriptInfo (25ms)
-			ResolveRequiredComponents (14ms)
-	FinalizeReload (1359ms)
+		AnalyzeDomain (360ms)
+			TypeCache.Refresh (301ms)
+				TypeCache.ScanAssembly (277ms)
+			ScanForSourceGeneratedMonoScriptInfo (40ms)
+			ResolveRequiredComponents (16ms)
+	FinalizeReload (1233ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (681ms)
+		SetupLoadedEditorAssemblies (1011ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (25ms)
-			SetLoadedEditorAssemblies (5ms)
+			InitializePlatformSupportModulesInManaged (38ms)
+			SetLoadedEditorAssemblies (6ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (88ms)
-			ProcessInitializeOnLoadAttributes (422ms)
-			ProcessInitializeOnLoadMethodAttributes (133ms)
-			AfterProcessingInitializeOnLoad (7ms)
+			BeforeProcessingInitializeOnLoad (151ms)
+			ProcessInitializeOnLoadAttributes (521ms)
+			ProcessInitializeOnLoadMethodAttributes (286ms)
+			AfterProcessingInitializeOnLoad (8ms)
 			EditorAssembliesLoaded (1ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (11ms)
+		AwakeInstancesAfterBackupRestoration (8ms)
 WARNING: Shader Unsupported: 'Hidden/Simulation/URP/Synthetic' - All subshaders removed
 WARNING: Shader Did you use #pragma only_renderers and omit this platform?
 WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
@@ -345,14 +223,16 @@ WARNING: Shader If subshaders removal was intentional, you may have forgotten tu
 WARNING: Shader Unsupported: 'Simulation/URP/Lit' - All subshaders removed
 WARNING: Shader Did you use #pragma only_renderers and omit this platform?
 WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-Refreshing native plugins compatible for Editor in 21.91 ms, found 17 plugins.
-Preloading 1 native plugins for Editor in 0.04 ms.
-Unloading 7684 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 201 unused Assets / (1.5 MB). Loaded Objects now: 8227.
-Memory consumption went from 251.6 MB to 250.1 MB.
-Total: 5.305800 ms (FindLiveObjects: 0.621100 ms CreateObjectMapping: 0.348200 ms MarkObjects: 3.396600 ms  DeleteObjects: 0.938500 ms)
+database is locked
+Failed to delete database file Library/ShaderCache.db
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 35.09 ms, found 17 plugins.
+Preloading 1 native plugins for Editor in 0.13 ms.
+Unloading 7819 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 159 unused Assets / (1.9 MB). Loaded Objects now: 8217.
+Memory consumption went from 283.1 MB to 281.3 MB.
+Total: 7.869000 ms (FindLiveObjects: 0.745300 ms CreateObjectMapping: 0.603400 ms MarkObjects: 5.341600 ms  DeleteObjects: 1.175600 ms)
 
-Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -362,86 +242,30 @@ AssetImportParameters requested are different than current active one (requested
   custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
   custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 12110.881303 seconds.
-  path: Assets/scripts/UnitAutoFreeze.cs
-  artifactKey: Guid(e6435155143e2de4ea71b8078c3cd795) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/scripts/UnitAutoFreeze.cs using Guid(e6435155143e2de4ea71b8078c3cd795) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'c1c8a3aa0189845a404db97078c9f140') in 0.002357 seconds
+  Time since last request: 371495.541131 seconds.
+  path: Assets/Cube.prefab
+  artifactKey: Guid(c8b5fca4c018cd8448e46b81eae5433c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cube.prefab using Guid(c8b5fca4c018cd8448e46b81eae5433c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '69d99e9c9042399526fe3cca72e313c3') in 0.752433 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Prepare
-WARNING: Shader Unsupported: 'Hidden/Simulation/URP/Synthetic' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Hidden/Simulation/URP/Synthetic' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Hidden/Simulation/Synthetic Lit' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Hidden/Simulation/Synthetic Lit' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Simulation/Standard Lit' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Simulation/Standard Lit' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Simulation/URP/Room X-Ray' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Simulation/URP/Room X-Ray' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Simulation/Room X-Ray' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Simulation/Room X-Ray' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Simulation/URP/Lit' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Simulation/URP/Lit' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-Refreshing native plugins compatible for Editor in 47.71 ms, found 17 plugins.
-Preloading 1 native plugins for Editor in 0.03 ms.
-Unloading 8 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 8 unused Assets / (1.5 MB). Loaded Objects now: 8227.
-Memory consumption went from 129.1 MB to 127.6 MB.
-Total: 5.265800 ms (FindLiveObjects: 0.587700 ms CreateObjectMapping: 0.322200 ms MarkObjects: 3.465700 ms  DeleteObjects: 0.888900 ms)
-
-Prepare: number of updated asset objects reloaded= 39
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+Number of asset objects unloaded after import = 26
 ========================================================================
 Received Prepare
 Caller must complete domain reload
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.658 seconds
+- Loaded All Assemblies, in  0.820 seconds
 Native extension for WindowsStandalone target not found
 Native extension for iOS target not found
 Native extension for Android target not found
+[ScriptCompilation] NOT recompiling all scripts because this is an import worker process. Reason to compile was: Define symbols changed
 System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.NullReferenceException: Object reference not set to an instance of an object
   at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x0003d] in .\Library\PackageCache\com.unity.xr.oculus@4.5.2\Runtime\OculusLoader.cs:312 
   at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0008c] in .\Library\PackageCache\com.unity.xr.oculus@4.5.2\Runtime\OculusLoader.cs:297 
@@ -461,158 +285,282 @@ Mono: successfully reloaded assembly
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
-- Finished resetting the current domain, in  9.666 seconds
-Domain Reload Profiling: 10322ms
-	BeginReloadAssembly (184ms)
+- Finished resetting the current domain, in  1.537 seconds
+Domain Reload Profiling: 2349ms
+	BeginReloadAssembly (192ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (9ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (59ms)
+	RebuildCommonClasses (36ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (45ms)
+	LoadAllAssembliesAndSetupDomain (528ms)
+		LoadAssemblies (409ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (199ms)
+			TypeCache.Refresh (151ms)
+				TypeCache.ScanAssembly (132ms)
+			ScanForSourceGeneratedMonoScriptInfo (34ms)
+			ResolveRequiredComponents (13ms)
+	FinalizeReload (1537ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (649ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (26ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (114ms)
+			ProcessInitializeOnLoadAttributes (367ms)
+			ProcessInitializeOnLoadMethodAttributes (132ms)
+			AfterProcessingInitializeOnLoad (5ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (16ms)
+WARNING: Shader Unsupported: 'Hidden/Simulation/URP/Synthetic' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Hidden/Simulation/URP/Synthetic' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Hidden/Simulation/Synthetic Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Hidden/Simulation/Synthetic Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Simulation/Standard Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Simulation/Standard Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Simulation/URP/Room X-Ray' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Simulation/URP/Room X-Ray' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Simulation/Room X-Ray' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Simulation/Room X-Ray' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Simulation/URP/Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Simulation/URP/Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Refreshing native plugins compatible for Editor in 35.12 ms, found 20 plugins.
+Preloading 1 native plugins for Editor in 0.08 ms.
+Unloading 7829 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 197 unused Assets / (1.9 MB). Loaded Objects now: 8416.
+Memory consumption went from 261.1 MB to 259.2 MB.
+Total: 5.376900 ms (FindLiveObjects: 0.633200 ms CreateObjectMapping: 0.335400 ms MarkObjects: 3.461400 ms  DeleteObjects: 0.945800 ms)
+
+Prepare: number of updated asset objects reloaded= 39
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:scripting/monoscript/fileName/Common.cs: 6a6fc259ef8b95db535fe0f40a3a892f -> 6ffc11e45ee8ab7a7d4178988978e63b
+  custom:scripting/monoscript/fileName/MobileInput.cs: dfa415439f330b7749adb2ef7567c3e4 -> 
+  custom:scripting/monoscript/fileName/MicrophoneSelector.cs: e3ac535a7b30f987fff014fc4477f261 -> 
+  custom:scripting/monoscript/fileName/ChangePOV.cs: 175f0bdb936152726faa709ac191fc88 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/precompiled-assembly-types:PhotonVoice.PUN: eca0410715f70dc737a2be3fa28d1d03 -> 
+  custom:scripting/monoscript/fileName/ProximityVoiceTrigger.cs: a77aa155b43a225487e43d09bbf4afd7 -> 
+  custom:scripting/monoscript/fileName/VoiceClient.cs: 3d27388d8d966c187fb41c46c0646176 -> 
+  custom:scripting/monoscript/fileName/Device.cs: 68be482ccdc0057880c5673a9cddb303 -> 8726cf26051bd1b118e5a19691a28e54
+  custom:scripting/monoscript/fileName/MicAmplifierFloat.cs: a8c0a65b544128d971773f0336ea10c8 -> 
+  custom:scripting/monoscript/fileName/OrthographicController.cs: a55734ec94d30eab7bd970b553606e55 -> 
+  custom:scripting/monoscript/fileName/VoiceLogger.cs: 33ad1c411e730ce3c983fe925ab5c8f6 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/SpeakerAudioFilterRead.cs: 825b0177f87e996af39215b6d663f993 -> 
+  custom:scripting/monoscript/fileName/UiExtensions.cs: 4d1cd0c9ca5a0bbf2d975894bd8e65eb -> 
+  custom:scripting/monoscript/fileName/TouchPad.cs: 71af049078ebd826d8919ba90a4412d3 -> 
+  custom:scripting/monoscript/fileName/DeviceEnumerator.cs: da29d112252c5b5ef80be4c61aea3e56 -> 
+  custom:scripting/monoscript/fileName/VoiceInfo.cs: 9bde5a7ca30c1619a15543cae6a9c5d3 -> 
+  custom:scripting/monoscript/fileName/VoiceComponent.cs: c0c099186c2896f0d6db06ae9140d04d -> 
+  custom:scripting/monoscript/fileName/RecorderPreset.cs: 4e6108cf139bbbe565d3b681bfa1d20b -> 
+  custom:scripting/monoscript/fileName/WebRtcAudioDsp.cs: e9538825afb2923534033583c8aa6daa -> 
+  custom:scripting/monoscript/fileName/RecorderEditor.cs: bc52c6b5ab302b95b2ec3e73b882fd4b -> 
+  custom:scripting/monoscript/fileName/UnityMicrophone.cs: 2cb89dd620c2dbee60b8f501b5dbaf59 -> 
+  custom:scripting/monoscript/fileName/WebRTCAudioProcessor.cs: 5743f46401bed82fe64679ba46e4336d -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/ByteStreamCodec.cs: 783ae89d9cbdbd0ec75f5a34ddafce63 -> 
+  custom:scripting/monoscript/fileName/DataStreamUtil.cs: 02162386b0aedab292a68fbcb2a42204 -> 
+  custom:scripting/monoscript/fileName/ObjectPool.cs: 00b433b4d730d4f41f1079309aab7e4d -> 90647cc400823b41df847a6cbfc29026
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:scripting/monoscript/fileName/Logger.cs: 48b5319a23e2dd67945c047b417927fc -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/ChangeColor.cs: 82bbb314796106b751b72e5bf8aa791b -> 
+  custom:scripting/monoscript/fileName/VirtualInput.cs: e290279061a851c625fb61c863776a94 -> 
+  custom:scripting/monoscript/fileName/DemoVoiceUI.cs: 9351214003b97415c6c37ddbc1f6ad12 -> 
+  custom:scripting/monoscript/fileName/VoiceDebugScript.cs: 72c7b20180d646ff1bf5fe4615e6c207 -> 
+  custom:scripting/monoscript/fileName/UnityAndroidAudioInAEC.cs: 5fa2dc678b3d98cbb6be9b94fa810adc -> 
+  custom:scripting/monoscript/fileName/OpusWrapper.cs: 0190d722ad6cccc4c53005d848f12bda -> 
+  custom:scripting/precompiled-assembly-types:MicAmplifierEditor.Editor: e3eff8dca780ba37baee99b1926cc071 -> 
+  custom:scripting/monoscript/fileName/BaseController.cs: 9920202b742d4a270c44dd4cae9b70f0 -> 
+  custom:scripting/monoscript/fileName/PunVoiceClientEditor.cs: 5af6bef93770b1c83d847d70e055d7c5 -> 
+  custom:scripting/monoscript/fileName/MicWrapper.cs: 87a0be0b1e317ea10016f47e1c91df41 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/FrameBuffer.cs: b034a3dcd7cae1d662b22440fefd31ad -> 
+  custom:scripting/monoscript/fileName/PhotonVoiceLagSimulationGui.cs: a80ca234f6f2e994c61a29653d928909 -> 
+  custom:scripting/monoscript/fileName/PhotonAppSettings.cs: 4ba016b8443d6cb2c49f719693a5b6ca -> 
+  custom:scripting/monoscript/fileName/AudioOut.cs: b705dbb2bddfa816db3dae4e379ebd84 -> 
+  custom:scripting/monoscript/fileName/PointersController.cs: 6517884bfd4af856fdaa1a909e3b8cd8 -> 
+  custom:scripting/monoscript/fileName/OpusEncoder.cs: 1716a574fc780d17d7aebcc7bfed9c9c -> 
+  custom:scripting/monoscript/fileName/Joystick.cs: 11d088fac7031e9ed548317b75c607b4 -> 1a1d9a9cba7940fed9939f7306abee3f
+  custom:scripting/monoscript/fileName/PhotonVoiceView.cs: 228bb8264feca8cc576f8c68f2773aa8 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp-Editor: 0c57f6c924a8a012bb40f70e482a78ee -> e118bcc911b8d029fc94c13a54e544ea
+  custom:scripting/precompiled-assembly-types:PhotonVoice.PUN.Editor: 1ea4a71a261022e8b14da96e0c6b6672 -> 
+  custom:scripting/precompiled-assembly-types:PhotonVoice.API: 9e6216b1003e956edc05ec86679befef -> 
+  custom:scripting/monoscript/fileName/VoiceCodec.cs: 2e1bdad973c3c2cd0a69c35cdd91b59f -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: d1e4248aaef8ab6ca59ed92e58ea83a3 -> c946ef87c24ce76e19f2bd00654ae74d
+  custom:scripting/monoscript/fileName/Voice.cs: a7a8a2fb5ee5c65d23cd63e1bd414948 -> 
+  custom:scripting/monoscript/fileName/InputAxisScrollbar.cs: ce23cb16d4e46181bfcdc67e0abad940 -> 
+  custom:scripting/monoscript/fileName/Recorder.cs: 39c2e277dcdd18c02926ecf203df3e66 -> 
+  custom:scripting/monoscript/fileName/OpusCodec.cs: c070b6473e5cd4e763534d6452cdc10e -> 
+  custom:scripting/monoscript/fileName/LoadBalancingTransport.cs: 43e204da466102809cb383d8101b42e1 -> 
+  custom:scripting/monoscript/fileName/FMODHelpersMenu.cs: a23885e39d7e4f0f166f0b7450f3d962 -> 
+  custom:scripting/monoscript/fileName/CrossPlatformInputInitialize.cs: 957a994b43bb271adc778fbadd721ef1 -> 
+  custom:scripting/monoscript/fileName/CrossPlatformInputManager.cs: a6a27da3c2613aab4b889711813fe29f -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/SpeakerEditor.cs: c43e934a454ff4141faf8a09498deaa9 -> 
+  custom:scripting/monoscript/fileName/BetterToggle.cs: e97f5da28621e475c60472475ecdef91 -> 
+  custom:scripting/monoscript/fileName/ConnectAndJoinEditor.cs: f27ae6b45de1a5ae03a253b1c2e85d70 -> 
+  custom:scripting/monoscript/fileName/Speaker.cs: 53e4541584d57c2fe54246d45c54fa72 -> 
+  custom:scripting/monoscript/fileName/CodecSettingsUI.cs: fd8ff114840964c795b3f5d36495501f -> 
+  custom:scripting/monoscript/fileName/UnityAudioOut.cs: 88c9a6a21c1e42a106fc7042ad8c4bdb -> 
+  custom:scripting/monoscript/fileName/Util.cs: 9080d408a376cc5be77c81b88faffe20 -> 
+  custom:scripting/monoscript/fileName/WebRtcAudioDspEditor.cs: 13b7bc2dc382650a2f93807c895a5dde -> 
+  custom:scripting/precompiled-assembly-types:PhotonVoice.Editor: e1d2b2386fb6ce19cb2441a222ea85d8 -> 
+  custom:scripting/precompiled-assembly-types:PhotonVoice.Utilities.Editor: 6ca9222add6775585ac76c2f7f72f824 -> 
+  custom:scripting/monoscript/fileName/VoiceAudio.cs: 7bed65ec8c74dff78e718418fa053459 -> 
+  custom:scripting/monoscript/fileName/RawCodec.cs: 65ed37c18ab9ba0efaad026ab3e559aa -> 
+  custom:scripting/monoscript/fileName/VoiceFramed.cs: 0cdf409b5aa8d4c25876d72b5c6a3b60 -> 
+  custom:scripting/monoscript/fileName/PhotonVoiceEditorUtils.cs: d8dee85c1a28d45c5d372164d10ae12c -> 
+  custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
+  custom:scripting/monoscript/fileName/PunVoiceClient.cs: 6260d2dd2d539b55dd98f0c448379e76 -> 
+  custom:scripting/monoscript/fileName/Highlighter.cs: cd2506eac463ee0d14376eccf15d800f -> 
+  custom:scripting/monoscript/fileName/Platform.cs: 8590c2de48c121225a953900effd947c -> 3dec73b58e385eeb1aa8945a90fdd163
+  custom:scripting/monoscript/fileName/TestTone.cs: d5ffa56f41774c608f663b83189a8f97 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/RemoteVoiceLink.cs: 11e51c054bc0c21e285633d5a5fa7724 -> 
+  custom:scripting/monoscript/fileName/StandaloneInput.cs: 8cfda68f78df3b7dc3040fdb29fc2cd1 -> 
+  custom:scripting/monoscript/fileName/MicAmplifierEditor.cs: 21cb3f02878cf8e09104af352a26b8a6 -> 
+  custom:scripting/monoscript/fileName/MicAmplifierShort.cs: f937d9718668140c6cda2f6adbf8ce34 -> 
+  custom:scripting/monoscript/fileName/PhotonTransport.cs: 4aea8a480efbeff695f770119992b7ff -> 
+  custom:scripting/monoscript/fileName/OpusDecoder.cs: 0cdf409b5aa8d4c25876d72b5c6a3b60 -> 
+  custom:scripting/monoscript/fileName/UnityVoiceClientEditor.cs: d316da310947dfa37532efa15c9acdfb -> 
+  custom:scripting/monoscript/fileName/MouseLookHelper.cs: 20e1802a29d93dfd2e974df3cd142c65 -> 
+  custom:scripting/monoscript/fileName/UnityVoiceClient.cs: f7e1fc311763f3e4db38e1fd7c293d3c -> 
+  custom:scripting/monoscript/fileName/ObjectFactory.cs: 90647cc400823b41df847a6cbfc29026 -> 
+  custom:scripting/monoscript/fileName/RemoteSpeakerUI.cs: e29fcb1af24311e358721a334a768345 -> 
+  custom:scripting/monoscript/fileName/MobileControlRig.cs: 3524fff44c8126dee0548f9b6ab19d53 -> 
+  custom:scripting/monoscript/fileName/AudioClipWrapper.cs: 4e92e4065a5ee3fb367bf1d106734eed -> 
+  custom:scripting/monoscript/fileName/SaveIncomingStreamToFile.cs: 12760b166bbb86267642c751db38e1cb -> 
+  custom:scripting/monoscript/fileName/CharacterInstantiation.cs: 30288a048d6cc003791c7d8467b1da9a -> 
+  custom:scripting/monoscript/fileName/MicAmplifier.cs: 84d63e90ef76531961ac47d532444500 -> 
+  custom:scripting/monoscript/fileName/AudioGen.cs: f069ef1a941d68ea1c62475a36966130 -> 
+  custom:scripting/monoscript/fileName/MicWrapperPusher.cs: c45781d1994adbdaff794fa849ceb551 -> 
+  custom:scripting/monoscript/fileName/DataStreamClient.cs: 872a134c2fd26c2f5799716d2b793ce1 -> 
+  custom:scripting/monoscript/fileName/VoiceFollowClient.cs: f515a157d8b5ad1d3b53b47d0dd39bad -> 
+  custom:scripting/monoscript/fileName/VoiceDemoUI.cs: e8cde9e0b6438138500b3231dc415888 -> 
+  custom:scripting/precompiled-assembly-types:PhotonVoice: 610e074f3671ec51b4dbf6357fa2e27d -> 
+  custom:scripting/monoscript/fileName/AudioChangesHandler.cs: 0ccb83b93abf49df26de0641112d10de -> 
+  custom:scripting/monoscript/fileName/ConnectAndJoin.cs: a40bb2a4e34383a7568e91fc8862adab -> 
+  custom:scripting/monoscript/fileName/WindowsAudioIn.cs: f39130ea90753c6c43ad2590d2579764 -> 
+  custom:scripting/monoscript/fileName/ButtonHandler.cs: e27d3f4c7505c394dad450c78dd6faf1 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/ChangeName.cs: 13ec6936ecbfc396bbaf2ddb31098606 -> 
+  custom:scripting/monoscript/fileName/Framer.cs: 0cdf409b5aa8d4c25876d72b5c6a3b60 -> 
+  custom:scripting/monoscript/fileName/AudioUtil.cs: 78393a29a35b4a8193fecddb149b8c14 -> 
+  custom:scripting/monoscript/fileName/AxisTouchButton.cs: 31be56f36d53422fd33aa4f9a14e630a -> 
+  custom:scripting/monoscript/fileName/PhotonVoiceStatsGui.cs: 0dc4b49c237db8e2557e9e9263a20421 -> 
+  custom:scripting/monoscript/fileName/iOSAudioSession.cs: 544a539e14c3f002d688c1bc9bf8267e -> 
+  custom:scripting/monoscript/fileName/LoadBalancingTransport2.cs: a56162fa4393c02ed00c1aa9d088e8d0 -> 
+  custom:scripting/monoscript/fileName/PhotonDemoExtensions.cs: 610dd19c8998b0a2713b22f2f2053b30 -> 
+  custom:scripting/monoscript/fileName/SaveOutgoingStreamToFile.cs: 210c72e519873238eefcfa03a8511ca1 -> 
+  custom:scripting/monoscript/fileName/MicrophonePermission.cs: c7150a081ebc37e94b380608ebfd9f96 -> 
+  custom:scripting/monoscript/fileName/FirstPersonController.cs: dfde8d42de52c54a5b8828cf3c129f46 -> 
+  custom:scripting/monoscript/fileName/WaveWriter.cs: 4354f761ae460f22018fbec85e71c74a -> 
+  custom:scripting/monoscript/fileName/VoiceSourceAdapter.cs: c238a344fab919701e4cce537ee3f78b -> 
+  custom:scripting/monoscript/fileName/ThirdPersonController.cs: 0edcf5441ece11c3ad1c6d89aab30af9 -> 
+  custom:scripting/precompiled-assembly-types:Voice.FMOD.Editor: 3be12b4494369d3fcdbfbfea24f05045 -> 
+  custom:scripting/monoscript/fileName/OpusException.cs: 0f10f25cbd64b2727aca2ca7856e85e3 -> 
+  custom:scripting/monoscript/fileName/AudioOutCapture.cs: 5a4d19e4f8a4760834a7079a9dec4ba6 -> 
+  custom:scripting/monoscript/fileName/AudioSyncBuffer.cs: 90647cc400823b41df847a6cbfc29026 -> 
+  custom:scripting/monoscript/fileName/BackgroundMusicController.cs: 353e41b65ba82e58f312c78727b0707f -> 
+  custom:scripting/monoscript/fileName/SidebarToggle.cs: 654af0539a6a629956f409aae143e334 -> 
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.617 seconds
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+[ScriptCompilation] NOT recompiling all scripts because this is an import worker process. Reason to compile was: Define symbols changed
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.NullReferenceException: Object reference not set to an instance of an object
+  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x0003d] in .\Library\PackageCache\com.unity.xr.oculus@4.5.2\Runtime\OculusLoader.cs:312 
+  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0008c] in .\Library\PackageCache\com.unity.xr.oculus@4.5.2\Runtime\OculusLoader.cs:297 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <1071a2cb0cb3433aae80a793c277a048>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <1071a2cb0cb3433aae80a793c277a048>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <1071a2cb0cb3433aae80a793c277a048>:0 
+  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x000a5] in <4b8f645257c94d1296f440a10c6f388e>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+Mono: successfully reloaded assembly
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in 29.943 seconds
+Domain Reload Profiling: 31553ms
+	BeginReloadAssembly (333ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (4ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (47ms)
-	RebuildCommonClasses (28ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (36ms)
-	LoadAllAssembliesAndSetupDomain (398ms)
-		LoadAssemblies (452ms)
+		CreateAndSetChildDomain (99ms)
+	RebuildCommonClasses (47ms)
+	RebuildNativeTypeToScriptingClass (15ms)
+	initialDomainReloadingComplete (48ms)
+	LoadAllAssembliesAndSetupDomain (1167ms)
+		LoadAssemblies (1261ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (41ms)
-			TypeCache.Refresh (21ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (19ms)
-	FinalizeReload (9667ms)
+		AnalyzeDomain (78ms)
+			TypeCache.Refresh (23ms)
+				TypeCache.ScanAssembly (5ms)
+			ScanForSourceGeneratedMonoScriptInfo (38ms)
+			ResolveRequiredComponents (16ms)
+	FinalizeReload (29944ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (829ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (35ms)
-			SetLoadedEditorAssemblies (7ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (103ms)
-			ProcessInitializeOnLoadAttributes (539ms)
-			ProcessInitializeOnLoadMethodAttributes (137ms)
-			AfterProcessingInitializeOnLoad (7ms)
-			EditorAssembliesLoaded (1ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (11ms)
-WARNING: Shader Unsupported: 'Hidden/Simulation/URP/Synthetic' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Hidden/Simulation/URP/Synthetic' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Hidden/Simulation/Synthetic Lit' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Hidden/Simulation/Synthetic Lit' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Simulation/Standard Lit' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Simulation/Standard Lit' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Simulation/URP/Room X-Ray' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Simulation/URP/Room X-Ray' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Simulation/Room X-Ray' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Simulation/Room X-Ray' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Simulation/URP/Lit' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Simulation/URP/Lit' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-Refreshing native plugins compatible for Editor in 27.14 ms, found 17 plugins.
-Preloading 1 native plugins for Editor in 0.10 ms.
-Unloading 7684 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 201 unused Assets / (1.6 MB). Loaded Objects now: 8233.
-Memory consumption went from 251.8 MB to 250.1 MB.
-Total: 9.314000 ms (FindLiveObjects: 1.352300 ms CreateObjectMapping: 0.711800 ms MarkObjects: 5.840600 ms  DeleteObjects: 1.405200 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-========================================================================
-Received Prepare
-Caller must complete domain reload
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.590 seconds
-Native extension for WindowsStandalone target not found
-Native extension for iOS target not found
-Native extension for Android target not found
-System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.NullReferenceException: Object reference not set to an instance of an object
-  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x0003d] in .\Library\PackageCache\com.unity.xr.oculus@4.5.2\Runtime\OculusLoader.cs:312 
-  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0008c] in .\Library\PackageCache\com.unity.xr.oculus@4.5.2\Runtime\OculusLoader.cs:297 
-  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
-  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <1071a2cb0cb3433aae80a793c277a048>:0 
-   --- End of inner exception stack trace ---
-  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <1071a2cb0cb3433aae80a793c277a048>:0 
-  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <1071a2cb0cb3433aae80a793c277a048>:0 
-  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x000a5] in <4b8f645257c94d1296f440a10c6f388e>:0 
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:LogError (object)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
-
-Mono: successfully reloaded assembly
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-- Finished resetting the current domain, in  1.416 seconds
-Domain Reload Profiling: 2003ms
-	BeginReloadAssembly (163ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (3ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (45ms)
-	RebuildCommonClasses (29ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (38ms)
-	LoadAllAssembliesAndSetupDomain (347ms)
-		LoadAssemblies (403ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (26ms)
-			TypeCache.Refresh (10ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (15ms)
-	FinalizeReload (1417ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (704ms)
+		SetupLoadedEditorAssemblies (818ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (27ms)
 			SetLoadedEditorAssemblies (6ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (95ms)
-			ProcessInitializeOnLoadAttributes (451ms)
-			ProcessInitializeOnLoadMethodAttributes (116ms)
-			AfterProcessingInitializeOnLoad (8ms)
+			BeforeProcessingInitializeOnLoad (112ms)
+			ProcessInitializeOnLoadAttributes (429ms)
+			ProcessInitializeOnLoadMethodAttributes (238ms)
+			AfterProcessingInitializeOnLoad (6ms)
 			EditorAssembliesLoaded (1ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (10ms)
+		AwakeInstancesAfterBackupRestoration (16ms)
+Script is not up to date after domain reload: guid(a5213db8b943445438811578775a553d) path("Assets/scripts/Voice/VoiceChatManager.cs") state(2)
 WARNING: Shader Unsupported: 'Hidden/Simulation/URP/Synthetic' - All subshaders removed
 WARNING: Shader Did you use #pragma only_renderers and omit this platform?
 WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
@@ -649,65 +597,159 @@ WARNING: Shader If subshaders removal was intentional, you may have forgotten tu
 WARNING: Shader Unsupported: 'Simulation/URP/Lit' - All subshaders removed
 WARNING: Shader Did you use #pragma only_renderers and omit this platform?
 WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-Refreshing native plugins compatible for Editor in 25.50 ms, found 17 plugins.
-Preloading 1 native plugins for Editor in 0.05 ms.
-Unloading 7684 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 201 unused Assets / (1.5 MB). Loaded Objects now: 8239.
-Memory consumption went from 251.5 MB to 250.0 MB.
-Total: 5.515100 ms (FindLiveObjects: 0.568800 ms CreateObjectMapping: 0.343700 ms MarkObjects: 3.482600 ms  DeleteObjects: 1.118600 ms)
+Refreshing native plugins compatible for Editor in 36.92 ms, found 20 plugins.
+Preloading 1 native plugins for Editor in 0.07 ms.
+Unloading 7829 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 197 unused Assets / (1.9 MB). Loaded Objects now: 8422.
+Memory consumption went from 261.0 MB to 259.1 MB.
+Total: 5.594500 ms (FindLiveObjects: 0.667300 ms CreateObjectMapping: 0.275300 ms MarkObjects: 3.673500 ms  DeleteObjects: 0.977000 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
+  custom:scripting/monoscript/fileName/Common.cs: 6a6fc259ef8b95db535fe0f40a3a892f -> 6ffc11e45ee8ab7a7d4178988978e63b
+  custom:scripting/monoscript/fileName/MobileInput.cs: dfa415439f330b7749adb2ef7567c3e4 -> 
+  custom:scripting/monoscript/fileName/MicrophoneSelector.cs: e3ac535a7b30f987fff014fc4477f261 -> 
+  custom:scripting/monoscript/fileName/ChangePOV.cs: 175f0bdb936152726faa709ac191fc88 -> 
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/precompiled-assembly-types:PhotonVoice.PUN: eca0410715f70dc737a2be3fa28d1d03 -> 
+  custom:scripting/monoscript/fileName/ProximityVoiceTrigger.cs: a77aa155b43a225487e43d09bbf4afd7 -> 
+  custom:scripting/monoscript/fileName/VoiceClient.cs: 3d27388d8d966c187fb41c46c0646176 -> 
+  custom:scripting/monoscript/fileName/Device.cs: 68be482ccdc0057880c5673a9cddb303 -> 8726cf26051bd1b118e5a19691a28e54
+  custom:scripting/monoscript/fileName/MicAmplifierFloat.cs: a8c0a65b544128d971773f0336ea10c8 -> 
+  custom:scripting/monoscript/fileName/OrthographicController.cs: a55734ec94d30eab7bd970b553606e55 -> 
+  custom:scripting/monoscript/fileName/VoiceLogger.cs: 33ad1c411e730ce3c983fe925ab5c8f6 -> 
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/SpeakerAudioFilterRead.cs: 825b0177f87e996af39215b6d663f993 -> 
+  custom:scripting/monoscript/fileName/UiExtensions.cs: 4d1cd0c9ca5a0bbf2d975894bd8e65eb -> 
+  custom:scripting/monoscript/fileName/TouchPad.cs: 71af049078ebd826d8919ba90a4412d3 -> 
+  custom:scripting/monoscript/fileName/DeviceEnumerator.cs: da29d112252c5b5ef80be4c61aea3e56 -> 
+  custom:scripting/monoscript/fileName/VoiceInfo.cs: 9bde5a7ca30c1619a15543cae6a9c5d3 -> 
+  custom:scripting/monoscript/fileName/VoiceComponent.cs: c0c099186c2896f0d6db06ae9140d04d -> 
+  custom:scripting/monoscript/fileName/RecorderPreset.cs: 4e6108cf139bbbe565d3b681bfa1d20b -> 
+  custom:scripting/monoscript/fileName/WebRtcAudioDsp.cs: e9538825afb2923534033583c8aa6daa -> 
+  custom:scripting/monoscript/fileName/RecorderEditor.cs: bc52c6b5ab302b95b2ec3e73b882fd4b -> 
+  custom:scripting/monoscript/fileName/UnityMicrophone.cs: 2cb89dd620c2dbee60b8f501b5dbaf59 -> 
+  custom:scripting/monoscript/fileName/WebRTCAudioProcessor.cs: 5743f46401bed82fe64679ba46e4336d -> 
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/ByteStreamCodec.cs: 783ae89d9cbdbd0ec75f5a34ddafce63 -> 
+  custom:scripting/monoscript/fileName/DataStreamUtil.cs: 02162386b0aedab292a68fbcb2a42204 -> 
+  custom:scripting/monoscript/fileName/ObjectPool.cs: 00b433b4d730d4f41f1079309aab7e4d -> 90647cc400823b41df847a6cbfc29026
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:scripting/monoscript/fileName/Logger.cs: 48b5319a23e2dd67945c047b417927fc -> 
   custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/ChangeColor.cs: 82bbb314796106b751b72e5bf8aa791b -> 
+  custom:scripting/monoscript/fileName/VirtualInput.cs: e290279061a851c625fb61c863776a94 -> 
+  custom:scripting/monoscript/fileName/DemoVoiceUI.cs: 9351214003b97415c6c37ddbc1f6ad12 -> 
+  custom:scripting/monoscript/fileName/VoiceDebugScript.cs: 72c7b20180d646ff1bf5fe4615e6c207 -> 
+  custom:scripting/monoscript/fileName/UnityAndroidAudioInAEC.cs: 5fa2dc678b3d98cbb6be9b94fa810adc -> 
+  custom:scripting/monoscript/fileName/OpusWrapper.cs: 0190d722ad6cccc4c53005d848f12bda -> 
+  custom:scripting/precompiled-assembly-types:MicAmplifierEditor.Editor: e3eff8dca780ba37baee99b1926cc071 -> 
+  custom:scripting/monoscript/fileName/BaseController.cs: 9920202b742d4a270c44dd4cae9b70f0 -> 
+  custom:scripting/monoscript/fileName/PunVoiceClientEditor.cs: 5af6bef93770b1c83d847d70e055d7c5 -> 
+  custom:scripting/monoscript/fileName/MicWrapper.cs: 87a0be0b1e317ea10016f47e1c91df41 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/FrameBuffer.cs: b034a3dcd7cae1d662b22440fefd31ad -> 
+  custom:scripting/monoscript/fileName/PhotonVoiceLagSimulationGui.cs: a80ca234f6f2e994c61a29653d928909 -> 
+  custom:scripting/monoscript/fileName/PhotonAppSettings.cs: 4ba016b8443d6cb2c49f719693a5b6ca -> 
+  custom:scripting/monoscript/fileName/AudioOut.cs: b705dbb2bddfa816db3dae4e379ebd84 -> 
+  custom:scripting/monoscript/fileName/PointersController.cs: 6517884bfd4af856fdaa1a909e3b8cd8 -> 
+  custom:scripting/monoscript/fileName/OpusEncoder.cs: 1716a574fc780d17d7aebcc7bfed9c9c -> 
+  custom:scripting/monoscript/fileName/Joystick.cs: 11d088fac7031e9ed548317b75c607b4 -> 1a1d9a9cba7940fed9939f7306abee3f
+  custom:scripting/monoscript/fileName/PhotonVoiceView.cs: 228bb8264feca8cc576f8c68f2773aa8 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp-Editor: 0c57f6c924a8a012bb40f70e482a78ee -> e118bcc911b8d029fc94c13a54e544ea
+  custom:scripting/precompiled-assembly-types:PhotonVoice.PUN.Editor: 1ea4a71a261022e8b14da96e0c6b6672 -> 
+  custom:scripting/precompiled-assembly-types:PhotonVoice.API: 9e6216b1003e956edc05ec86679befef -> 
+  custom:scripting/monoscript/fileName/VoiceCodec.cs: 2e1bdad973c3c2cd0a69c35cdd91b59f -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 1bae2e08fdf21cdf4551bbffdf9c6f6d -> c946ef87c24ce76e19f2bd00654ae74d
+  custom:scripting/monoscript/fileName/Voice.cs: a7a8a2fb5ee5c65d23cd63e1bd414948 -> 
+  custom:scripting/monoscript/fileName/InputAxisScrollbar.cs: ce23cb16d4e46181bfcdc67e0abad940 -> 
+  custom:scripting/monoscript/fileName/Recorder.cs: 39c2e277dcdd18c02926ecf203df3e66 -> 
+  custom:scripting/monoscript/fileName/OpusCodec.cs: c070b6473e5cd4e763534d6452cdc10e -> 
+  custom:scripting/monoscript/fileName/LoadBalancingTransport.cs: 43e204da466102809cb383d8101b42e1 -> 
+  custom:scripting/monoscript/fileName/FMODHelpersMenu.cs: a23885e39d7e4f0f166f0b7450f3d962 -> 
+  custom:scripting/monoscript/fileName/CrossPlatformInputInitialize.cs: 957a994b43bb271adc778fbadd721ef1 -> 
+  custom:scripting/monoscript/fileName/CrossPlatformInputManager.cs: a6a27da3c2613aab4b889711813fe29f -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/SpeakerEditor.cs: c43e934a454ff4141faf8a09498deaa9 -> 
+  custom:scripting/monoscript/fileName/BetterToggle.cs: e97f5da28621e475c60472475ecdef91 -> 
+  custom:scripting/monoscript/fileName/ConnectAndJoinEditor.cs: f27ae6b45de1a5ae03a253b1c2e85d70 -> 
+  custom:scripting/monoscript/fileName/Speaker.cs: 53e4541584d57c2fe54246d45c54fa72 -> 
+  custom:scripting/monoscript/fileName/CodecSettingsUI.cs: fd8ff114840964c795b3f5d36495501f -> 
+  custom:scripting/monoscript/fileName/UnityAudioOut.cs: 88c9a6a21c1e42a106fc7042ad8c4bdb -> 
+  custom:scripting/monoscript/fileName/Util.cs: 9080d408a376cc5be77c81b88faffe20 -> 
+  custom:scripting/monoscript/fileName/WebRtcAudioDspEditor.cs: 13b7bc2dc382650a2f93807c895a5dde -> 
+  custom:scripting/precompiled-assembly-types:PhotonVoice.Editor: e1d2b2386fb6ce19cb2441a222ea85d8 -> 
+  custom:scripting/precompiled-assembly-types:PhotonVoice.Utilities.Editor: 6ca9222add6775585ac76c2f7f72f824 -> 
+  custom:scripting/monoscript/fileName/VoiceAudio.cs: 7bed65ec8c74dff78e718418fa053459 -> 
+  custom:scripting/monoscript/fileName/RawCodec.cs: 65ed37c18ab9ba0efaad026ab3e559aa -> 
+  custom:scripting/monoscript/fileName/VoiceFramed.cs: 0cdf409b5aa8d4c25876d72b5c6a3b60 -> 
+  custom:scripting/monoscript/fileName/PhotonVoiceEditorUtils.cs: d8dee85c1a28d45c5d372164d10ae12c -> 
   custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
+  custom:scripting/monoscript/fileName/PunVoiceClient.cs: 6260d2dd2d539b55dd98f0c448379e76 -> 
+  custom:scripting/monoscript/fileName/Highlighter.cs: cd2506eac463ee0d14376eccf15d800f -> 
+  custom:scripting/monoscript/fileName/Platform.cs: 8590c2de48c121225a953900effd947c -> 3dec73b58e385eeb1aa8945a90fdd163
+  custom:scripting/monoscript/fileName/TestTone.cs: d5ffa56f41774c608f663b83189a8f97 -> 
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/RemoteVoiceLink.cs: 11e51c054bc0c21e285633d5a5fa7724 -> 
+  custom:scripting/monoscript/fileName/StandaloneInput.cs: 8cfda68f78df3b7dc3040fdb29fc2cd1 -> 
+  custom:scripting/monoscript/fileName/MicAmplifierEditor.cs: 21cb3f02878cf8e09104af352a26b8a6 -> 
+  custom:scripting/monoscript/fileName/MicAmplifierShort.cs: f937d9718668140c6cda2f6adbf8ce34 -> 
+  custom:scripting/monoscript/fileName/PhotonTransport.cs: 4aea8a480efbeff695f770119992b7ff -> 
+  custom:scripting/monoscript/fileName/OpusDecoder.cs: 0cdf409b5aa8d4c25876d72b5c6a3b60 -> 
+  custom:scripting/monoscript/fileName/UnityVoiceClientEditor.cs: d316da310947dfa37532efa15c9acdfb -> 
+  custom:scripting/monoscript/fileName/MouseLookHelper.cs: 20e1802a29d93dfd2e974df3cd142c65 -> 
+  custom:scripting/monoscript/fileName/VoiceChatManager.cs: 16758199ac666f989f46e6f0e3f5b778 -> 
+  custom:scripting/monoscript/fileName/UnityVoiceClient.cs: f7e1fc311763f3e4db38e1fd7c293d3c -> 
+  custom:scripting/monoscript/fileName/ObjectFactory.cs: 90647cc400823b41df847a6cbfc29026 -> 
+  custom:scripting/monoscript/fileName/RemoteSpeakerUI.cs: e29fcb1af24311e358721a334a768345 -> 
+  custom:scripting/monoscript/fileName/MobileControlRig.cs: 3524fff44c8126dee0548f9b6ab19d53 -> 
+  custom:scripting/monoscript/fileName/AudioClipWrapper.cs: 4e92e4065a5ee3fb367bf1d106734eed -> 
+  custom:scripting/monoscript/fileName/SaveIncomingStreamToFile.cs: 12760b166bbb86267642c751db38e1cb -> 
+  custom:scripting/monoscript/fileName/CharacterInstantiation.cs: 30288a048d6cc003791c7d8467b1da9a -> 
+  custom:scripting/monoscript/fileName/MicAmplifier.cs: 84d63e90ef76531961ac47d532444500 -> 
+  custom:scripting/monoscript/fileName/AudioGen.cs: f069ef1a941d68ea1c62475a36966130 -> 
+  custom:scripting/monoscript/fileName/MicWrapperPusher.cs: c45781d1994adbdaff794fa849ceb551 -> 
+  custom:scripting/monoscript/fileName/DataStreamClient.cs: 872a134c2fd26c2f5799716d2b793ce1 -> 
+  custom:scripting/monoscript/fileName/VoiceFollowClient.cs: f515a157d8b5ad1d3b53b47d0dd39bad -> 
+  custom:scripting/monoscript/fileName/VoiceDemoUI.cs: e8cde9e0b6438138500b3231dc415888 -> 
+  custom:scripting/precompiled-assembly-types:PhotonVoice: 610e074f3671ec51b4dbf6357fa2e27d -> 
+  custom:scripting/monoscript/fileName/AudioChangesHandler.cs: 0ccb83b93abf49df26de0641112d10de -> 
+  custom:scripting/monoscript/fileName/ConnectAndJoin.cs: a40bb2a4e34383a7568e91fc8862adab -> 
+  custom:scripting/monoscript/fileName/WindowsAudioIn.cs: f39130ea90753c6c43ad2590d2579764 -> 
+  custom:scripting/monoscript/fileName/ButtonHandler.cs: e27d3f4c7505c394dad450c78dd6faf1 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 423.200707 seconds.
-  path: Assets/Resources/NetworkPrefabs/BearRed.prefab
-  artifactKey: Guid(f267c839a0bae6544bef50cf90188abf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/NetworkPrefabs/BearRed.prefab using Guid(f267c839a0bae6544bef50cf90188abf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'c6a781bc50f7272c00c8f3f56a271dbb') in 0.569593 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 228
-========================================================================
-Received Import Request.
-  Time since last request: 30.574514 seconds.
-  path: Assets/Resources/NetworkPrefabs/BearBlue.prefab
-  artifactKey: Guid(2e7918a68e3ec1447a2cd0faccad4602) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/NetworkPrefabs/BearBlue.prefab using Guid(2e7918a68e3ec1447a2cd0faccad4602) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '9220f8d70cc2a6a4fa8bbd13bf73773a') in 0.156685 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 210
-========================================================================
-Received Import Request.
-  Time since last request: 0.000037 seconds.
-  path: Assets/Resources/NetworkPrefabs/okchu.prefab
-  artifactKey: Guid(6f8673b94c71bca4d9da49131fe8327a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/NetworkPrefabs/okchu.prefab using Guid(6f8673b94c71bca4d9da49131fe8327a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'e4302d4b4d296ef3b9596bb422b4e1e0') in 0.046548 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 418
+  custom:scripting/monoscript/fileName/ChangeName.cs: 13ec6936ecbfc396bbaf2ddb31098606 -> 
+  custom:scripting/monoscript/fileName/Framer.cs: 0cdf409b5aa8d4c25876d72b5c6a3b60 -> 
+  custom:scripting/monoscript/fileName/AudioUtil.cs: 78393a29a35b4a8193fecddb149b8c14 -> 
+  custom:scripting/monoscript/fileName/AxisTouchButton.cs: 31be56f36d53422fd33aa4f9a14e630a -> 
+  custom:scripting/monoscript/fileName/PhotonVoiceStatsGui.cs: 0dc4b49c237db8e2557e9e9263a20421 -> 
+  custom:scripting/monoscript/fileName/iOSAudioSession.cs: 544a539e14c3f002d688c1bc9bf8267e -> 
+  custom:scripting/monoscript/fileName/LoadBalancingTransport2.cs: a56162fa4393c02ed00c1aa9d088e8d0 -> 
+  custom:scripting/monoscript/fileName/PhotonDemoExtensions.cs: 610dd19c8998b0a2713b22f2f2053b30 -> 
+  custom:scripting/monoscript/fileName/SaveOutgoingStreamToFile.cs: 210c72e519873238eefcfa03a8511ca1 -> 
+  custom:scripting/monoscript/fileName/MicrophonePermission.cs: c7150a081ebc37e94b380608ebfd9f96 -> 
+  custom:scripting/monoscript/fileName/FirstPersonController.cs: dfde8d42de52c54a5b8828cf3c129f46 -> 
+  custom:scripting/monoscript/fileName/WaveWriter.cs: 4354f761ae460f22018fbec85e71c74a -> 
+  custom:scripting/monoscript/fileName/VoiceSourceAdapter.cs: c238a344fab919701e4cce537ee3f78b -> 
+  custom:scripting/monoscript/fileName/ThirdPersonController.cs: 0edcf5441ece11c3ad1c6d89aab30af9 -> 
+  custom:scripting/precompiled-assembly-types:Voice.FMOD.Editor: 3be12b4494369d3fcdbfbfea24f05045 -> 
+  custom:scripting/monoscript/fileName/OpusException.cs: 0f10f25cbd64b2727aca2ca7856e85e3 -> 
+  custom:scripting/monoscript/fileName/AudioOutCapture.cs: 5a4d19e4f8a4760834a7079a9dec4ba6 -> 
+  custom:scripting/monoscript/fileName/AudioSyncBuffer.cs: 90647cc400823b41df847a6cbfc29026 -> 
+  custom:scripting/monoscript/fileName/BackgroundMusicController.cs: 353e41b65ba82e58f312c78727b0707f -> 
+  custom:scripting/monoscript/fileName/SidebarToggle.cs: 654af0539a6a629956f409aae143e334 -> 
 ========================================================================
 Received Prepare
 Caller must complete domain reload
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.838 seconds
+- Loaded All Assemblies, in  0.653 seconds
 Native extension for WindowsStandalone target not found
 Native extension for iOS target not found
 Native extension for Android target not found
+[ScriptCompilation] NOT recompiling all scripts because this is an import worker process. Reason to compile was: Define symbols changed
 System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.NullReferenceException: Object reference not set to an instance of an object
   at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x0003d] in .\Library\PackageCache\com.unity.xr.oculus@4.5.2\Runtime\OculusLoader.cs:312 
   at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0008c] in .\Library\PackageCache\com.unity.xr.oculus@4.5.2\Runtime\OculusLoader.cs:297 
@@ -727,40 +769,40 @@ Mono: successfully reloaded assembly
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
-- Finished resetting the current domain, in  1.722 seconds
-Domain Reload Profiling: 2558ms
-	BeginReloadAssembly (319ms)
+- Finished resetting the current domain, in  1.535 seconds
+Domain Reload Profiling: 2182ms
+	BeginReloadAssembly (159ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (12ms)
+		DisableScriptedObjects (4ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (132ms)
-	RebuildCommonClasses (39ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (42ms)
-	LoadAllAssembliesAndSetupDomain (424ms)
-		LoadAssemblies (456ms)
+		CreateAndSetChildDomain (44ms)
+	RebuildCommonClasses (29ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (39ms)
+	LoadAllAssembliesAndSetupDomain (411ms)
+		LoadAssemblies (414ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (78ms)
-			TypeCache.Refresh (22ms)
-				TypeCache.ScanAssembly (3ms)
-			ScanForSourceGeneratedMonoScriptInfo (36ms)
-			ResolveRequiredComponents (18ms)
-	FinalizeReload (1723ms)
+		AnalyzeDomain (69ms)
+			TypeCache.Refresh (18ms)
+				TypeCache.ScanAssembly (4ms)
+			ScanForSourceGeneratedMonoScriptInfo (33ms)
+			ResolveRequiredComponents (17ms)
+	FinalizeReload (1535ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (939ms)
+		SetupLoadedEditorAssemblies (684ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (29ms)
+			InitializePlatformSupportModulesInManaged (28ms)
 			SetLoadedEditorAssemblies (5ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (99ms)
-			ProcessInitializeOnLoadAttributes (534ms)
-			ProcessInitializeOnLoadMethodAttributes (264ms)
-			AfterProcessingInitializeOnLoad (8ms)
-			EditorAssembliesLoaded (1ms)
+			BeforeProcessingInitializeOnLoad (111ms)
+			ProcessInitializeOnLoadAttributes (410ms)
+			ProcessInitializeOnLoadMethodAttributes (124ms)
+			AfterProcessingInitializeOnLoad (6ms)
+			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (17ms)
+		AwakeInstancesAfterBackupRestoration (14ms)
 WARNING: Shader Unsupported: 'Hidden/Simulation/URP/Synthetic' - All subshaders removed
 WARNING: Shader Did you use #pragma only_renderers and omit this platform?
 WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
@@ -797,106 +839,244 @@ WARNING: Shader If subshaders removal was intentional, you may have forgotten tu
 WARNING: Shader Unsupported: 'Simulation/URP/Lit' - All subshaders removed
 WARNING: Shader Did you use #pragma only_renderers and omit this platform?
 WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-Refreshing native plugins compatible for Editor in 41.50 ms, found 17 plugins.
-Preloading 1 native plugins for Editor in 0.06 ms.
-Unloading 7684 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 207 unused Assets / (1.6 MB). Loaded Objects now: 8290.
-Memory consumption went from 258.7 MB to 257.0 MB.
-Total: 8.453100 ms (FindLiveObjects: 0.768900 ms CreateObjectMapping: 0.684000 ms MarkObjects: 5.502300 ms  DeleteObjects: 1.496100 ms)
+Refreshing native plugins compatible for Editor in 35.47 ms, found 20 plugins.
+Preloading 1 native plugins for Editor in 0.08 ms.
+Unloading 7830 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 197 unused Assets / (1.9 MB). Loaded Objects now: 8429.
+Memory consumption went from 261.1 MB to 259.3 MB.
+Total: 6.961700 ms (FindLiveObjects: 0.808500 ms CreateObjectMapping: 0.459200 ms MarkObjects: 4.384600 ms  DeleteObjects: 1.307800 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
+  custom:scripting/monoscript/fileName/Common.cs: 6a6fc259ef8b95db535fe0f40a3a892f -> 6ffc11e45ee8ab7a7d4178988978e63b
+  custom:scripting/monoscript/fileName/MobileInput.cs: dfa415439f330b7749adb2ef7567c3e4 -> 
+  custom:scripting/monoscript/fileName/MicrophoneSelector.cs: e3ac535a7b30f987fff014fc4477f261 -> 
+  custom:scripting/monoscript/fileName/ChangePOV.cs: 175f0bdb936152726faa709ac191fc88 -> 
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/precompiled-assembly-types:PhotonVoice.PUN: eca0410715f70dc737a2be3fa28d1d03 -> 
+  custom:scripting/monoscript/fileName/ProximityVoiceTrigger.cs: a77aa155b43a225487e43d09bbf4afd7 -> 
+  custom:scripting/monoscript/fileName/VoiceClient.cs: 3d27388d8d966c187fb41c46c0646176 -> 
+  custom:scripting/monoscript/fileName/Device.cs: 68be482ccdc0057880c5673a9cddb303 -> 8726cf26051bd1b118e5a19691a28e54
+  custom:scripting/monoscript/fileName/MicAmplifierFloat.cs: a8c0a65b544128d971773f0336ea10c8 -> 
+  custom:scripting/monoscript/fileName/OrthographicController.cs: a55734ec94d30eab7bd970b553606e55 -> 
+  custom:scripting/monoscript/fileName/VoiceLogger.cs: 33ad1c411e730ce3c983fe925ab5c8f6 -> 
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/SpeakerAudioFilterRead.cs: 825b0177f87e996af39215b6d663f993 -> 
+  custom:scripting/monoscript/fileName/UiExtensions.cs: 4d1cd0c9ca5a0bbf2d975894bd8e65eb -> 
+  custom:scripting/monoscript/fileName/TouchPad.cs: 71af049078ebd826d8919ba90a4412d3 -> 
+  custom:scripting/monoscript/fileName/DeviceEnumerator.cs: da29d112252c5b5ef80be4c61aea3e56 -> 
+  custom:scripting/monoscript/fileName/VoiceInfo.cs: 9bde5a7ca30c1619a15543cae6a9c5d3 -> 
+  custom:scripting/monoscript/fileName/VoiceComponent.cs: c0c099186c2896f0d6db06ae9140d04d -> 
+  custom:scripting/monoscript/fileName/RecorderPreset.cs: 4e6108cf139bbbe565d3b681bfa1d20b -> 
+  custom:scripting/monoscript/fileName/WebRtcAudioDsp.cs: e9538825afb2923534033583c8aa6daa -> 
+  custom:scripting/monoscript/fileName/RecorderEditor.cs: bc52c6b5ab302b95b2ec3e73b882fd4b -> 
+  custom:scripting/monoscript/fileName/UnityMicrophone.cs: 2cb89dd620c2dbee60b8f501b5dbaf59 -> 
+  custom:scripting/monoscript/fileName/WebRTCAudioProcessor.cs: 5743f46401bed82fe64679ba46e4336d -> 
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/ByteStreamCodec.cs: 783ae89d9cbdbd0ec75f5a34ddafce63 -> 
+  custom:scripting/monoscript/fileName/DataStreamUtil.cs: 02162386b0aedab292a68fbcb2a42204 -> 
+  custom:scripting/monoscript/fileName/ObjectPool.cs: 00b433b4d730d4f41f1079309aab7e4d -> 90647cc400823b41df847a6cbfc29026
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:scripting/monoscript/fileName/Logger.cs: 48b5319a23e2dd67945c047b417927fc -> 
   custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/ChangeColor.cs: 82bbb314796106b751b72e5bf8aa791b -> 
+  custom:scripting/monoscript/fileName/VirtualInput.cs: e290279061a851c625fb61c863776a94 -> 
+  custom:scripting/monoscript/fileName/DemoVoiceUI.cs: 9351214003b97415c6c37ddbc1f6ad12 -> 
+  custom:scripting/monoscript/fileName/VoiceDebugScript.cs: 72c7b20180d646ff1bf5fe4615e6c207 -> 
+  custom:scripting/monoscript/fileName/UnityAndroidAudioInAEC.cs: 5fa2dc678b3d98cbb6be9b94fa810adc -> 
+  custom:scripting/monoscript/fileName/OpusWrapper.cs: 0190d722ad6cccc4c53005d848f12bda -> 
+  custom:scripting/precompiled-assembly-types:MicAmplifierEditor.Editor: e3eff8dca780ba37baee99b1926cc071 -> 
+  custom:scripting/monoscript/fileName/BaseController.cs: 9920202b742d4a270c44dd4cae9b70f0 -> 
+  custom:scripting/monoscript/fileName/PunVoiceClientEditor.cs: 5af6bef93770b1c83d847d70e055d7c5 -> 
+  custom:scripting/monoscript/fileName/MicWrapper.cs: 87a0be0b1e317ea10016f47e1c91df41 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/FrameBuffer.cs: b034a3dcd7cae1d662b22440fefd31ad -> 
+  custom:scripting/monoscript/fileName/PhotonVoiceLagSimulationGui.cs: a80ca234f6f2e994c61a29653d928909 -> 
+  custom:scripting/monoscript/fileName/PhotonAppSettings.cs: 4ba016b8443d6cb2c49f719693a5b6ca -> 
+  custom:scripting/monoscript/fileName/AudioOut.cs: b705dbb2bddfa816db3dae4e379ebd84 -> 
+  custom:scripting/monoscript/fileName/PointersController.cs: 6517884bfd4af856fdaa1a909e3b8cd8 -> 
+  custom:scripting/monoscript/fileName/OpusEncoder.cs: 1716a574fc780d17d7aebcc7bfed9c9c -> 
+  custom:scripting/monoscript/fileName/Joystick.cs: 11d088fac7031e9ed548317b75c607b4 -> 1a1d9a9cba7940fed9939f7306abee3f
+  custom:scripting/monoscript/fileName/PhotonVoiceView.cs: 228bb8264feca8cc576f8c68f2773aa8 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp-Editor: 0c57f6c924a8a012bb40f70e482a78ee -> e118bcc911b8d029fc94c13a54e544ea
+  custom:scripting/precompiled-assembly-types:PhotonVoice.PUN.Editor: 1ea4a71a261022e8b14da96e0c6b6672 -> 
+  custom:scripting/precompiled-assembly-types:PhotonVoice.API: 9e6216b1003e956edc05ec86679befef -> 
+  custom:scripting/monoscript/fileName/VoiceCodec.cs: 2e1bdad973c3c2cd0a69c35cdd91b59f -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 1bae2e08fdf21cdf4551bbffdf9c6f6d -> c946ef87c24ce76e19f2bd00654ae74d
+  custom:scripting/monoscript/fileName/Voice.cs: a7a8a2fb5ee5c65d23cd63e1bd414948 -> 
+  custom:scripting/monoscript/fileName/InputAxisScrollbar.cs: ce23cb16d4e46181bfcdc67e0abad940 -> 
+  custom:scripting/monoscript/fileName/Recorder.cs: 39c2e277dcdd18c02926ecf203df3e66 -> 
+  custom:scripting/monoscript/fileName/OpusCodec.cs: c070b6473e5cd4e763534d6452cdc10e -> 
+  custom:scripting/monoscript/fileName/LoadBalancingTransport.cs: 43e204da466102809cb383d8101b42e1 -> 
+  custom:scripting/monoscript/fileName/FMODHelpersMenu.cs: a23885e39d7e4f0f166f0b7450f3d962 -> 
+  custom:scripting/monoscript/fileName/CrossPlatformInputInitialize.cs: 957a994b43bb271adc778fbadd721ef1 -> 
+  custom:scripting/monoscript/fileName/CrossPlatformInputManager.cs: a6a27da3c2613aab4b889711813fe29f -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/SpeakerEditor.cs: c43e934a454ff4141faf8a09498deaa9 -> 
+  custom:scripting/monoscript/fileName/BetterToggle.cs: e97f5da28621e475c60472475ecdef91 -> 
+  custom:scripting/monoscript/fileName/ConnectAndJoinEditor.cs: f27ae6b45de1a5ae03a253b1c2e85d70 -> 
+  custom:scripting/monoscript/fileName/Speaker.cs: 53e4541584d57c2fe54246d45c54fa72 -> 
+  custom:scripting/monoscript/fileName/CodecSettingsUI.cs: fd8ff114840964c795b3f5d36495501f -> 
+  custom:scripting/monoscript/fileName/UnityAudioOut.cs: 88c9a6a21c1e42a106fc7042ad8c4bdb -> 
+  custom:scripting/monoscript/fileName/Util.cs: 9080d408a376cc5be77c81b88faffe20 -> 
+  custom:scripting/monoscript/fileName/WebRtcAudioDspEditor.cs: 13b7bc2dc382650a2f93807c895a5dde -> 
+  custom:scripting/precompiled-assembly-types:PhotonVoice.Editor: e1d2b2386fb6ce19cb2441a222ea85d8 -> 
+  custom:scripting/precompiled-assembly-types:PhotonVoice.Utilities.Editor: 6ca9222add6775585ac76c2f7f72f824 -> 
+  custom:scripting/monoscript/fileName/VoiceAudio.cs: 7bed65ec8c74dff78e718418fa053459 -> 
+  custom:scripting/monoscript/fileName/RawCodec.cs: 65ed37c18ab9ba0efaad026ab3e559aa -> 
+  custom:scripting/monoscript/fileName/VoiceFramed.cs: 0cdf409b5aa8d4c25876d72b5c6a3b60 -> 
+  custom:scripting/monoscript/fileName/PhotonVoiceEditorUtils.cs: d8dee85c1a28d45c5d372164d10ae12c -> 
   custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
+  custom:scripting/monoscript/fileName/PunVoiceClient.cs: 6260d2dd2d539b55dd98f0c448379e76 -> 
+  custom:scripting/monoscript/fileName/Highlighter.cs: cd2506eac463ee0d14376eccf15d800f -> 
+  custom:scripting/monoscript/fileName/Platform.cs: 8590c2de48c121225a953900effd947c -> 3dec73b58e385eeb1aa8945a90fdd163
+  custom:scripting/monoscript/fileName/TestTone.cs: d5ffa56f41774c608f663b83189a8f97 -> 
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/RemoteVoiceLink.cs: 11e51c054bc0c21e285633d5a5fa7724 -> 
+  custom:scripting/monoscript/fileName/StandaloneInput.cs: 8cfda68f78df3b7dc3040fdb29fc2cd1 -> 
+  custom:scripting/monoscript/fileName/MicAmplifierEditor.cs: 21cb3f02878cf8e09104af352a26b8a6 -> 
+  custom:scripting/monoscript/fileName/MicAmplifierShort.cs: f937d9718668140c6cda2f6adbf8ce34 -> 
+  custom:scripting/monoscript/fileName/PhotonTransport.cs: 4aea8a480efbeff695f770119992b7ff -> 
+  custom:scripting/monoscript/fileName/OpusDecoder.cs: 0cdf409b5aa8d4c25876d72b5c6a3b60 -> 
+  custom:scripting/monoscript/fileName/UnityVoiceClientEditor.cs: d316da310947dfa37532efa15c9acdfb -> 
+  custom:scripting/monoscript/fileName/MouseLookHelper.cs: 20e1802a29d93dfd2e974df3cd142c65 -> 
+  custom:scripting/monoscript/fileName/VoiceChatManager.cs: 16758199ac666f989f46e6f0e3f5b778 -> 
+  custom:scripting/monoscript/fileName/UnityVoiceClient.cs: f7e1fc311763f3e4db38e1fd7c293d3c -> 
+  custom:scripting/monoscript/fileName/ObjectFactory.cs: 90647cc400823b41df847a6cbfc29026 -> 
+  custom:scripting/monoscript/fileName/RemoteSpeakerUI.cs: e29fcb1af24311e358721a334a768345 -> 
+  custom:scripting/monoscript/fileName/MobileControlRig.cs: 3524fff44c8126dee0548f9b6ab19d53 -> 
+  custom:scripting/monoscript/fileName/AudioClipWrapper.cs: 4e92e4065a5ee3fb367bf1d106734eed -> 
+  custom:scripting/monoscript/fileName/SaveIncomingStreamToFile.cs: 12760b166bbb86267642c751db38e1cb -> 
+  custom:scripting/monoscript/fileName/CharacterInstantiation.cs: 30288a048d6cc003791c7d8467b1da9a -> 
+  custom:scripting/monoscript/fileName/MicAmplifier.cs: 84d63e90ef76531961ac47d532444500 -> 
+  custom:scripting/monoscript/fileName/AudioGen.cs: f069ef1a941d68ea1c62475a36966130 -> 
+  custom:scripting/monoscript/fileName/MicWrapperPusher.cs: c45781d1994adbdaff794fa849ceb551 -> 
+  custom:scripting/monoscript/fileName/DataStreamClient.cs: 872a134c2fd26c2f5799716d2b793ce1 -> 
+  custom:scripting/monoscript/fileName/VoiceFollowClient.cs: f515a157d8b5ad1d3b53b47d0dd39bad -> 
+  custom:scripting/monoscript/fileName/VoiceDemoUI.cs: e8cde9e0b6438138500b3231dc415888 -> 
+  custom:scripting/precompiled-assembly-types:PhotonVoice: 610e074f3671ec51b4dbf6357fa2e27d -> 
+  custom:scripting/monoscript/fileName/AudioChangesHandler.cs: 0ccb83b93abf49df26de0641112d10de -> 
+  custom:scripting/monoscript/fileName/ConnectAndJoin.cs: a40bb2a4e34383a7568e91fc8862adab -> 
+  custom:scripting/monoscript/fileName/WindowsAudioIn.cs: f39130ea90753c6c43ad2590d2579764 -> 
+  custom:scripting/monoscript/fileName/ButtonHandler.cs: e27d3f4c7505c394dad450c78dd6faf1 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/ChangeName.cs: 13ec6936ecbfc396bbaf2ddb31098606 -> 
+  custom:scripting/monoscript/fileName/Framer.cs: 0cdf409b5aa8d4c25876d72b5c6a3b60 -> 
+  custom:scripting/monoscript/fileName/AudioUtil.cs: 78393a29a35b4a8193fecddb149b8c14 -> 
+  custom:scripting/monoscript/fileName/AxisTouchButton.cs: 31be56f36d53422fd33aa4f9a14e630a -> 
+  custom:scripting/monoscript/fileName/PhotonVoiceStatsGui.cs: 0dc4b49c237db8e2557e9e9263a20421 -> 
+  custom:scripting/monoscript/fileName/iOSAudioSession.cs: 544a539e14c3f002d688c1bc9bf8267e -> 
+  custom:scripting/monoscript/fileName/LoadBalancingTransport2.cs: a56162fa4393c02ed00c1aa9d088e8d0 -> 
+  custom:scripting/monoscript/fileName/PhotonDemoExtensions.cs: 610dd19c8998b0a2713b22f2f2053b30 -> 
+  custom:scripting/monoscript/fileName/SaveOutgoingStreamToFile.cs: 210c72e519873238eefcfa03a8511ca1 -> 
+  custom:scripting/monoscript/fileName/MicrophonePermission.cs: c7150a081ebc37e94b380608ebfd9f96 -> 
+  custom:scripting/monoscript/fileName/FirstPersonController.cs: dfde8d42de52c54a5b8828cf3c129f46 -> 
+  custom:scripting/monoscript/fileName/WaveWriter.cs: 4354f761ae460f22018fbec85e71c74a -> 
+  custom:scripting/monoscript/fileName/VoiceSourceAdapter.cs: c238a344fab919701e4cce537ee3f78b -> 
+  custom:scripting/monoscript/fileName/ThirdPersonController.cs: 0edcf5441ece11c3ad1c6d89aab30af9 -> 
+  custom:scripting/precompiled-assembly-types:Voice.FMOD.Editor: 3be12b4494369d3fcdbfbfea24f05045 -> 
+  custom:scripting/monoscript/fileName/OpusException.cs: 0f10f25cbd64b2727aca2ca7856e85e3 -> 
+  custom:scripting/monoscript/fileName/AudioOutCapture.cs: 5a4d19e4f8a4760834a7079a9dec4ba6 -> 
+  custom:scripting/monoscript/fileName/AudioSyncBuffer.cs: 90647cc400823b41df847a6cbfc29026 -> 
+  custom:scripting/monoscript/fileName/BackgroundMusicController.cs: 353e41b65ba82e58f312c78727b0707f -> 
+  custom:scripting/monoscript/fileName/SidebarToggle.cs: 654af0539a6a629956f409aae143e334 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 44.647202 seconds.
-  path: Assets/Resources/NetworkPrefabs/BearRed.prefab
-  artifactKey: Guid(f267c839a0bae6544bef50cf90188abf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/NetworkPrefabs/BearRed.prefab using Guid(f267c839a0bae6544bef50cf90188abf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+  Time since last request: 1331.918726 seconds.
+  path: Assets/Resources/NetworkPrefabs/agentRed.prefab
+  artifactKey: Guid(3e2d0508c79548143a35296df3aaa41b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/NetworkPrefabs/agentRed.prefab using Guid(3e2d0508c79548143a35296df3aaa41b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '17cae049726916bb4f0bb81507fc4095') in 0.649517 seconds
+ -> (artifact id: '60bda35f73d8bc6485693ff969d97a35') in 0.473751 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 228
+Number of asset objects unloaded after import = 319
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/Resources/NetworkPrefabs/BearBlue.prefab
-  artifactKey: Guid(2e7918a68e3ec1447a2cd0faccad4602) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/NetworkPrefabs/BearBlue.prefab using Guid(2e7918a68e3ec1447a2cd0faccad4602) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Models/Asteroid01.fbx
+  artifactKey: Guid(401fae203bae0ee428e401e7f9af9be8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Models/Asteroid01.fbx using Guid(401fae203bae0ee428e401e7f9af9be8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '9e3b1ac815c73ccbe108affe023c854e') in 0.101905 seconds
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '1cc353baf74a78ed7a021bd6ded85c66') in 0.526676 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/sprites/armor/URP_Medieval_Fantasy/Dynamic_parts/Meshes/Back_Pack_U.fbx
+  artifactKey: Guid(46944d2a58ec5b04c9664fe27106f9af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/armor/URP_Medieval_Fantasy/Dynamic_parts/Meshes/Back_Pack_U.fbx using Guid(46944d2a58ec5b04c9664fe27106f9af) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '14db3858dd7486dd72f580292b7dcfa8') in 0.059068 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/sprites/armor/URP_Medieval_Fantasy/Dynamic_parts/Prefs/Back_Pack_U.prefab
+  artifactKey: Guid(58455737705dd7543aedb84c3e85790c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/armor/URP_Medieval_Fantasy/Dynamic_parts/Prefs/Back_Pack_U.prefab using Guid(58455737705dd7543aedb84c3e85790c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '1b8a5e01a7942ff827c532337dd37dc2') in 0.695481 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000071 seconds.
+  path: Assets/anim/iskelet/attack1.fbx
+  artifactKey: Guid(ef751e951ed91ed4fbc94d82726c9eed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/anim/iskelet/attack1.fbx using Guid(ef751e951ed91ed4fbc94d82726c9eed) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '5fac2ae1a02b72d23976350214b8bcc6') in 0.009271 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 119
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/anim/arch/arrow.fbx
+  artifactKey: Guid(2c377c9a64f87054caf38af521f07715) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/anim/arch/arrow.fbx using Guid(2c377c9a64f87054caf38af521f07715) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '2461dcbaa31f997db05a242348a64eba') in 0.007596 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 111
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/sprites/Blink/Art/Animals/Stylized/Bear/Bear_Meshes/Bear.fbx
+  artifactKey: Guid(b7822eb5951163b48830b6d9bcbf48b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/Blink/Art/Animals/Stylized/Bear/Bear_Meshes/Bear.fbx using Guid(b7822eb5951163b48830b6d9bcbf48b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '18f37f4aa9a79d80290fef9f8d5a7b29') in 0.047199 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 140
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/prefab/AR Default Plane.prefab
+  artifactKey: Guid(e6d7a5c80154352418543952003131fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/prefab/AR Default Plane.prefab using Guid(e6d7a5c80154352418543952003131fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd7dc6b47ad898fcabd94792c6226faec') in 0.043754 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/prefab/ayk.prefab
+  artifactKey: Guid(44fb8b64f9ebb1d4981c3288d62a1003) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/prefab/ayk.prefab using Guid(44fb8b64f9ebb1d4981c3288d62a1003) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'ec01f72da407125f9a2ca8d28d1fc455') in 0.381647 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 210
-========================================================================
-Received Prepare
-WARNING: Shader Unsupported: 'Hidden/Simulation/URP/Synthetic' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Hidden/Simulation/URP/Synthetic' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Hidden/Simulation/Synthetic Lit' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Hidden/Simulation/Synthetic Lit' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Simulation/Standard Lit' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Simulation/Standard Lit' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Simulation/URP/Room X-Ray' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Simulation/URP/Room X-Ray' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Simulation/Room X-Ray' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Simulation/Room X-Ray' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Simulation/URP/Lit' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-WARNING: Shader Unsupported: 'Simulation/URP/Lit' - All subshaders removed
-WARNING: Shader Did you use #pragma only_renderers and omit this platform?
-WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-Refreshing native plugins compatible for Editor in 24.24 ms, found 17 plugins.
-Preloading 1 native plugins for Editor in 0.04 ms.
-Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 12 unused Assets / (1.4 MB). Loaded Objects now: 8375.
-Memory consumption went from 136.8 MB to 135.4 MB.
-Total: 6.511400 ms (FindLiveObjects: 0.767900 ms CreateObjectMapping: 0.502800 ms MarkObjects: 4.298300 ms  DeleteObjects: 0.941100 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: Bir iþ parçacýðý çýkýþý veya bir uygulama isteði nedeniyle G/Ç iþlemi iptal edildi.
 AssetImportWorker is now disconnected from the server
