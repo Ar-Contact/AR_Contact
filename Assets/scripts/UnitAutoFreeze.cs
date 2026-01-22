@@ -3,20 +3,27 @@ using UnityEngine.AI;
 
 public class UnitAutoFreeze : MonoBehaviour
 {
-    void Start()
+    private NavMeshAgent nma;
+    private MonoBehaviour ai;
+
+    void Awake()
     {
-        // Eðer hazýrlýk aþamasýndaysak (Savaþ baþlamadýysa)
+        nma = GetComponent<NavMeshAgent>();
+        ai = GetComponent("AiAgent") as MonoBehaviour;
+    }
+
+    void OnEnable()
+    {
+        CheckAndFreeze();
+    }
+
+    public void CheckAndFreeze()
+    {
+        // Savaþ baþlamadýysa dondur
         if (ArenaManager.Instance != null && !ArenaManager.Instance.isWarStarted)
         {
-            // Hareket sistemini kapat
-            NavMeshAgent nma = GetComponent<NavMeshAgent>();
             if (nma != null) nma.enabled = false;
-
-            // Zeka/Saldýrý sistemini kapat
-            MonoBehaviour ai = GetComponent("AiAgent") as MonoBehaviour;
             if (ai != null) ai.enabled = false;
-
-            Debug.Log(gameObject.name + " hazýrlýk için donduruldu.");
         }
     }
 }

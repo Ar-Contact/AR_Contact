@@ -468,6 +468,10 @@ PrefabInstance:
       value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6820022724511789896, guid: 1c8950e890f8de640b645d9ccc90ffa4, type: 3}
+      propertyPath: m_Height
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6820022724511789896, guid: 1c8950e890f8de640b645d9ccc90ffa4, type: 3}
       propertyPath: m_Acceleration
       value: 40
       objectReference: {fileID: 0}
@@ -477,7 +481,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6820022724511789896, guid: 1c8950e890f8de640b645d9ccc90ffa4, type: 3}
       propertyPath: m_StoppingDistance
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9015651193053095870, guid: 1c8950e890f8de640b645d9ccc90ffa4, type: 3}
       propertyPath: m_ApplyRootMotion

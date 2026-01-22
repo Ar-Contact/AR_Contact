@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using UnityEngine.AI; // NavMesh için gerekli
-using Photon.Pun;     // Multiplayer için gerekli
+using System.Collections.Generic; // List ve koleksiyonlar için gerekli
+using UnityEngine.AI;
+using Photon.Pun;
 
-// PhotonView eklemeyi unutma!
 public class ArenaManager : MonoBehaviourPunCallbacks
 {
     public static ArenaManager Instance;
@@ -33,7 +33,6 @@ public class ArenaManager : MonoBehaviourPunCallbacks
 
         if (stateText != null) stateText.text = "SAVAŞ ALANI HAZIR!";
 
-        // Sadece Master Client (Odayı kuran) oyun döngüsünü yönetsin
         if (PhotonNetwork.IsMasterClient)
         {
             StartCoroutine(SystemLoop());
@@ -45,13 +44,12 @@ public class ArenaManager : MonoBehaviourPunCallbacks
         int currentRound = 1;
         while (currentRound <= 5)
         {
-            // Tüm oyunculara round bilgisini gönder
             photonView.RPC("RPC_UpdateRound", RpcTarget.All, currentRound);
 
             // --- HAZIRLIK ---
-            photonView.RPC("RPC_SetWarState", RpcTarget.All, false); // Savaşı durdur, panelleri aç
+            photonView.RPC("RPC_SetWarState", RpcTarget.All, false);
 
-            float time = 10f; // Test için 10 saniye (Normalde 30 yaparsın)
+            float time = 10f;
             while (time > 0)
             {
                 photonView.RPC("RPC_UpdateTimer", RpcTarget.All, time);
@@ -60,13 +58,21 @@ public class ArenaManager : MonoBehaviourPunCallbacks
             }
 
             // --- SAVAŞ ---
-            photonView.RPC("RPC_SetWarState", RpcTarget.All, true); // Savaşı başlat, panelleri kapat
-
-            // !!! İŞTE EKSİK OLAN KISIM BURASIYDI !!!
-            // Askerleri uyandır
+            photonView.RPC("RPC_SetWarState", RpcTarget.All, true);
             photonView.RPC("RPC_WakeUpSoldiers", RpcTarget.All);
 
-            yield return new WaitForSeconds(30f); // Savaş süresi (90 yapabilirsin)
+            // Takımlardan biri bitene kadar bekle (Maksimum 90 saniye)
+            float maxWarDuration = 90f;
+            float currentWarTime = 0f;
+
+            while (AreBothTeamsAlive() && currentWarTime < maxWarDuration)
+            {
+                currentWarTime += Time.deltaTime;
+                yield return null;
+            }
+
+            Debug.Log("Round bitti, bir takım elendi.");
+            yield return new WaitForSeconds(3f); // Bir sonraki round'a geçmeden önce bekleme
 
             currentRound++;
         }
@@ -74,35 +80,61 @@ public class ArenaManager : MonoBehaviourPunCallbacks
         if (stateText != null) stateText.text = "MAÇ BİTTİ!";
     }
 
-    [PunRPC]
-    void RPC_UpdateRound(int round)
+    bool AreBothTeamsAlive()
     {
-        if (roundText != null) roundText.text = "ROUND: " + round;
-    }
+        // Eğer askerler öldüğünde Destroy(gameObject) yapılıyorsa bu yeterlidir
+        GameObject[] blueTeam = GameObject.FindGameObjectsWithTag("BlueTeam");
+        GameObject[] redTeam = GameObject.FindGameObjectsWithTag("RedTeam");
 
-    [PunRPC]
-    void RPC_UpdateTimer(float time)
-    {
-        if (timerText != null) timerText.text = Mathf.CeilToInt(time).ToString();
-        if (stateText != null && !isWarStarted) stateText.text = "HAZIRLIK: " + Mathf.CeilToInt(time);
+        return blueTeam.Length > 0 && redTeam.Length > 0;
     }
 
     [PunRPC]
     void RPC_SetWarState(bool state)
     {
         isWarStarted = state;
-        UpdatePanelVisibility(!state); // Savaş başladıysa paneli kapat (false), değilse aç (true)
+        UpdatePanelVisibility(!state);
 
-        if (state) stateText.text = "SAVAŞ BAŞLADI!";
-        else stateText.text = "BİRLİKLERİNİ YERLEŞTİR!";
+        if (state)
+        {
+            stateText.text = "SAVAŞ BAŞLADI!";
+        }
+        else
+        {
+            stateText.text = "BİRLİKLERİNİ YERLEŞTİR!";
+
+            // Hazırlık aşamasında hayatta kalan askerleri dondur
+            FreezeAllUnits();
+        }
+    }
+
+    void FreezeAllUnits()
+    {
+        List<GameObject> allSoldiers = new List<GameObject>();
+        allSoldiers.AddRange(GameObject.FindGameObjectsWithTag("BlueTeam"));
+        allSoldiers.AddRange(GameObject.FindGameObjectsWithTag("RedTeam"));
+
+        foreach (GameObject soldier in allSoldiers)
+        {
+            UnitAutoFreeze freezer = soldier.GetComponent<UnitAutoFreeze>();
+            if (freezer != null)
+            {
+                freezer.enabled = true;
+                freezer.CheckAndFreeze();
+            }
+
+            // Güvenlik: NavMesh ve AI'yı kapat
+            NavMeshAgent nma = soldier.GetComponent<NavMeshAgent>();
+            if (nma != null) nma.enabled = false;
+
+            AiAgent ai = soldier.GetComponent<AiAgent>();
+            if (ai != null) ai.enabled = false;
+        }
     }
 
     [PunRPC]
     void RPC_WakeUpSoldiers()
     {
-        Debug.Log("ASKERLER UYANDIRILIYOR!");
-
-        // Mavi ve Kırmızı takımı bul ve hareket ettir
         ActivateTeam("BlueTeam");
         ActivateTeam("RedTeam");
     }
@@ -112,76 +144,34 @@ public class ArenaManager : MonoBehaviourPunCallbacks
         GameObject[] soldiers = GameObject.FindGameObjectsWithTag(teamTag);
         foreach (GameObject soldier in soldiers)
         {
-            Debug.Log($"<color=yellow>[ACTIVATE] {soldier.name} aktifleştiriliyor...</color>");
-            
-            // 1. NavMeshAgent'ı Aç ve Ayarla
             NavMeshAgent agent = soldier.GetComponent<NavMeshAgent>();
             if (agent != null)
             {
-                // Önce NavMesh pozisyonunu bul
                 NavMeshHit hit;
                 if (NavMesh.SamplePosition(soldier.transform.position, out hit, 5.0f, NavMesh.AllAreas))
                 {
-                    // Agent'ı kapalıyken pozisyonu ayarla
-                    soldier.transform.position = hit.position;
-                    Debug.Log($"<color=green>[ACTIVATE] {soldier.name} NavMesh'e yerleştirildi: {hit.position}</color>");
-                }
-                
-                // Agent'ı aç
-                agent.enabled = true;
-                
-                // Agent ayarları
-                agent.baseOffset = 0f;
-                agent.isStopped = false;
-                agent.updatePosition = true;
-                agent.updateRotation = true;
-                
-                // NavMesh üzerinde olduğunu kontrol et
-                if (!agent.isOnNavMesh)
-                {
-                    Debug.LogWarning($"<color=orange>[ACTIVATE] {soldier.name} hala NavMesh üzerinde değil! Warp deneniyor...</color>");
-                    if (NavMesh.SamplePosition(soldier.transform.position, out hit, 10.0f, NavMesh.AllAreas))
-                    {
-                        agent.Warp(hit.position);
-                        Debug.Log($"<color=green>[ACTIVATE] {soldier.name} Warp ile NavMesh'e yerleştirildi: {hit.position}</color>");
-                    }
-                }
-                else
-                {
-                    Debug.Log($"<color=green>[ACTIVATE] {soldier.name} NavMesh üzerinde! isOnNavMesh=true</color>");
+                    agent.enabled = true;
+                    agent.Warp(hit.position);
                 }
             }
 
-            // 2. Dondurucu Scripti Kapat
             UnitAutoFreeze freezer = soldier.GetComponent<UnitAutoFreeze>();
             if (freezer != null) freezer.enabled = false;
 
-            // 3. AI Scriptini Aç
             AiAgent ai = soldier.GetComponent<AiAgent>();
             if (ai != null) ai.enabled = true;
-            
-            // 4. GroundSnapper'ı tetikle
-            GroundSnapper snapper = soldier.GetComponent<GroundSnapper>();
-            if (snapper != null)
-            {
-                snapper.ForceSnapToGround();
-                Debug.Log($"<color=cyan>[ACTIVATE] {soldier.name} GroundSnapper tetiklendi</color>");
-            }
         }
     }
 
+    // Timer ve Round RPC'leri
+    [PunRPC] void RPC_UpdateRound(int round) { if (roundText != null) roundText.text = "ROUND: " + round; }
+    [PunRPC] void RPC_UpdateTimer(float time) { if (timerText != null) timerText.text = Mathf.CeilToInt(time).ToString(); }
+
     private void UpdatePanelVisibility(bool show)
     {
+        // PlayerSession.Team üzerinden hangi panelin açılacağını belirler
         string team = PlayerSession.Team;
-        if (team == "Blue")
-        {
-            if (dragBluePanel) dragBluePanel.SetActive(show);
-            if (dragRedPanel) dragRedPanel.SetActive(false);
-        }
-        else if (team == "Red")
-        {
-            if (dragRedPanel) dragRedPanel.SetActive(show);
-            if (dragBluePanel) dragBluePanel.SetActive(false);
-        }
+        if (dragBluePanel) dragBluePanel.SetActive(team == "Blue" && show);
+        if (dragRedPanel) dragRedPanel.SetActive(team == "Red" && show);
     }
 }
