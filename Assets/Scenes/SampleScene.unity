@@ -522,7 +522,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d86d520092e602845a56cbd999cec283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secilenPrefab: {fileID: 5049317514932536441, guid: 03bca4d23bdc3f7489f1650d4c9cf69a, type: 3}
+  arenaSiyahPrefab: {fileID: 5049317514932536441, guid: 03bca4d23bdc3f7489f1650d4c9cf69a, type: 3}
+  arenaKirmiziPrefab: {fileID: 5049317514932536441, guid: 4e153d3bd5d77e54cb836301cb3e0422, type: 3}
+  arenaMaviPrefab: {fileID: 5049317514932536441, guid: 0b8f545f47e4da446ae6a3f84f584973, type: 3}
   debugText: {fileID: 0}
 --- !u!114 &285088747
 MonoBehaviour:

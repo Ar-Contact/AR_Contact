@@ -11,6 +11,9 @@ public class MatchMaker : MonoBehaviourPunCallbacks
     public GameObject createRoomPanel;
     public GameObject roomListPanel;
 
+    // YENİ EKLENEN: Renk Paneli Referansı
+    public GameObject renkDedektoruPaneli;
+
     [Header("UI Elements")]
     public InputField roomNameInput;
     public Transform roomListContent;
@@ -22,6 +25,10 @@ public class MatchMaker : MonoBehaviourPunCallbacks
     private void Start()
     {
         PlayerSession.NetworkStarted = false;
+
+        // Başlangıçta panelleri sıfırla
+        ShowPanel(mainPanel);
+
         if (!PhotonNetwork.IsConnected)
         {
             PhotonNetwork.ConnectUsingSettings();
@@ -30,11 +37,25 @@ public class MatchMaker : MonoBehaviourPunCallbacks
         {
             PhotonNetwork.JoinLobby();
         }
-        ShowPanel(mainPanel);
     }
 
     #region Panel Kontrolleri
-    public void OpenCreateRoomPanel() => ShowPanel(createRoomPanel);
+
+    // 1. ADIM: Ana Menüdeki "Oda Kur" butonu ARTIK BUNU ÇAĞIRMALI
+    public void OdaKurButonunaBasildi()
+    {
+        // CreateRoomPanel yerine ÖNCE Renk panelini açıyoruz
+        ShowPanel(renkDedektoruPaneli);
+    }
+
+    // 2. ADIM: Renk seçilip "Tamam" denince RenkDedektoru scripti BUNU ÇAĞIRACAK
+    public void RenkSecimiTamamlandi()
+    {
+        // Renk bitti, şimdi oda kurma ekranını aç
+        ShowPanel(createRoomPanel);
+    }
+
+    // Mevcut Oda Listesi Açma Fonksiyonu
     public void OpenRoomListPanel()
     {
         ShowPanel(roomListPanel);
@@ -43,13 +64,19 @@ public class MatchMaker : MonoBehaviourPunCallbacks
             PhotonNetwork.JoinLobby();
         }
     }
+
     public void BackToMain() => ShowPanel(mainPanel);
 
+    // TÜM PANELLERİ YÖNETEN FONKSİYON (Tıklama sorununu çözer)
     private void ShowPanel(GameObject panelToShow)
     {
-        mainPanel.SetActive(panelToShow == mainPanel);
-        createRoomPanel.SetActive(panelToShow == createRoomPanel);
-        roomListPanel.SetActive(panelToShow == roomListPanel);
+        // Hangi panelin açılacağını belirle, diğerlerini kapat.
+        // SetActive(false) yapmak butonların engellenmesini önler.
+
+        if (mainPanel != null) mainPanel.SetActive(panelToShow == mainPanel);
+        if (createRoomPanel != null) createRoomPanel.SetActive(panelToShow == createRoomPanel);
+        if (roomListPanel != null) roomListPanel.SetActive(panelToShow == roomListPanel);
+        if (renkDedektoruPaneli != null) renkDedektoruPaneli.SetActive(panelToShow == renkDedektoruPaneli);
     }
     #endregion
 
@@ -72,42 +99,29 @@ public class MatchMaker : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinLobby();
     }
 
-    // KRİTİK DÜZELTME BURADA
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
     {
         Debug.Log($"[LOBİ] Güncelleme geldi. Paket boyutu: {roomList.Count}");
 
-        // 1. Önce hafızadaki listeyi (cache) güncelle
         foreach (RoomInfo room in roomList)
         {
             if (room.RemovedFromList)
-            {
                 cachedRoomList.Remove(room.Name);
-            }
             else
-            {
                 cachedRoomList[room.Name] = room;
-            }
         }
 
-        // 2. UI listesini temizle ve hafızadaki güncel listeye göre yeniden çiz
         UpdateRoomListView();
     }
 
     private void UpdateRoomListView()
     {
-        // Mevcut butonları temizle
-        foreach (Transform child in roomListContent)
-        {
-            Destroy(child.gameObject);
-        }
+        foreach (Transform child in roomListContent) Destroy(child.gameObject);
 
-        // Hafızadaki tüm geçerli odaları ekrana bas
         foreach (var entry in cachedRoomList)
         {
             RoomInfo room = entry.Value;
 
-            // Oda gizli veya doluysa gösterme
             if (!room.IsVisible || room.PlayerCount >= room.MaxPlayers)
                 continue;
 
@@ -116,9 +130,7 @@ public class MatchMaker : MonoBehaviourPunCallbacks
 
             Text roomText = item.GetComponentInChildren<Text>();
             if (roomText != null)
-            {
                 roomText.text = $"{room.Name} ({room.PlayerCount}/{room.MaxPlayers})";
-            }
 
             string rName = room.Name;
             item.GetComponent<Button>().onClick.AddListener(() => JoinRoom(rName));
@@ -127,7 +139,6 @@ public class MatchMaker : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        // Odaya girince hafızayı temizle (lobiye dönünce taze başlasın)
         cachedRoomList.Clear();
 
         if (PhotonNetwork.IsMasterClient)
