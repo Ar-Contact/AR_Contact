@@ -1,0 +1,184 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\muham\\Desktop\\AR-Nasilsin\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DA5C9369-B04A-0BE7-6964-C89E20EEA96D}|Assembly-CSharp.csproj|c:\\users\\muham\\desktop\\ar-nasilsin\\assets\\scripts\\aiagent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA5C9369-B04A-0BE7-6964-C89E20EEA96D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\aiagent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA5C9369-B04A-0BE7-6964-C89E20EEA96D}|Assembly-CSharp.csproj|c:\\users\\muham\\desktop\\ar-nasilsin\\assets\\scripts\\aiidlestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA5C9369-B04A-0BE7-6964-C89E20EEA96D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\aiidlestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA5C9369-B04A-0BE7-6964-C89E20EEA96D}|Assembly-CSharp.csproj|c:\\users\\muham\\desktop\\ar-nasilsin\\assets\\scripts\\magician\\aimagicianagent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA5C9369-B04A-0BE7-6964-C89E20EEA96D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\magician\\aimagicianagent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA5C9369-B04A-0BE7-6964-C89E20EEA96D}|Assembly-CSharp.csproj|c:\\users\\muham\\desktop\\ar-nasilsin\\assets\\scripts\\multiplayer\\networkboostraper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA5C9369-B04A-0BE7-6964-C89E20EEA96D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\multiplayer\\networkboostraper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA5C9369-B04A-0BE7-6964-C89E20EEA96D}|Assembly-CSharp.csproj|C:\\Users\\muham\\Desktop\\AR-Nasilsin\\assets\\scripts\\multiplayer\\matchmaker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA5C9369-B04A-0BE7-6964-C89E20EEA96D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\multiplayer\\matchmaker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA5C9369-B04A-0BE7-6964-C89E20EEA96D}|Assembly-CSharp.csproj|C:\\Users\\muham\\Desktop\\AR-Nasilsin\\assets\\scripts\\dragdropspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA5C9369-B04A-0BE7-6964-C89E20EEA96D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dragdropspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA5C9369-B04A-0BE7-6964-C89E20EEA96D}|Assembly-CSharp.csproj|C:\\Users\\muham\\Desktop\\AR-Nasilsin\\assets\\scripts\\multiplayer\\playerunitspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA5C9369-B04A-0BE7-6964-C89E20EEA96D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\multiplayer\\playerunitspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA5C9369-B04A-0BE7-6964-C89E20EEA96D}|Assembly-CSharp.csproj|C:\\Users\\muham\\Desktop\\AR-Nasilsin\\assets\\scripts\\loginauth\\firebaseauth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA5C9369-B04A-0BE7-6964-C89E20EEA96D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\loginauth\\firebaseauth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA5C9369-B04A-0BE7-6964-C89E20EEA96D}|Assembly-CSharp.csproj|C:\\Users\\muham\\Desktop\\AR-Nasilsin\\assets\\scripts\\multiplayer\\playersession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA5C9369-B04A-0BE7-6964-C89E20EEA96D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\multiplayer\\playersession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA5C9369-B04A-0BE7-6964-C89E20EEA96D}|Assembly-CSharp.csproj|C:\\Users\\muham\\Desktop\\AR-Nasilsin\\assets\\scripts\\arenamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA5C9369-B04A-0BE7-6964-C89E20EEA96D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\arenamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AiAgent.cs",
+              "DocumentMoniker": "C:\\Users\\muham\\Desktop\\AR-Nasilsin\\Assets\\scripts\\AiAgent.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\AiAgent.cs",
+              "ToolTip": "C:\\Users\\muham\\Desktop\\AR-Nasilsin\\Assets\\scripts\\AiAgent.cs",
+              "RelativeToolTip": "Assets\\scripts\\AiAgent.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAIA0wDoAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T23:05:48.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AiIdleState.cs",
+              "DocumentMoniker": "C:\\Users\\muham\\Desktop\\AR-Nasilsin\\Assets\\scripts\\AiIdleState.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\AiIdleState.cs",
+              "ToolTip": "C:\\Users\\muham\\Desktop\\AR-Nasilsin\\Assets\\scripts\\AiIdleState.cs",
+              "RelativeToolTip": "Assets\\scripts\\AiIdleState.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T22:36:01.152Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AiMagicianAgent.cs",
+              "DocumentMoniker": "C:\\Users\\muham\\Desktop\\AR-Nasilsin\\Assets\\scripts\\Magician\\AiMagicianAgent.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Magician\\AiMagicianAgent.cs",
+              "ToolTip": "C:\\Users\\muham\\Desktop\\AR-Nasilsin\\Assets\\scripts\\Magician\\AiMagicianAgent.cs",
+              "RelativeToolTip": "Assets\\scripts\\Magician\\AiMagicianAgent.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAUwBoAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T22:30:46.027Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PlayerUnitSpawner.cs",
+              "DocumentMoniker": "C:\\Users\\muham\\Desktop\\AR-Nasilsin\\Assets\\scripts\\Multiplayer\\PlayerUnitSpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Multiplayer\\PlayerUnitSpawner.cs",
+              "ToolTip": "C:\\Users\\muham\\Desktop\\AR-Nasilsin\\Assets\\scripts\\Multiplayer\\PlayerUnitSpawner.cs",
+              "RelativeToolTip": "Assets\\scripts\\Multiplayer\\PlayerUnitSpawner.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T17:00:09.981Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DragDropSpawner.cs",
+              "DocumentMoniker": "C:\\Users\\muham\\Desktop\\AR-Nasilsin\\Assets\\scripts\\DragDropSpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\DragDropSpawner.cs",
+              "ToolTip": "C:\\Users\\muham\\Desktop\\AR-Nasilsin\\Assets\\scripts\\DragDropSpawner.cs",
+              "RelativeToolTip": "Assets\\scripts\\DragDropSpawner.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAswE0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T16:50:42.572Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "NetworkBoostraper.cs",
+              "DocumentMoniker": "C:\\Users\\muham\\Desktop\\AR-Nasilsin\\Assets\\scripts\\Multiplayer\\NetworkBoostraper.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Multiplayer\\NetworkBoostraper.cs",
+              "ToolTip": "C:\\Users\\muham\\Desktop\\AR-Nasilsin\\Assets\\scripts\\Multiplayer\\NetworkBoostraper.cs",
+              "RelativeToolTip": "Assets\\scripts\\Multiplayer\\NetworkBoostraper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEwAAABqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T13:45:06.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MatchMaker.cs",
+              "DocumentMoniker": "C:\\Users\\muham\\Desktop\\AR-Nasilsin\\Assets\\scripts\\Multiplayer\\MatchMaker.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Multiplayer\\MatchMaker.cs",
+              "ToolTip": "C:\\Users\\muham\\Desktop\\AR-Nasilsin\\Assets\\scripts\\Multiplayer\\MatchMaker.cs",
+              "RelativeToolTip": "Assets\\scripts\\Multiplayer\\MatchMaker.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAswA0AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-26T21:32:13.118Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ArenaManager.cs",
+              "DocumentMoniker": "C:\\Users\\muham\\Desktop\\AR-Nasilsin\\Assets\\scripts\\ArenaManager.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\ArenaManager.cs",
+              "ToolTip": "C:\\Users\\muham\\Desktop\\AR-Nasilsin\\Assets\\scripts\\ArenaManager.cs",
+              "RelativeToolTip": "Assets\\scripts\\ArenaManager.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwCAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-26T21:04:02.342Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PlayerSession.cs",
+              "DocumentMoniker": "C:\\Users\\muham\\Desktop\\AR-Nasilsin\\Assets\\scripts\\Multiplayer\\PlayerSession.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Multiplayer\\PlayerSession.cs",
+              "ToolTip": "C:\\Users\\muham\\Desktop\\AR-Nasilsin\\Assets\\scripts\\Multiplayer\\PlayerSession.cs",
+              "RelativeToolTip": "Assets\\scripts\\Multiplayer\\PlayerSession.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T13:42:20.316Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FireBaseAuth.cs",
+              "DocumentMoniker": "C:\\Users\\muham\\Desktop\\AR-Nasilsin\\Assets\\scripts\\LoginAuth\\FireBaseAuth.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\LoginAuth\\FireBaseAuth.cs",
+              "ToolTip": "C:\\Users\\muham\\Desktop\\AR-Nasilsin\\Assets\\scripts\\LoginAuth\\FireBaseAuth.cs",
+              "RelativeToolTip": "Assets\\scripts\\LoginAuth\\FireBaseAuth.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAkwD4AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T06:41:37.037Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

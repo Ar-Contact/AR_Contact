@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\muham\\Desktop\\son_oyun\\AR_Contact\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|c:\\users\\muham\\desktop\\son_oyun\\ar_contact\\assets\\scripts\\multiplayer\\matchmaker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{909EA7BB-8626-9FF4-4EC4-172FA7BE0FE2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\multiplayer\\matchmaker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MatchMaker.cs",
+              "DocumentMoniker": "C:\\Users\\muham\\Desktop\\son_oyun\\AR_Contact\\Assets\\scripts\\Multiplayer\\MatchMaker.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Multiplayer\\MatchMaker.cs",
+              "ToolTip": "C:\\Users\\muham\\Desktop\\son_oyun\\AR_Contact\\Assets\\scripts\\Multiplayer\\MatchMaker.cs",
+              "RelativeToolTip": "Assets\\scripts\\Multiplayer\\MatchMaker.cs",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAuwIAAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T19:41:20.215Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
